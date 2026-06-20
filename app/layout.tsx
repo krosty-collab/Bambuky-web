@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 import {
   SITE,
   SOCIAL,
@@ -7,17 +7,17 @@ import {
 } from "@/lib/site";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const bodoni = Bodoni_Moda({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["400", "500", "700"],
   style: ["normal", "italic"],
   variable: "--font-serif",
   display: "swap",
 });
 
-const jost = Jost({
+const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-sans",
   display: "swap",
 });
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: "Bambuky · Fotografía Newborn y Recién Nacidos en Querétaro",
   description:
-    "Estudio de fotografía newborn en Querétaro. Más de 10 años y 800+ bebés fotografiados. Cristian y Reyna en Jurica, Querétaro. Sesiones de recién nacido, maternidad y smash the cake.",
+    "Estudio de fotografía newborn en Querétaro. Más de 10 años y 800+ bebés fotografiados. Cristian y Reyna. Sesiones de recién nacido, maternidad y smash the cake.",
   keywords: [
     "fotografía newborn Querétaro",
     "fotógrafo recién nacido Querétaro",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Bambuky",
     title: "Bambuky · Fotografía Newborn en Querétaro",
     description:
-      "10 años y 800+ bebés fotografiados. Estudio de fotografía newborn, maternidad y smash the cake en Jurica, Querétaro.",
+      "10 años y 800+ bebés fotografiados. Estudio de fotografía newborn, maternidad y smash the cake en Querétaro.",
     locale: "es_MX",
     images: [
       {
@@ -83,7 +83,7 @@ const jsonLd = {
   foundingDate: "2015-08",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Jurica",
+    addressLocality: "Querétaro",
     addressRegion: "Querétaro",
     addressCountry: "MX",
   },
@@ -110,7 +110,7 @@ const jsonLd = {
       "Newborn · Recién Nacido",
       "Maternidad",
       "48 Horas Contigo",
-      "Sitters · Bebé Sentado",
+      "Sitters",
       "Smash the Cake",
     ].map((name) => ({
       "@type": "Offer",
@@ -125,7 +125,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${jost.variable}`}>
+    <html lang="es" className={`${bodoni.variable} ${manrope.variable}`}>
       <body>
         <script
           type="application/ld+json"

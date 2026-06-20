@@ -8,13 +8,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: "#B8960C",
-        "gold-lt": "#D4AF37",
-        cream: "#FAF8F5",
-        warm: "#F2EDE6",
-        stone: "#E8E1D8",
-        ink: "#2C2620",
-        muted: "#7A6E65",
+        gold: "#B5838D",
+        "gold-lt": "#C9A0A8",
+        cream: "#FAF6F4",
+        warm: "#F0E6E2",
+        stone: "#E5DCDA",
+        ink: "#1E1B19",
+        muted: "#8C7E78",
         wa: "#25D366",
       },
       fontFamily: {

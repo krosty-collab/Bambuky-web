@@ -18,11 +18,11 @@ export default function Footer() {
             <Image
               src="/images/logo.png"
               alt="Bambuky Fotografía Querétaro"
-              width={150}
-              height={48}
+              width={180}
+              height={58}
             />
             <p>
-              Estudio de fotografía newborn y familia en Jurica, Querétaro. Desde
+              Estudio de fotografía newborn y familia en Querétaro. Desde
               2015 capturando los momentos más irrepetibles de las familias
               queretanas.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
               <li><a href="#servicios">Newborn · Recién Nacido</a></li>
               <li><a href="#servicios">Maternidad</a></li>
               <li><a href="#servicios">48 Horas Contigo</a></li>
-              <li><a href="#servicios">Sitters · Bebé Sentado</a></li>
+              <li><a href="#servicios">Sitters</a></li>
               <li><a href="#servicios">Smash the Cake</a></li>
             </ul>
           </div>
@@ -83,7 +83,7 @@ export default function Footer() {
                   Galería de clientes · mila-os.com
                 </a>
               </li>
-              <li><a href="#nosotros">Jurica, Querétaro Norte</a></li>
+              <li><a href="#nosotros">Querétaro</a></li>
               <li><a href="#proceso">¿Cómo funciona?</a></li>
             </ul>
           </div>
@@ -91,7 +91,7 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>
-            © {year} Bambuky Fotografía · Jurica, Querétaro, México
+            © {year} Bambuky Fotografía · Querétaro, México
           </span>
           <span>
             Fotografía de recién nacidos · Maternidad · Smash the Cake

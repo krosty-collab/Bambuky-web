@@ -11,7 +11,7 @@ const STEPS = [
   },
   {
     num: "03",
-    title: "La sesión en Jurica",
+    title: "La sesión en el estudio",
     text: "3-4 horas en nuestro estudio climatizado. Nosotros nos encargamos de todo: props, temperatura, poses y el cuidado de tu bebé.",
   },
   {

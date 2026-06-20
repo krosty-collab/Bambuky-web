@@ -8,7 +8,7 @@ export const SITE = {
   legalName: "Bambuky Fotografía",
   url: "https://www.bambuky.com",
   tagline: "Los primeros días duran para siempre",
-  locality: "Jurica",
+  locality: "Querétaro",
   region: "Querétaro",
   country: "MX",
   email: "hola@bambuky.com",
@@ -48,9 +48,9 @@ export const SERVICES: Service[] = [
     category: "Sesión estrella",
     title: "Newborn · Recién Nacido",
     description:
-      "Los primeros 5 a 15 días de vida son irrepetibles. Sesión de 3-4 horas en nuestro estudio climatizado en Jurica, con poses elaboradas y momentos naturalistas, siempre con total seguridad para tu bebé.",
+      "Los primeros 5 a 15 días de vida son irrepetibles. Sesión de 3-4 horas en nuestro estudio climatizado, con poses elaboradas y momentos naturalistas, siempre con total seguridad para tu bebé.",
     image: "/images/newborn1.jpg",
-    alt: "Fotografía newborn Querétaro - bebé en canasta con flores rosas, estudio Bambuky Jurica",
+    alt: "Fotografía newborn Querétaro - bebé en canasta con flores rosas, estudio Bambuky",
     waMessage: "Hola Bambuky, quisiera información sobre la sesión newborn 👶",
   },
   {
@@ -76,7 +76,7 @@ export const SERVICES: Service[] = [
   {
     id: "sitters",
     category: "6 a 8 meses",
-    title: "Sitters · Bebé Sentado",
+    title: "Sitters",
     description:
       "Entre los 6 y 8 meses tu bebé ya se sienta solo y descubre el mundo con curiosidad. Una etapa llena de expresiones, sonrisas y personalidad, previa al Smash the Cake.",
     image: "/images/sitters04.jpg",

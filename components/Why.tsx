@@ -10,7 +10,7 @@ const REASONS = [
     text: "Cristian dirige la fotografía y Reyna cuida al bebé y acompaña emocionalmente a los papás. No estás en manos de un desconocido, sino de una familia que entiende lo que sientes.",
   },
   {
-    title: "Estudio climatizado en Jurica",
+    title: "Estudio climatizado y profesional",
     text: "Temperatura controlada para el confort del bebé, flash de estudio profesional y un ambiente campestre y tranquilo, sin el ruido ni el tráfico de la ciudad.",
   },
   {
@@ -43,7 +43,7 @@ export default function Why() {
         <div className="why-image">
           <Image
             src="/images/behind.jpg"
-            alt="Cristian y Reyna fotografiando a un recién nacido en el estudio Bambuky de Jurica, Querétaro"
+            alt="Cristian y Reyna fotografiando a un recién nacido en el estudio Bambuky, Querétaro"
             fill
             sizes="(max-width: 768px) 0px, 46vw"
           />

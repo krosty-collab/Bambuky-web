@@ -29,8 +29,8 @@ export default function Nav() {
           <Image
             src="/images/logo.png"
             alt="Bambuky Fotografía"
-            width={160}
-            height={52}
+            width={192}
+            height={62}
             priority
           />
         </Link>

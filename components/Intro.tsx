@@ -11,7 +11,7 @@ export default function Intro() {
     <section className="intro" id="intro">
       <div className="container intro-inner">
         <div className="intro-text">
-          <p className="label">Estudio Bambuky · Jurica, Querétaro</p>
+          <p className="label">Estudio Bambuky · Querétaro</p>
           <h2 className="heading">
             Tu bebé merece el estudio más seguro de Querétaro
           </h2>
@@ -22,7 +22,7 @@ export default function Intro() {
             cuidado.
           </p>
           <p className="body-text">
-            Nuestro estudio en Jurica ofrece un ambiente campestre, tranquilo y
+            Nuestro estudio ofrece un ambiente campestre, tranquilo y
             con temperatura controlada, diseñado para que tu bebé esté cómodo y
             relajado durante toda la sesión.
           </p>
@@ -38,7 +38,7 @@ export default function Intro() {
         <div className="intro-image">
           <Image
             src="/images/newborn6.jpg"
-            alt="Fotografía recién nacido Querétaro - bebé envuelto durmiendo en el estudio Bambuky de Jurica"
+            alt="Fotografía recién nacido Querétaro - bebé envuelto durmiendo en el estudio Bambuky"
             fill
             sizes="(max-width: 768px) 92vw, 46vw"
           />

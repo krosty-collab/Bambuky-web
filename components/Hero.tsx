@@ -26,7 +26,7 @@ export default function Hero() {
         <p className="label">Fotografía Newborn · Querétaro</p>
         <h1 className="display">Los primeros días duran para siempre</h1>
         <p className="body-text">
-          Estudio especializado en recién nacidos en Jurica, Querétaro. Cristian
+          Estudio especializado en recién nacidos en Querétaro. Cristian
           y Reyna cuidan a tu bebé con más de 10 años de experiencia y
           certificación en primeros auxilios pediátricos.
         </p>

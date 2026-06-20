@@ -4,33 +4,13 @@ export default function About() {
   return (
     <section className="about" id="nosotros">
       <div className="container about-inner">
-        <div className="about-images">
-          <div className="about-img about-img-wide">
-            <Image
-              src="/images/maternidad8.jpg"
-              alt="Sesión de maternidad en Querétaro - mamá embarazada con su hijo mayor, estudio Bambuky"
-              fill
-              sizes="(max-width: 768px) 92vw, 46vw"
-            />
-          </div>
-          <div className="about-img">
-            <Image
-              src="/images/newborn1.jpg"
-              alt="Fotografía newborn Querétaro - bebé en canasta con flores"
-              fill
-              sizes="(max-width: 768px) 46vw, 23vw"
-              loading="lazy"
-            />
-          </div>
-          <div className="about-img">
-            <Image
-              src="/images/48hs02.jpg"
-              alt="Sesión 48 horas Querétaro - papás con su recién nacido"
-              fill
-              sizes="(max-width: 768px) 46vw, 23vw"
-              loading="lazy"
-            />
-          </div>
+        <div className="about-img-single">
+          <Image
+            src="/images/maternidad8.jpg"
+            alt="Sesión de maternidad en Querétaro - Bambuky Fotografía"
+            fill
+            sizes="(max-width: 768px) 92vw, 46vw"
+          />
         </div>
         <div className="about-text">
           <p className="label">Nuestra historia</p>
