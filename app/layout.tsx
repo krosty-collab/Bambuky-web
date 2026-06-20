@@ -92,17 +92,26 @@ const jsonLd = {
     latitude: "20.6752",
     longitude: "-100.3827",
   },
-  areaServed: {
-    "@type": "City",
-    name: "Querétaro",
-  },
+  areaServed: [
+    { "@type": "City", name: "Querétaro" },
+    { "@type": "Place", name: "Juriquilla" },
+    { "@type": "Place", name: "Zibatá" },
+    { "@type": "Place", name: "El Refugio" },
+    { "@type": "Place", name: "Milenio III" },
+    { "@type": "Place", name: "Corregidora" },
+  ],
   founder: [
     { "@type": "Person", name: "Cristian Andrada" },
     { "@type": "Person", name: "Reyna" },
   ],
   sameAs: [SOCIAL.instagram, SOCIAL.facebook],
   priceRange: "$$$$",
-  openingHours: "Mo-Sa 09:00-18:00",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Sesiones de fotografía",

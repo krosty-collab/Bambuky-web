@@ -19,18 +19,21 @@ export default function About() {
             Cristian Andrada llegó de Buenos Aires, Argentina, en 2011, con una
             carrera en cine y televisión que le da un ojo narrativo único. En
             Querétaro conoció a Reyna, originaria de León, Guanajuato. Juntos
-            construyeron Bambuky.
+            construyeron Bambuky, un estudio especializado en fotografía newborn
+            y de familia con más de 10 años de experiencia.
           </p>
           <p className="body-text">
-            En agosto de 2015 fotografiamos a Aaron, nuestro primer recién
-            nacido. Más de diez años después seguimos viendo crecer a su familia.
-            Eso define lo que somos.
+            Desde agosto de 2015 hemos fotografiado a más de 800 recién nacidos.
+            Estamos certificados en primeros auxilios pediátricos y cada sesión
+            se realiza con protocolos estrictos de seguridad. Recibimos familias
+            de Juriquilla, Zibatá, El Refugio, Milenio III, Corregidora y toda
+            la zona metropolitana de Querétaro.
           </p>
           <p className="body-text">
             En 2022 llegaron Thiago y Mateo, nuestros gemelos. Convertirnos en
             papás nos transformó: entendimos de manera profunda lo que significa
-            confiarle a alguien tu bebé de días de nacido. Esa empatía se refleja
-            en cada sesión.
+            confiarle a alguien tu bebé de días de nacido. Esa empatía, paciencia
+            y cuidado se refleja en cada sesión.
           </p>
           <div className="about-quote">
             <p>

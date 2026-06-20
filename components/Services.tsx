@@ -1,5 +1,14 @@
 import Image from "next/image";
-import { SERVICES, waLink } from "@/lib/site";
+import Link from "next/link";
+import { SERVICES } from "@/lib/site";
+
+const SERVICE_LINKS: Record<string, string> = {
+  newborn: "/fotografia-newborn-queretaro",
+  maternidad: "/fotografia-maternidad-queretaro",
+  "48-horas": "/48-horas-contigo-queretaro",
+  sitters: "/sitters-queretaro",
+  "smash-the-cake": "/smash-cake-queretaro",
+};
 
 export default function Services() {
   return (
@@ -30,14 +39,12 @@ export default function Services() {
                 <p className="label">{service.category}</p>
                 <h3 className="subheading">{service.title}</h3>
                 <p className="body-text">{service.description}</p>
-                <a
+                <Link
                   className="service-link"
-                  href={waLink(service.waMessage)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={SERVICE_LINKS[service.id] || "#"}
                 >
-                  Consultar paquetes
-                </a>
+                  Ver más
+                </Link>
               </div>
             </article>
           ))}

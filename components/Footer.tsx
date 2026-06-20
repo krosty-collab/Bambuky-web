@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   SOCIAL,
   SITE,
@@ -57,11 +58,11 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Sesiones</h4>
             <ul>
-              <li><a href="#servicios">Newborn · Recién Nacido</a></li>
-              <li><a href="#servicios">Maternidad</a></li>
-              <li><a href="#servicios">48 Horas Contigo</a></li>
-              <li><a href="#servicios">Sitters</a></li>
-              <li><a href="#servicios">Smash the Cake</a></li>
+              <li><Link href="/fotografia-newborn-queretaro">Newborn · Recién Nacido</Link></li>
+              <li><Link href="/fotografia-maternidad-queretaro">Maternidad</Link></li>
+              <li><Link href="/48-horas-contigo-queretaro">48 Horas Contigo</Link></li>
+              <li><Link href="/sitters-queretaro">Sitters</Link></li>
+              <li><Link href="/smash-cake-queretaro">Smash the Cake</Link></li>
             </ul>
           </div>
 
@@ -83,8 +84,8 @@ export default function Footer() {
                   Galería de clientes · mila-os.com
                 </a>
               </li>
-              <li><a href="#nosotros">Querétaro</a></li>
-              <li><a href="#proceso">¿Cómo funciona?</a></li>
+              <li><Link href="/#nosotros">Querétaro</Link></li>
+              <li><Link href="/#preguntas-frecuentes">Preguntas frecuentes</Link></li>
             </ul>
           </div>
         </div>
