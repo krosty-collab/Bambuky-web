@@ -1,11 +1,5 @@
 import Image from "next/image";
 
-const STATS = [
-  { value: "800+", label: "Bebés fotografiados" },
-  { value: "10+", label: "Años de experiencia" },
-  { value: "2015", label: "Desde Querétaro" },
-];
-
 export default function Intro() {
   return (
     <section className="intro" id="intro">
@@ -26,14 +20,6 @@ export default function Intro() {
             con temperatura controlada, diseñado para que tu bebé esté cómodo y
             relajado durante toda la sesión.
           </p>
-          <div className="stat-row">
-            {STATS.map((stat) => (
-              <div className="stat" key={stat.label}>
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-          </div>
         </div>
         <div className="intro-image">
           <Image

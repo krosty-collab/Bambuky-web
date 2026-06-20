@@ -6,6 +6,7 @@ import Gallery from "@/components/Gallery";
 import Why from "@/components/Why";
 import About from "@/components/About";
 import Process from "@/components/Process";
+import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -23,6 +24,7 @@ export default function Home() {
         <ScrollReveal><Why /></ScrollReveal>
         <ScrollReveal><About /></ScrollReveal>
         <ScrollReveal><Process /></ScrollReveal>
+        <ScrollReveal><Testimonials /></ScrollReveal>
         <ScrollReveal><CTA /></ScrollReveal>
       </main>
       <Footer />
