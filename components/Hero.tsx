@@ -19,6 +19,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
+        style={{ objectFit: "cover", objectPosition: "center" }}
       />
       <div className="hero-overlay" />
       <div className="hero-content">

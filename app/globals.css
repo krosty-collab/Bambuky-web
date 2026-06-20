@@ -17,7 +17,7 @@
   --serif: var(--font-serif), Georgia, serif;
   --sans: var(--font-sans), system-ui, sans-serif;
 
-  --gap: clamp(3rem, 8vw, 7rem);
+  --gap: clamp(3rem, 8vw, 8rem);
   --r: 2px;
 }
 
@@ -153,18 +153,20 @@ nav.site-nav.scrolled {
   padding-bottom: clamp(3rem, 8vh, 6rem);
   overflow: hidden;
 }
-.hero-bg img {
-  object-fit: cover;
-  object-position: center 30%;
+/* La clase .hero-bg está sobre el propio <img> que genera next/image (fill),
+   por eso el selector NO debe llevar " img" anidado. */
+.hero-bg {
+  object-fit: cover !important;
+  object-position: center !important;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(20, 14, 10, 0.75) 0%,
-    rgba(20, 14, 10, 0.25) 55%,
-    rgba(20, 14, 10, 0.05) 100%
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
   );
 }
 .hero-content {
@@ -178,7 +180,8 @@ nav.site-nav.scrolled {
   margin-bottom: 1rem;
 }
 .hero-content .display {
-  color: var(--white);
+  color: #ffffff;
+  font-size: clamp(3rem, 6vw, 5rem);
   max-width: 14ch;
   margin-bottom: 1.5rem;
 }
@@ -346,16 +349,28 @@ nav.site-nav.scrolled {
 .services {
   background: var(--white);
 }
+/* Desktop: 3 tarjetas arriba + 2 centradas abajo (grid de 6 columnas, cada
+   tarjeta ocupa 2; las dos últimas se desplazan para quedar centradas). */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5px;
-  background: var(--stone);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.75rem;
 }
 .service-card {
+  grid-column: span 2;
   background: var(--white);
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--stone);
+  border-radius: var(--r);
+  display: flex;
+  flex-direction: column;
+}
+.service-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+.service-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 .service-card-img {
   position: relative;
@@ -371,6 +386,9 @@ nav.site-nav.scrolled {
 }
 .service-card-body {
   padding: 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .service-card-body .label {
   margin-bottom: 0.5rem;
@@ -388,7 +406,9 @@ nav.site-nav.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 1.2rem;
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 1.2rem;
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -423,14 +443,14 @@ nav.site-nav.scrolled {
 
 /* ── POR QUÉ BAMBUKY ───────────────────────────── */
 .why {
-  background: var(--text);
-  color: var(--white);
+  background: #2c2620;
+  color: #ffffff;
 }
 .why .label {
   color: var(--gold-lt);
 }
 .why .heading {
-  color: var(--white);
+  color: #ffffff;
 }
 .why-inner {
   display: grid;
@@ -483,6 +503,7 @@ nav.site-nav.scrolled {
 }
 .why-image img {
   object-fit: cover;
+  object-position: center top;
 }
 
 /* ── NOSOTROS ──────────────────────────────────── */
@@ -507,6 +528,7 @@ nav.site-nav.scrolled {
 }
 .about-images .about-img img {
   object-fit: cover;
+  object-position: center top;
 }
 .about-images .about-img-wide {
   grid-column: 1 / -1;
@@ -712,6 +734,20 @@ nav.site-nav.scrolled {
 }
 
 /* ── RESPONSIVE ────────────────────────────────── */
+
+/* Tablet: servicios en 2 columnas (se anula el layout 3+2 de escritorio). */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-card,
+  .service-card:nth-child(4),
+  .service-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+/* Móvil: todos los grids de 2 columnas colapsan a 1 columna. */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -728,6 +764,9 @@ nav.site-nav.scrolled {
     left: 0;
     bottom: -1rem;
   }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
   .gallery-masonry {
     columns: 2;
   }
@@ -740,8 +779,9 @@ nav.site-nav.scrolled {
     gap: 0.5rem;
     text-align: center;
   }
+  /* La foto de "Por qué elegirnos" ahora se muestra apilada en móvil. */
   .why-image {
-    display: none;
+    max-width: 420px;
   }
   .about-images {
     grid-template-columns: 1fr;
@@ -750,11 +790,9 @@ nav.site-nav.scrolled {
     aspect-ratio: 4 / 3;
   }
 }
+
 @media (max-width: 480px) {
   .gallery-masonry {
     columns: 1;
-  }
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 }
