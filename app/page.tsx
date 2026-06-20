@@ -9,6 +9,7 @@ import Process from "@/components/Process";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -16,13 +17,13 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Intro />
-        <Services />
-        <Gallery />
-        <Why />
-        <About />
-        <Process />
-        <CTA />
+        <ScrollReveal><Intro /></ScrollReveal>
+        <ScrollReveal><Services /></ScrollReveal>
+        <ScrollReveal><Gallery /></ScrollReveal>
+        <ScrollReveal><Why /></ScrollReveal>
+        <ScrollReveal><About /></ScrollReveal>
+        <ScrollReveal><Process /></ScrollReveal>
+        <ScrollReveal><CTA /></ScrollReveal>
       </main>
       <Footer />
       <WhatsAppFloat />

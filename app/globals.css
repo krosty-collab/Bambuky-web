@@ -158,6 +158,7 @@ nav.site-nav.scrolled {
 .hero-bg {
   object-fit: cover !important;
   object-position: center !important;
+  animation: kenBurns 25s ease-out forwards;
 }
 .hero-overlay {
   position: absolute;
@@ -365,6 +366,26 @@ nav.site-nav.scrolled {
   border-radius: var(--r);
   display: flex;
   flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+.service-card:hover {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 .service-card:nth-child(4) {
   grid-column: 2 / span 2;
@@ -430,15 +451,17 @@ nav.site-nav.scrolled {
 .gallery-masonry .gallery-item {
   margin-bottom: 1rem;
   break-inside: avoid;
+  overflow: hidden;
+  border-radius: var(--r);
 }
 .gallery-masonry img {
   width: 100%;
   height: auto;
   display: block;
-  transition: opacity 0.3s;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .gallery-masonry .gallery-item:hover img {
-  opacity: 0.9;
+  transform: scale(1.03);
 }
 
 /* ── POR QUÉ BAMBUKY ───────────────────────────── */
@@ -569,17 +592,26 @@ nav.site-nav.scrolled {
   margin-top: 3rem;
 }
 .step {
-  padding: 2rem;
-  border: 1px solid var(--stone);
+  padding: 2rem 1.5rem;
+  border: none;
   position: relative;
 }
+.step::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 1.2rem;
+}
 .step-num {
-  font-family: var(--serif);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--stone);
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.15em;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 .step h3 {
   font-family: var(--serif);
@@ -731,6 +763,62 @@ nav.site-nav.scrolled {
   width: 28px;
   height: 28px;
   fill: #fff;
+}
+
+/* ── ANIMATIONS ────────────────────────────────── */
+
+/* Hero entrance — cinematic staggered reveal (Cristian's film eye) */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content > * {
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+.hero-content > :nth-child(1) { animation-delay: 0.15s; }
+.hero-content > :nth-child(2) { animation-delay: 0.35s; }
+.hero-content > :nth-child(3) { animation-delay: 0.55s; }
+.hero-content > :nth-child(4) { animation-delay: 0.7s; }
+.hero-content > :nth-child(5) { animation-delay: 0.85s; }
+
+/* Ken Burns slow zoom — living, cinematic hero background */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+/* Scroll reveal — sections emerge as the story unfolds */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-content > *,
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+  .hero-bg {
+    animation: none;
+  }
 }
 
 /* ── RESPONSIVE ────────────────────────────────── */
