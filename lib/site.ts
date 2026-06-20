@@ -111,7 +111,6 @@ export const GALLERY: GalleryItem[] = [
   { src: "/images/newborn5.jpg", alt: "Fotografía recién nacido Querétaro - pose lateral en traje crema", w: 900, h: 1150 },
   { src: "/images/smash02.jpg", alt: "Smash the Cake niño Querétaro - primer cumpleaños con globos azules", w: 900, h: 1300 },
   { src: "/images/maternidad6.jpg", alt: "Maternidad en pareja Querétaro - sesión de embarazo", w: 900, h: 1200 },
-  { src: "/images/sitters01.jpg", alt: "Bebé sentado sesión Sitters Querétaro - niña vestido verde menta", w: 900, h: 1250 },
   { src: "/images/newborn7.jpg", alt: "Bebé recién nacido fotografía newborn Querétaro - bowl con flores lilas", w: 900, h: 1100 },
   { src: "/images/smash04.jpg", alt: "Smash the Cake gemelos Querétaro - primer año con pasteles blancos", w: 1200, h: 800 },
   { src: "/images/maternidad7.jpg", alt: "Sesión de embarazo en pareja Querétaro - estudio Bambuky", w: 900, h: 1200 },
