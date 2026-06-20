@@ -7,18 +7,18 @@ export default function Intro() {
         <div className="intro-text">
           <p className="label">Estudio Bambuky · Querétaro</p>
           <h2 className="heading">
-            Tu bebé merece el estudio más seguro de Querétaro
+            Sabemos lo que se siente poner a tu bebé en manos de alguien más
           </h2>
           <p className="body-text">
-            En Bambuky la seguridad de tu recién nacido no es una frase — es
-            nuestra prioridad absoluta. Estamos certificados en primeros auxilios
-            pediátricos y cada sesión se realiza con protocolos estrictos de
-            cuidado.
+            Cuando nacieron nuestros gemelos, Thiago y Matheo, lo entendimos
+            en carne propia. Por eso cada sesión la hacemos con el mismo
+            cuidado que tendríamos con nuestros propios hijos. Estamos
+            capacitados por médicos neonatólogos y el estudio está
+            acondicionado para recibir a tu familia.
           </p>
           <p className="body-text">
-            Nuestro estudio ofrece un ambiente campestre, tranquilo y
-            con temperatura controlada, diseñado para que tu bebé esté cómodo y
-            relajado durante toda la sesión.
+            El estudio es tranquilo, lejos del ruido de la ciudad. Hay
+            sillones para los papás y todo el tiempo del mundo. No hay prisa.
           </p>
         </div>
         <div className="intro-image">
@@ -29,7 +29,7 @@ export default function Intro() {
             sizes="(max-width: 768px) 92vw, 46vw"
           />
           <div className="intro-image-badge">
-            “Cada sesión es un recuerdo para toda la vida”
+            &ldquo;Sabemos que pondrás en nuestras manos al amor de tu vida.&rdquo;
           </div>
         </div>
       </div>

@@ -17,11 +17,11 @@ export default function Services() {
         <div className="section-header">
           <p className="label">Nuestras sesiones</p>
           <h2 className="heading">
-            Cada etapa de tu familia, capturada para siempre
+            Desde el embarazo hasta su primer cumpleaños
           </h2>
           <p className="body-text">
-            Desde la panza hasta el primer pastel, acompañamos a las familias de
-            Querétaro en cada momento irrepetible.
+            Cada sesión es distinta porque cada bebé y cada familia son
+            distintos. Estas son las etapas que fotografiamos.
           </p>
         </div>
         <div className="services-grid">

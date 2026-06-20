@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: "Bambuky · Fotografía Newborn y Recién Nacidos en Querétaro",
   description:
-    "Estudio de fotografía newborn en Querétaro. Más de 10 años y 800+ bebés fotografiados. Cristian y Reyna. Sesiones de recién nacido, maternidad y smash the cake.",
+    "Somos Cristian y Reyna. Fotografiamos recién nacidos en Querétaro desde 2015. Más de 800 bebés, certificados en primeros auxilios, papás de gemelos. Sesiones newborn, maternidad y smash the cake.",
   keywords: [
     "fotografía newborn Querétaro",
     "fotógrafo recién nacido Querétaro",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Bambuky",
     title: "Bambuky · Fotografía Newborn en Querétaro",
     description:
-      "10 años y 800+ bebés fotografiados. Estudio de fotografía newborn, maternidad y smash the cake en Querétaro.",
+      "Cristian y Reyna. 800+ bebés fotografiados desde 2015. Fotografía newborn, maternidad y smash the cake en Querétaro.",
     locale: "es_MX",
     images: [
       {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bambuky · Fotografía Newborn en Querétaro",
-    description: "10 años y 800+ bebés fotografiados en Querétaro.",
+    description: "Cristian y Reyna. 800+ bebés fotografiados en Querétaro desde 2015.",
     images: ["/images/hero.jpg"],
   },
   robots: {
@@ -75,7 +75,7 @@ const jsonLd = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   name: "Bambuky Fotografía",
   description:
-    "Estudio de fotografía especializado en recién nacidos, maternidad, sitters y smash the cake en Querétaro. Más de 10 años de experiencia y 800+ bebés fotografiados. Equipo de pareja certificado en primeros auxilios pediátricos.",
+    "Cristian y Reyna fotografían recién nacidos, maternidad, sitters y smash the cake en Querétaro. Desde 2015, más de 800 bebés. Certificados en primeros auxilios pediátricos. Papás de gemelos.",
   url: SITE.url,
   telephone: `+${WHATSAPP_NUMBER}`,
   image: `${SITE.url}/images/hero.jpg`,

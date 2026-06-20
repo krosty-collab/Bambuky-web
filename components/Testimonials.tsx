@@ -1,17 +1,17 @@
 const TESTIMONIALS = [
   {
     quote:
-      "Cristian y Reyna son increíbles. Me dieron mucha confianza desde el primer momento y las fotos de mi bebé quedaron preciosas.",
+      "Llegué con los nervios de mamá primeriza y Reyna me tranquilizó en dos minutos. Mi bebé durmió toda la sesión y yo terminé llorando de la emoción cuando vi las primeras fotos en la pantalla.",
     name: "Sofía M.",
   },
   {
     quote:
-      "El estudio es un lugar mágico. Mi bebé estuvo tranquilo toda la sesión y las imágenes superaron todo lo que imaginé.",
+      "Les llevé a mi hijo con 8 días de nacido y lo trataron como si fuera suyo. Cristian me explicó cada pose antes de hacerla. Eso para mí fue todo.",
     name: "Daniela R.",
   },
   {
     quote:
-      "Llevamos 3 años eligiendo a Bambuky para cada etapa de nuestra familia. No los cambiaríamos por nada.",
+      "Hicimos la newborn, la sitter y el smash cake. Cuando ves las tres juntas, se te hace un nudo en la garganta. No los cambiaríamos por nada.",
     name: "Fernanda G.",
   },
 ];

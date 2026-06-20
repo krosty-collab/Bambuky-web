@@ -12,6 +12,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
+/* -- METADATA ---------------------------------------- */
+
 const PAGE_URL = `${SITE.url}/fotografia-maternidad-queretaro`;
 const WA_MESSAGE =
   "Hola Bambuky, quisiera información sobre la sesión de maternidad 🌿";
@@ -23,13 +25,25 @@ export const metadata: Metadata = {
   alternates: {
     canonical: PAGE_URL,
   },
+  keywords: [
+    "fotografía maternidad Querétaro",
+    "sesión embarazo Querétaro",
+    "fotografía embarazo Querétaro",
+    "fotos maternidad Querétaro",
+    "estudio maternidad Querétaro",
+    "fotógrafo maternidad Juriquilla",
+    "sesión maternidad Zibatá",
+    "maternity photography Querétaro",
+    "fotografía embarazada Querétaro",
+    "sesión de fotos embarazo Querétaro",
+  ],
   openGraph: {
     type: "website",
     url: PAGE_URL,
     siteName: "Bambuky",
     title: "Fotografía de Maternidad en Querétaro | Bambuky",
     description:
-      "Sesión de fotografía de maternidad en estudio profesional en Querétaro. Vestidos, dirección de poses y una experiencia inolvidable entre la semana 28 y 34.",
+      "Sesión de fotografía de maternidad en estudio profesional en Querétaro. Vestidos incluidos, dirección de poses y acompañamiento de Cristian y Reyna. Semana 28–34.",
     locale: "es_MX",
     images: [
       {
@@ -42,277 +56,301 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FotografiaMaternidadQueretaro() {
-  const breadcrumbItems = [
-    { name: "Inicio", url: SITE.url },
-    { name: "Fotografía de Maternidad Querétaro", url: PAGE_URL },
-  ];
+/* -- JSON-LD DATA ------------------------------------ */
 
+const breadcrumbLd = breadcrumbSchema([
+  { name: "Inicio", url: SITE.url },
+  { name: "Fotografía de Maternidad Querétaro", url: PAGE_URL },
+]);
+
+const serviceLd = serviceSchema({
+  name: "Fotografía de Maternidad · Sesión Embarazo en Querétaro",
+  description:
+    "Sesión de fotografía de maternidad en estudio profesional. Vestidos incluidos, dirección artística y acompañamiento emocional. Ideal entre la semana 28 y 34 del embarazo.",
+  url: PAGE_URL,
+  image: "/images/maternidad3.jpg",
+});
+
+const faqLd = faqSchema(MATERNIDAD_FAQS);
+
+/* -- PAGE COMPONENT ---------------------------------- */
+
+export default function FotografiaMaternidadQueretaro() {
   return (
     <>
+      {/* -- Structured data -- */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema(breadcrumbItems)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
-            serviceSchema({
-              name: "Fotografía de Maternidad en Querétaro",
-              description:
-                "Sesión de fotografía de maternidad en estudio profesional. Vestidos incluidos, dirección artística y acompañamiento emocional. Ideal entre la semana 28 y 34 del embarazo.",
-              url: PAGE_URL,
-              image: "/images/maternidad3.jpg",
-            })
-          ),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema(MATERNIDAD_FAQS)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
       <Nav />
 
       <main>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Inicio", href: "/" },
-            { label: "Fotografía de Maternidad Querétaro" },
-          ]}
-        />
-
-        {/* Hero */}
-        <section className="svc-hero">
-          <div className="container">
-            <p className="label">Maternidad · Semana 28–34</p>
-            <h1 className="display">
-              Fotografía de Maternidad en Querétaro
-            </h1>
-            <p className="subheading">
-              El embarazo es una de las etapas más hermosas y efímeras de tu
-              vida. Nuestras sesiones capturan la fuerza, la ternura y la
-              conexión que sientes con tu bebé antes de conocerlo.
-            </p>
-            <a
-              className="btn-wa"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-          </div>
-        </section>
-
-        {/* Imagen principal */}
-        <section className="svc-content">
-          <div className="container">
-            <div className="svc-feature-img">
+        {/* -- Hero -- */}
+        <section className="svc-hero svc-hero--split">
+          <div className="container svc-hero-grid">
+            <div className="svc-hero-text">
+              <Breadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Fotografía de Maternidad Querétaro" },
+                ]}
+              />
+              <p className="label">Maternidad &middot; Semana 28&ndash;34</p>
+              <h1>
+                Fotografía de Maternidad en Querétaro: tu cuerpo
+                está haciendo algo increíble y merece verse así
+              </h1>
+              <p className="subheading">
+                Una sesión tranquila en nuestro estudio, con vestidos,
+                telas y dirección de poses incluidos. Tú solo
+                llégate &mdash; nosotros nos encargamos de todo.
+              </p>
+              <a
+                className="btn-wa"
+                href={waLink(WA_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppIcon /> Pedir información y precios
+              </a>
+              <p className="svc-microcopy">
+                Te respondemos por WhatsApp en minutos
+              </p>
+            </div>
+            <div className="svc-hero-img">
               <Image
-                src="/images/maternidad3.jpg"
-                alt="Sesión de fotografía de maternidad en Querétaro - mamá embarazada en estudio Bambuky"
+                src="/images/maternidad8.jpg"
+                alt="Cristian y Reyna en su sesión de maternidad - Bambuky Fotografía Querétaro"
                 width={900}
                 height={1200}
+                sizes="(max-width: 768px) 92vw, 420px"
                 priority
-                sizes="(max-width: 768px) 92vw, 55vw"
               />
             </div>
+          </div>
+        </section>
 
-            {/* Contenido SEO */}
-            <div className="svc-text">
-              <div className="section-header">
-                <h2 className="heading">
-                  Una sesión pensada para ti y para tu bebé
-                </h2>
-              </div>
+        {/* -- Content: intro -- */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Cómo es una sesión de maternidad con nosotros</h2>
+            <p className="body-text">
+              Lo primero que hacemos es platicar contigo. Te preguntamos
+              qué estilo te gusta, qué colores te hacen sentir bien,
+              si quieres algo más clásico o más arriesgado. Con
+              eso armamos la selección de vestidos, telas e
+              iluminación. No hay fórmula &mdash; cada sesión
+              sale diferente porque cada mamá es diferente.
+            </p>
+            <p className="body-text">
+              Somos dos en cada sesión, siempre. Reyna te dirige las
+              poses, te ayuda con cada cambio de vestido y está pendiente
+              de que estés cómoda: agua, snack, descanso, lo que
+              necesites. Cristian se encarga de la cámara. Llevamos más
+              de 10 años fotografiando familias y somos papás de
+              gemelos, así que sabemos lo que se siente esperar un hijo.
+            </p>
+          </div>
+        </section>
 
+        {/* -- Editorial: semana ideal (texto izq + img der) -- */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-text">
+              <h2>La semana ideal: entre la 28 y la 34</h2>
               <p className="body-text">
-                En Bambuky sabemos que cada embarazo es único. Por eso, cada
-                sesión de maternidad en nuestro estudio de Querétaro se diseña
-                de forma personalizada: desde la selección de vestidos y telas
-                hasta la iluminación y las poses que mejor resaltan tu silueta.
-                Queremos que te sientas hermosa, cómoda y acompañada en todo
-                momento.
+                Te recomendamos venir entre la semana 28 y la 34. El vientre de
+                mamá ya se nota bien y normalmente todavía te sientes
+                con energía para moverte y posar. Pero si ya pasaste de la
+                34 o quieres hacerla antes, no hay problema &mdash;
+                escríbenos y lo platicamos. Hemos hecho sesiones en la
+                semana 38 y quedan increíbles.
               </p>
-
               <p className="body-text">
-                Cristian y Reyna trabajan juntos en cada sesión. Cristian
-                dirige la fotografía con su experiencia en cine y televisión,
-                cuidando cada detalle de la luz y la composición. Reyna te
-                acompaña emocionalmente, te ayuda con los cambios de vestuario
-                y se asegura de que la experiencia sea relajada y bonita de
-                principio a fin. Juntos, llevan más de 10 años fotografiando
-                familias en Querétaro.
+                Lo mejor es que nos escribas desde que decidas que quieres la
+                sesión. Apartamos la fecha y si necesitas moverla, la
+                movemos sin problema.
               </p>
+            </div>
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/maternidad3.jpg"
+                alt="Fotografía de embarazo en estudio - mamá con vestido de maternidad"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+          </div>
+        </section>
 
-              <h3 className="subheading">
-                La semana ideal: entre la 28 y la 34
-              </h3>
+        {/* -- Content: vestidos y direccion -- */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Vestidos, telas y dirección artística incluidos</h2>
+            <p className="body-text">
+              No tienes que traer nada. Tenemos vestidos de maternidad, tops,
+              telas y accesorios &mdash; los vamos renovando seguido para que
+              siempre haya opciones frescas. Tú eliges lo que te guste y
+              Reyna te ayuda a probártelo antes de empezar. Si quieres
+              traer algo tuyo también funciona: los zapatos del bebé,
+              un ultrasonido, una carta, lo que tenga significado para ti.
+            </p>
+            <p className="body-text">
+              Si nunca te han tomado fotos profesionales, no te preocupes.
+              Reyna te va diciendo dónde poner las manos, cómo
+              girar, hacia dónde mirar &mdash; todo paso a paso. La
+              mayoría de las mamás llegan nerviosas y a los diez
+              minutos ya están riéndose. No necesitas saber posar;
+              para eso estamos nosotros.
+            </p>
+          </div>
+        </section>
 
+        {/* -- Editorial: familia (img izq + texto der) -- */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/maternidad5.jpg"
+                alt="Sesión de maternidad en pareja - fotografía de embarazo en estudio"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+            <div className="svc-editorial-text">
+              <h2>Tu pareja y tu familia también son parte</h2>
               <p className="body-text">
-                Recomendamos agendar tu sesión de maternidad entre la semana 28
-                y la 34 del embarazo. En este periodo la pancita tiene un
-                tamaño hermoso y, por lo general, la mamá todavía se siente
-                con energía y comodidad para posar. Sin embargo, cada cuerpo
-                es diferente y siempre nos adaptamos a tus tiempos. Si estás
-                fuera de esas semanas, escríbenos y encontraremos la mejor
-                solución para ti.
-              </p>
-
-              <h3 className="subheading">
-                Vestidos, telas y dirección artística incluidos
-              </h3>
-
-              <p className="body-text">
-                No necesitas preocuparte por la ropa. En nuestro estudio
-                contamos con una selección cuidada de vestidos de maternidad,
-                tops, telas y accesorios que se renuevan constantemente. Todos
-                los elementos están pensados para realzar tu figura y crear
-                imágenes elegantes y atemporales. También puedes traer prendas
-                propias o algún objeto con significado especial: los zapatos
-                del bebé, un ultrasonido, una carta.
-              </p>
-
-              <p className="body-text">
-                Cristian dirige cada pose con suavidad y precisión. No tienes
-                que saber posar, solo dejarte guiar. Te indicamos cómo colocar
-                las manos, la mirada, la postura, para que cada imagen
-                transmita naturalidad y emoción. Muchas mamás nos dicen que
-                fue la primera vez que se sintieron realmente bonitas frente a
-                una cámara.
-              </p>
-
-              <h3 className="subheading">
-                Tu pareja y tu familia también son parte
-              </h3>
-
-              <p className="body-text">
-                Nos encanta incluir a la pareja y a los hermanos mayores en la
-                sesión. Los momentos en familia durante el embarazo tienen una
-                magia particular: la espera compartida, las manos sobre la
-                pancita, las miradas llenas de ilusión. Estas fotos se
-                convierten en un tesoro familiar que van a querer ver una y
-                otra vez.
-              </p>
-
-              <h3 className="subheading">
-                Un estudio preparado para que disfrutes
-              </h3>
-
-              <p className="body-text">
-                Nuestro estudio en Querétaro está climatizado y equipado para
-                que tu sesión sea una experiencia placentera. La temperatura
-                es cálida y agradable, la música suave, y el ritmo lo marcas
-                tú. Si necesitas descansar, tomar agua o un snack, nos
-                detenemos. No hay prisas. Recibimos familias de Juriquilla,
-                Zibatá, El Refugio, Corregidora, Milenio III y toda la zona
-                metropolitana de Querétaro.
-              </p>
-
-              <h3 className="subheading">
-                Más que fotos: una experiencia que mereces vivir
-              </h3>
-
-              <p className="body-text">
-                Una sesión de maternidad no se trata solo de obtener imágenes
-                bonitas. Es un momento para pausar, para conectar con tu
-                cuerpo y con la vida que crece dentro de ti. Muchas mamás en
-                Querétaro nos cuentan que la sesión fue un punto de inflexión
-                emocional en su embarazo: una tarde para sentirse celebradas,
-                cuidadas y absolutamente hermosas.
-              </p>
-
-              <p className="body-text">
-                Si estás buscando un estudio de fotografía de maternidad en
-                Querétaro que combine calidad artística con trato humano y
-                cálido, nos encantaría conocerte. Escríbenos por WhatsApp para
-                platicar sobre tu sesión, revisar fechas disponibles y
-                encontrar el paquete ideal para ti.
+                Si quieres que venga tu pareja o tus hijos
+                &mdash; bienvenidos. Algunas de las fotos que más nos
+                gustan son así: el hermano mayor abrazando el vientre de
+                mamá, tu pareja viéndote de una forma que no
+                sabías que podía verse en una foto. Esos momentos
+                pasan rápido en la vida real, pero en la sesión los
+                podemos detener.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Galería */}
+        {/* -- Content: lo que nos dicen -- */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Lo que nos dicen las mamás después</h2>
+            <p className="body-text">
+              Algo que nos pasa seguido: mamás nos escriben días
+              después diciendo que la sesión les cambió la forma
+              de verse a sí mismas durante el embarazo. No porque hagamos
+              algo mágico &mdash; sino porque por una hora, alguien las
+              cuidó, las dirigió y les dijo &ldquo;quédate
+              así, te ves increíble&rdquo;. A veces eso es lo que
+              necesitas cuando tu cuerpo se siente raro y nuevo.
+            </p>
+            <p className="body-text">
+              Si quieres sentirte acompañada y no solo
+              &ldquo;posada&rdquo;, escríbenos por WhatsApp. Te platicamos
+              cómo funciona, vemos fechas y armamos algo que se ajuste a lo
+              que tú quieres.
+            </p>
+          </div>
+        </section>
+
+        {/* -- Gallery -- */}
         <section className="svc-gallery">
           <div className="container">
             <div className="section-header">
               <p className="label">Galería</p>
-              <h2 className="heading">Sesiones de maternidad en Querétaro</h2>
+              <h2 className="heading">Sesiones de maternidad</h2>
             </div>
             <div className="svc-gallery-grid">
-              <Image
-                src="/images/maternidad2.jpg"
-                alt="Fotografía embarazo Querétaro - sesión de maternidad en estudio"
-                width={900}
-                height={1200}
-                sizes="(max-width: 768px) 92vw, 30vw"
-              />
-              <Image
-                src="/images/maternidad5.jpg"
-                alt="Fotografía maternidad Querétaro - pareja esperando bebé"
-                width={900}
-                height={1250}
-                sizes="(max-width: 768px) 92vw, 30vw"
-              />
-              <Image
-                src="/images/maternidad6.jpg"
-                alt="Maternidad en pareja Querétaro - sesión de embarazo"
-                width={900}
-                height={1200}
-                sizes="(max-width: 768px) 92vw, 30vw"
-              />
-              <Image
-                src="/images/maternidad7.jpg"
-                alt="Sesión de embarazo en pareja Querétaro - estudio Bambuky"
-                width={900}
-                height={1200}
-                sizes="(max-width: 768px) 92vw, 30vw"
-              />
-              <Image
-                src="/images/maternidad8.jpg"
-                alt="Fotografía de maternidad en estudio Querétaro - Bambuky"
-                width={900}
-                height={1200}
-                sizes="(max-width: 768px) 92vw, 30vw"
-              />
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/maternidad2.jpg"
+                  alt="Fotografía embarazo - sesión de maternidad en estudio"
+                  width={900}
+                  height={1200}
+                  sizes="(max-width: 768px) 92vw, 30vw"
+                />
+              </div>
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/maternidad5.jpg"
+                  alt="Fotografía maternidad - pareja esperando bebé"
+                  width={900}
+                  height={1250}
+                  sizes="(max-width: 768px) 92vw, 30vw"
+                />
+              </div>
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/maternidad6.jpg"
+                  alt="Maternidad en pareja - sesión de embarazo en estudio"
+                  width={900}
+                  height={1200}
+                  sizes="(max-width: 768px) 92vw, 30vw"
+                />
+              </div>
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/maternidad7.jpg"
+                  alt="Sesión de embarazo en pareja - estudio Bambuky"
+                  width={900}
+                  height={1200}
+                  sizes="(max-width: 768px) 92vw, 30vw"
+                />
+              </div>
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/maternidad8.jpg"
+                  alt="Fotografía de maternidad en estudio - Bambuky"
+                  width={900}
+                  height={1200}
+                  sizes="(max-width: 768px) 92vw, 30vw"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA intermedio */}
+        {/* -- Mid CTA -- */}
         <section className="svc-cta">
           <div className="container">
-            <p className="display">
-              Tu embarazo merece ser recordado para siempre
-            </p>
+            <h2 className="heading">
+              Esto pasa rápido &mdash; que queden las fotos
+            </h2>
             <p className="body-text">
-              Escríbenos hoy para reservar tu sesión de maternidad en
-              Querétaro. Te contamos todo sobre paquetes, fechas disponibles y
-              cómo prepararte para el día.
+              Escríbenos y te contamos paquetes, fechas disponibles y
+              qué llevar el día de tu sesión. Sin compromiso.
             </p>
             <a
-              className="btn-wa"
+              className="btn-wa-dark"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon /> Pedir información y precios
+              <WhatsAppIcon /> Agendar mi sesión de maternidad
             </a>
+            <p className="svc-microcopy">
+              Te orientamos según tu semana de embarazo
+            </p>
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* -- FAQ -- */}
         <FAQ items={MATERNIDAD_FAQS} id="preguntas-maternidad" />
 
-        {/* Servicios relacionados */}
+        {/* -- Related services -- */}
         <RelatedServices
           current="/fotografia-maternidad-queretaro"
           show={[
@@ -321,24 +359,27 @@ export default function FotografiaMaternidadQueretaro() {
           ]}
         />
 
-        {/* CTA final */}
+        {/* -- Final CTA -- */}
         <section className="svc-cta">
           <div className="container">
-            <p className="display">
-              Agenda tu sesión de maternidad
-            </p>
+            <h2 className="heading">
+              Platiquemos de tu sesión
+            </h2>
             <p className="body-text">
-              Reserva tu fecha, elige tu estilo y vive una experiencia que
-              vas a atesorar siempre. Estamos a un mensaje de distancia.
+              Un mensaje por WhatsApp y te respondemos con todo: estilos,
+              precios y fechas. Nos adaptamos a ti.
             </p>
             <a
-              className="btn-wa"
+              className="btn-wa-dark"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Reservar por WhatsApp
             </a>
+            <p className="svc-microcopy">
+              Te respondemos por WhatsApp
+            </p>
           </div>
         </section>
       </main>

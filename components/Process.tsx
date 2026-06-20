@@ -2,22 +2,22 @@ const STEPS = [
   {
     num: "01",
     title: "Escríbenos por WhatsApp",
-    text: "Cuéntanos la fecha probable de parto y el tipo de sesión. Te respondemos con toda la información y los paquetes disponibles.",
+    text: "Cuéntanos cuándo nace tu bebé (o cuándo nació) y qué sesión te interesa. Te respondemos rápido y sin compromiso.",
   },
   {
     num: "02",
     title: "Reserva tu fecha",
-    text: "Aseguramos tu lugar con un anticipo. Recomendamos reservar desde el 2do trimestre del embarazo, los lugares son limitados.",
+    text: "Con un anticipo apartamos tu lugar. Si estás embarazada, lo ideal es reservar desde el segundo trimestre — así no andas con las prisas después.",
   },
   {
     num: "03",
-    title: "La sesión en el estudio",
-    text: "3-4 horas en nuestro estudio climatizado. Nosotros nos encargamos de todo: props, temperatura, poses y el cuidado de tu bebé.",
+    title: "La sesión",
+    text: "Tú solo trae al bebé. Nosotros tenemos todo: ropa, accesorios, temperatura controlada y paciencia infinita. Si necesita comer o dormir, esperamos.",
   },
   {
     num: "04",
-    title: "Recibe tu galería",
-    text: "En 3-4 semanas recibes tu galería digital privada en mila-os.com, en alta calidad y lista para descargar y guardar para siempre.",
+    title: "Tu galería privada",
+    text: "En 3-4 semanas recibes tus fotos en una galería digital. Las descargas en alta calidad y las compartes con quien quieras.",
   },
 ];
 
@@ -29,8 +29,8 @@ export default function Process() {
           <p className="label">¿Cómo funciona?</p>
           <h2 className="heading">Tu sesión, paso a paso</h2>
           <p className="body-text">
-            Reserva con anticipación durante el embarazo. Los primeros 15 días de
-            vida son la ventana ideal para la sesión newborn.
+            Es más fácil de lo que parece. Te contamos cómo funciona desde
+            que nos escribes hasta que recibes tus fotos.
           </p>
         </div>
         <div className="process-steps">

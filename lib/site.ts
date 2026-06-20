@@ -7,7 +7,7 @@ export const SITE = {
   name: "Bambuky",
   legalName: "Bambuky Fotografía",
   url: "https://www.bambuky.com",
-  tagline: "Los primeros días duran para siempre",
+  tagline: "Los primeros días pasan volando",
   locality: "Querétaro",
   region: "Querétaro",
   country: "MX",
@@ -48,7 +48,7 @@ export const SERVICES: Service[] = [
     category: "Sesión estrella",
     title: "Newborn · Recién Nacido",
     description:
-      "Los primeros 5 a 15 días de vida son irrepetibles. Sesión de 3-4 horas en nuestro estudio climatizado, con poses elaboradas y momentos naturalistas, siempre con total seguridad para tu bebé.",
+      "Entre los 5 y 15 días tu bebé todavía duerme como en el vientre de mamá. Nos tomamos 3-4 horas, sin prisa, para fotografiarlo con todo el cuidado del mundo. Capacitados para hacer la sesión lo mejor posible.",
     image: "/images/newborn1.jpg",
     alt: "Fotografía newborn Querétaro - bebé en canasta con flores rosas, estudio Bambuky",
     waMessage: "Hola Bambuky, quisiera información sobre la sesión newborn 👶",
@@ -58,7 +58,7 @@ export const SERVICES: Service[] = [
     category: "Semana 28–32",
     title: "Maternidad",
     description:
-      "El embarazo es una de las experiencias más transformadoras de tu vida. Lo capturamos con la luz, el cuidado y la emoción que merece. Ideal combinarla con tu sesión newborn.",
+      "Muchas mamás nos dicen que fue la primera vez que se sintieron realmente bonitas durante el embarazo. Tenemos vestidos, telas y toda la dirección de poses. Tú solo ven.",
     image: "/images/maternidad3.jpg",
     alt: "Fotografía maternidad Querétaro - sesión de embarazo en estudio Bambuky",
     waMessage: "Hola Bambuky, quisiera información sobre la sesión de maternidad 🌿",
@@ -68,7 +68,7 @@ export const SERVICES: Service[] = [
     category: "En el hospital",
     title: "48 Horas Contigo",
     description:
-      "Las primeras 48 horas son únicas. Capturamos ese momento de magia en el hospital: los primeros abrazos, las primeras miradas y la familia completa por primera vez.",
+      "Vamos al hospital o a tu casa en las primeras horas. Sin poses, sin escenarios. Solo lo que realmente pasa: el primer abrazo, los deditos, la abuela llorando.",
     image: "/images/48hs01.jpg",
     alt: "Fotografía 48 horas hospital Querétaro - recién nacido con su familia",
     waMessage: "Hola Bambuky, quisiera información sobre la sesión 48 horas 🏥",
@@ -78,7 +78,7 @@ export const SERVICES: Service[] = [
     category: "6 a 8 meses",
     title: "Sitters",
     description:
-      "Entre los 6 y 8 meses tu bebé ya se sienta solo y descubre el mundo con curiosidad. Una etapa llena de expresiones, sonrisas y personalidad, previa al Smash the Cake.",
+      "Ya se sienta solo, agarra todo, sonríe con intención. Entre los 6 y 8 meses la personalidad explota y cada gesto es nuevo. Es la sesión más divertida que hacemos.",
     image: "/images/sitters04.jpg",
     alt: "Sesión Sitters bebé 6-8 meses Querétaro - bebé sentado en estudio Bambuky",
     waMessage: "Hola Bambuky, quisiera información sobre la sesión Sitters 👶",
@@ -88,7 +88,7 @@ export const SERVICES: Service[] = [
     category: "Primer año",
     title: "Smash the Cake",
     description:
-      "El primer cumpleaños merece una celebración llena de color, pastel y sonrisas. Decorados temáticos personalizados y una sesión que toda la familia guardará para siempre.",
+      "Armamos un set temático a tu gusto, ponemos el pastel enfrente y dejamos que pase lo que tenga que pasar. Unos meten las manos, algunos no lo quieren tocar, pero las fotos siempre quedan increíbles.",
     image: "/images/smash05.jpg",
     alt: "Smash the Cake Querétaro - fotografía primer año del bebé, estudio Bambuky",
     waMessage: "Hola Bambuky, quisiera información sobre Smash the Cake 🎂",

@@ -1,33 +1,43 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
+import Breadcrumb from "@/components/Breadcrumb";
+import FAQ from "@/components/FAQ";
+import RelatedServices from "@/components/RelatedServices";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waLink } from "@/lib/site";
 import { SITE } from "@/lib/site";
 import { SITTERS_FAQS } from "@/lib/faqs";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
-import FAQ from "@/components/FAQ";
-import Breadcrumb from "@/components/Breadcrumb";
-import RelatedServices from "@/components/RelatedServices";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
 
-const WA_MSG = "Hola Bambuky, quisiera información sobre la sesión Sitters 👶";
+/* ── METADATA ────────────────────────────────── */
 
 export const metadata: Metadata = {
   title: "Sesión Sitter en Querétaro | Bambuky · Fotos Bebé 6 Meses",
   description:
-    "Sesión de fotos sitter para bebés de 5 a 8 meses en Querétaro. Capturamos la etapa en que tu bebé se sienta solo, llena de sonrisas y personalidad. Estudio Bambuky.",
+    "Sesión de fotos sitter para bebés de 5 a 8 meses en Querétaro. Tu bebé ya se sienta solo, agarra todo y se ríe de la nada — esta es la sesión más divertida. Estudio Bambuky.",
   alternates: {
     canonical: `${SITE.url}/sitters-queretaro`,
   },
+  keywords: [
+    "sesión sitter Querétaro",
+    "fotografía bebé 6 meses Querétaro",
+    "fotos bebé sentado Querétaro",
+    "sesión bebé sitter Querétaro",
+    "fotografía sitter estudio Querétaro",
+    "fotos bebé 5 meses Querétaro",
+    "sesión bebé Bambuky Querétaro",
+    "fotógrafo bebés Querétaro",
+  ],
   openGraph: {
     type: "website",
     url: `${SITE.url}/sitters-queretaro`,
     siteName: "Bambuky",
     title: "Sesión Sitter en Querétaro | Bambuky · Fotos Bebé 6 Meses",
     description:
-      "Fotografía profesional para bebés de 5 a 8 meses en Querétaro. Tu bebé ya se sienta solo y queremos capturar cada gesto, cada sonrisa.",
+      "Fotografía de bebés de 5 a 8 meses en Querétaro. Tu bebé ya se sienta solo, hace caras increíbles y se ríe con todo — queremos fotografiar eso.",
     locale: "es_MX",
     images: [
       {
@@ -40,186 +50,236 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbItems = [
+/* ── JSON-LD DATA ────────────────────────────── */
+
+const breadcrumbLd = breadcrumbSchema([
   { name: "Inicio", url: SITE.url },
   { name: "Sesión Sitter Querétaro", url: `${SITE.url}/sitters-queretaro` },
-];
+]);
 
-const service = {
+const serviceLd = serviceSchema({
   name: "Sesión Sitter - Fotografía de Bebé 5 a 8 Meses",
   description:
-    "Sesión de fotografía profesional para bebés de 5 a 8 meses que ya se sientan solos. Capturamos expresiones, sonrisas y toda la personalidad de esta etapa única.",
+    "Sesión de fotografía para bebés de 5 a 8 meses que ya se sientan solos. Risas, caras chistosas y toda la personalidad de tu bebé en fotos.",
   url: `${SITE.url}/sitters-queretaro`,
   image: "/images/sitters04.jpg",
-};
+});
+
+const faqLd = faqSchema(SITTERS_FAQS);
+
+/* ── PAGE COMPONENT ──────────────────────────── */
+
+const WA_MSG =
+  "Hola Bambuky, quisiera información sobre la sesión Sitters 👶";
 
 export default function SittersQueretaroPage() {
   return (
     <>
+      {/* ── Structured data ── */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema(breadcrumbItems)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema(service)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema(SITTERS_FAQS)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
       <Nav />
 
       <main>
-        {/* Breadcrumb */}
-        <Breadcrumb
-          items={[
-            { label: "Inicio", href: "/" },
-            { label: "Sesión Sitter Querétaro" },
-          ]}
-        />
-
-        {/* Hero */}
-        <section className="svc-hero">
-          <div className="container">
-            <p className="label">Bebés de 5 a 8 meses</p>
-            <h1 className="display">
-              Sesión Sitter en Querétaro
-            </h1>
-            <p className="subheading">
-              Tu bebé ya se sienta solo y descubre el mundo con curiosidad.
-              Capturamos cada gesto, cada sonrisa y toda la personalidad de esta
-              etapa irrepetible.
-            </p>
-            <a
-              className="btn-wa"
-              href={waLink(WA_MSG)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-            <p className="svc-microcopy">
-              Respondemos en menos de 2 horas · Sin compromiso
-            </p>
+        {/* ── Hero ── */}
+        <section className="svc-hero svc-hero--split">
+          <div className="container svc-hero-grid">
+            <div className="svc-hero-text">
+              <Breadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Sesión Sitter Querétaro" },
+                ]}
+              />
+              <p className="label">Bebés de 5 a 8 meses</p>
+              <h1>
+                Sesión Sitter en Querétaro: la edad de las carcajadas
+              </h1>
+              <p className="subheading">
+                Tu bebé ya se sienta solo, agarra todo lo que encuentra y te
+                mira con esa cara que te derrite. Esta es la sesión más
+                divertida que hacemos &mdash; y queremos fotografiarla contigo.
+              </p>
+              <a
+                className="btn-wa"
+                href={waLink(WA_MSG)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppIcon /> Pedir informaci&oacute;n y precios
+              </a>
+              <p className="svc-microcopy">
+                Respondemos en menos de 2 horas &middot; Sin compromiso
+              </p>
+            </div>
+            <div className="svc-hero-img">
+              <Image
+                src="/images/sitters04.jpg"
+                alt="Bebé de 6 meses sentado y sonriendo en sesión sitter - Bambuky Fotografía Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 420px"
+                priority
+              />
+            </div>
           </div>
         </section>
 
-        {/* Content */}
+        {/* ── Content: intro ─────────────────── */}
         <section className="svc-content">
           <div className="container">
-            <h2 className="heading">
-              ¿Qué es una sesión sitter y por qué es tan especial?
-            </h2>
+            <h2>Qu&eacute; es una sesi&oacute;n sitter y por qu&eacute; nos encanta</h2>
             <p className="body-text">
-              La sesión sitter celebra uno de los hitos más emocionantes del
-              primer año de tu bebé: el momento en que se sienta solo por primera
-              vez. Entre los 5 y los 8 meses, tu pequeño ha dejado atrás la
-              fragilidad del recién nacido y ahora explora el mundo con las manos,
-              la mirada y unas expresiones que cambian cada día. Es una etapa
-              breve, llena de descubrimientos, y merece ser recordada con
-              fotografías que capturen toda esa magia.
+              Entre los 5 y los 8 meses pasan tantas cosas que si no las
+              fotograf&iacute;as, en serio se te olvidan. Tu beb&eacute; ya se sienta
+              solo, se mete todo a la boca, se r&iacute;e de la nada y pone caras
+              que nunca le hab&iacute;as visto. No es que seas mala mam&aacute;
+              &mdash; es que cambian demasiado r&aacute;pido.
             </p>
             <p className="body-text">
-              En Bambuky, Cristian y Reyna llevan más de diez años fotografiando
-              bebés en Querétaro. Han visto cientos de pequeños sentarse por
-              primera vez frente a su cámara, y saben exactamente cómo crear el
-              ambiente perfecto para que tu bebé se sienta seguro, cómodo y libre
-              de ser quien es. Cristian aporta su experiencia cinematográfica para
-              lograr una luz cálida y envolvente, mientras Reyna acompaña a cada
-              familia con la paciencia y el cariño que hacen de cada sesión una
-              experiencia relajada y especial.
-            </p>
-
-            <h2 className="heading">
-              La edad ideal: entre los 5 y los 8 meses
-            </h2>
-            <p className="body-text">
-              Cada bebé tiene su propio ritmo, pero generalmente entre los 5 y los
-              8 meses alcanzan la fuerza suficiente para mantenerse sentados con
-              estabilidad. Es justo ese punto en el que todavía tienen las
-              mejillas redondas y los pliegues adorables del bebé, pero ya
-              muestran una personalidad desbordante: sonríen con intención, se
-              sorprenden con todo, agarran objetos con curiosidad y muchas veces
-              nos regalan carcajadas que llenan el estudio de alegría.
-            </p>
-            <p className="body-text">
-              Si tu bebé aún no se sienta completamente solo, no te preocupes.
-              Antes de agendar, conversamos contigo para conocer en qué etapa de
-              desarrollo se encuentra y así asegurarnos de que el momento sea el
-              indicado. Lo importante es que disfrute la sesión tanto como tú.
-            </p>
-
-            <h2 className="heading">
-              ¿Qué incluye la sesión y cómo nos preparamos?
-            </h2>
-            <p className="body-text">
-              La sesión sitter dura aproximadamente entre 1 y 2 horas. A
-              diferencia de una sesión newborn, aquí los bebés están despiertos y
-              activos, así que trabajamos con su energía natural. Preparamos
-              escenarios sencillos y cuidados, con fondos y props que complementan
-              sin distraer, para que el protagonista absoluto sea tu hijo.
-            </p>
-            <p className="body-text">
-              Te recomendamos traer entre 2 y 3 cambios de ropa en tonos neutros o
-              pastel, aunque también contamos con algunos outfits y accesorios en
-              el estudio. Si tu bebé tiene un juguete favorito o una mantita que lo
-              tranquiliza, tráelo: esos detalles hacen las fotos más auténticas y
-              personales. Respetamos siempre los tiempos de tu bebé: si necesita
-              comer, descansar o simplemente un momento en brazos de mamá o papá,
-              nos detenemos sin prisa.
-            </p>
-
-            <h2 className="heading">
-              El puente perfecto entre el recién nacido y el primer año
-            </h2>
-            <p className="body-text">
-              Muchas familias en Querétaro, Juriquilla, Zibatá, El Refugio y
-              Corregidora conocen Bambuky por la sesión newborn, y regresan meses
-              después para la sesión sitter. Es el capítulo intermedio de una
-              historia que comenzó con los primeros días de vida y que culminará con
-              el Smash the Cake en su primer cumpleaños. Cuando ves las tres
-              sesiones juntas, el crecimiento de tu bebé cobra una dimensión
-              emocional que te acompaña para siempre.
-            </p>
-            <p className="body-text">
-              Si no tuviste la oportunidad de hacer la sesión newborn, la sesión
-              sitter es un punto de partida maravilloso. Tu bebé ya interactúa, ya
-              te busca con la mirada, ya se ríe cuando le haces cosquillas, y todo
-              eso queda capturado en imágenes que vas a atesorar durante toda tu
-              vida.
-            </p>
-
-            <h2 className="heading">
-              Familias de todo Querétaro confían en Bambuky
-            </h2>
-            <p className="body-text">
-              Nuestro estudio recibe familias de todas las zonas de la ciudad:
-              Juriquilla, Zibatá, El Refugio, Milenio III, Corregidora, Centro y
-              toda la zona metropolitana de Querétaro. No importa de dónde vengas,
-              lo que sí importa es que te sientas como en casa desde el momento en
-              que llegues. Cristian y Reyna cuidan cada detalle, desde la
-              temperatura del estudio hasta la música suave de fondo, para que tu
-              bebé esté relajado y feliz.
-            </p>
-            <p className="body-text">
-              Con más de 800 bebés fotografiados y certificación en primeros
-              auxilios pediátricos, tu bebé está en las mejores manos. La seguridad
-              y la tranquilidad de tu familia siempre son nuestra prioridad.
+              La sesi&oacute;n sitter es nuestra forma de frenar ese momento.
+              Cristian se encarga de la luz (de esa que hace que la piel de tu
+              beb&eacute; se vea de terciopelo) y Reyna es la que logra las
+              carcajadas. Tiene un don. A veces los pap&aacute;s nos dicen
+              &ldquo;nunca se r&iacute;e as&iacute; con desconocidos&rdquo;
+              &mdash; y ah&iacute; est&aacute; el beb&eacute;, muerto de risa
+              con Reyna.
             </p>
           </div>
         </section>
 
-        {/* Gallery */}
+        {/* ── Editorial: edad ideal (texto izq + img der) ── */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-text">
+              <h2>La edad ideal: entre los 5 y los 8 meses</h2>
+              <p className="body-text">
+                Cada beb&eacute; va a su ritmo, pero generalmente entre los 5 y
+                los 8 meses ya se mantienen sentados. Es el punto perfecto:
+                todav&iacute;a tienen las mejillas redondas y los rollitos, pero
+                ya tienen personalidad de sobra. Sonr&iacute;en a prop&oacute;sito,
+                se asombran con cualquier cosa y muchas veces se sueltan unas
+                carcajadas que nos matan a todos en el estudio.
+              </p>
+              <p className="body-text">
+                Si tu beb&eacute; a&uacute;n no se sienta completamente solo,
+                no te preocupes. Escr&iacute;benos y platicamos &mdash; te
+                preguntamos cositas como si ya se sostiene un ratito, si ya le
+                interesa agarrar objetos, y te decimos con honestidad si es
+                mejor esperar unas semanas.
+              </p>
+            </div>
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/sitters02.jpg"
+                alt="Bebé de 7 meses explorando con curiosidad durante sesión sitter - Bambuky Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ── Content: qué incluye ────────────────── */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Qu&eacute; incluye la sesi&oacute;n y c&oacute;mo nos preparamos</h2>
+            <p className="body-text">
+              La sesi&oacute;n sitter dura entre 1 y 2 horas, pero se siente
+              mucho m&aacute;s corta porque nos la pasamos jugando. A diferencia
+              de la sesi&oacute;n newborn (donde todo es silencio y sue&ntilde;o),
+              aqu&iacute; hay ruido, risas y movimiento. Tu beb&eacute;
+              est&aacute; despierto, activo, y nosotros trabajamos con esa
+              energ&iacute;a &mdash; no en contra de ella.
+            </p>
+            <p className="body-text">
+              Te recomendamos traer 2 o 3 cambios de ropa en tonos neutros o
+              pastel, aunque tenemos algunos outfits y accesorios en el estudio.
+              Si tu beb&eacute; tiene un juguete favorito o una mantita que lo
+              tranquiliza, tr&aacute;elo &mdash; esos detalles hacen las fotos
+              mucho m&aacute;s de ustedes. Y si a media sesi&oacute;n necesita
+              comer, descansar o un rato en brazos de mam&aacute;, le paramos
+              sin ning&uacute;n problema. Aqu&iacute; manda tu beb&eacute;.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Editorial: recorrido (img izq + texto der) ── */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/sitters05.jpg"
+                alt="Bebé sentado con osito de peluche en sesión sitter profesional - estudio Bambuky"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+            <div className="svc-editorial-text">
+              <h2>De reci&eacute;n nacido a sitter a Smash the Cake</h2>
+              <p className="body-text">
+                Muchas familias nos conocen por la sesi&oacute;n newborn y
+                regresan para la sesi&oacute;n sitter. Despu&eacute;s viene el
+                Smash the Cake en su primer cumplea&ntilde;os. Cuando pones las
+                tres sesiones juntas ves c&oacute;mo creci&oacute; tu
+                beb&eacute; de verdad &mdash; no solo de tama&ntilde;o, sino de
+                carita, de gestos, de todo. Es de las cosas que m&aacute;s nos
+                gusta ense&ntilde;arles a los pap&aacute;s.
+              </p>
+              <p className="body-text">
+                Si no hiciste la sesi&oacute;n newborn, no pasa nada. La
+                sesi&oacute;n sitter es un arranque incre&iacute;ble. Tu
+                beb&eacute; ya interact&uacute;a, ya te busca con la mirada, ya
+                se r&iacute;e cuando le haces cosquillas &mdash; y todo eso
+                queda en las fotos.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Content: estudio y seguridad ── */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>C&oacute;mo te recibimos en el estudio</h2>
+            <p className="body-text">
+              Cuando llegas, Reyna te recibe, te ofrece algo de tomar y
+              platicamos un rato antes de empezar. El estudio est&aacute;
+              calientito (a los beb&eacute;s les gusta), hay m&uacute;sica
+              bajita de fondo, y todo est&aacute; pensado para que tu
+              beb&eacute; se sienta a gusto.
+            </p>
+            <p className="body-text">
+              Llevamos m&aacute;s de 800 beb&eacute;s fotografiados y tenemos
+              certificaci&oacute;n en primeros auxilios pedi&aacute;tricos.
+              Si tu beb&eacute; se rueda, si se jala algo, si decide que hoy es
+              d&iacute;a de llorar &mdash; lo hemos visto todo y sabemos
+              c&oacute;mo manejarlo con calma.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Gallery ── */}
         <section className="svc-gallery">
           <div className="container">
+            <div className="section-header">
+              <p className="label">Galer&iacute;a Sitter</p>
+              <h2 className="heading">
+                As&iacute; se ven los 6 meses
+              </h2>
+            </div>
             <div className="svc-gallery-grid">
               <div className="svc-gallery-item">
                 <Image
@@ -261,16 +321,16 @@ export default function SittersQueretaroPage() {
           </div>
         </section>
 
-        {/* Mid-content CTA */}
+        {/* ── Mid CTA ── */}
         <section className="svc-cta">
           <div className="container">
             <h2 className="heading">
-              Reserva la sesión sitter de tu bebé
+              Reserva la sesi&oacute;n sitter de tu beb&eacute;
             </h2>
             <p className="body-text">
-              Los meses pasan volando y esta etapa no se repite. Escríbenos hoy
-              para apartar tu fecha y recibir toda la información sobre paquetes y
-              precios.
+              Escr&iacute;benos por WhatsApp, te contamos c&oacute;mo funciona,
+              qu&eacute; incluye cada paquete y apartamos tu fecha. Cero
+              presi&oacute;n, pura pl&aacute;tica.
             </p>
             <a
               className="btn-wa-dark"
@@ -278,33 +338,33 @@ export default function SittersQueretaroPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon /> Pedir información y precios
+              <WhatsAppIcon /> Pedir informaci&oacute;n y precios
             </a>
             <p className="svc-microcopy">
-              Respondemos en menos de 2 horas · Sin compromiso
+              Respondemos en menos de 2 horas &middot; Sin compromiso
             </p>
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* ── FAQ ── */}
         <FAQ items={SITTERS_FAQS} id="preguntas-sitters" />
 
-        {/* Related Services */}
+        {/* ── Related Services ── */}
         <RelatedServices
           current="/sitters-queretaro"
           show={["/smash-cake-queretaro", "/fotografia-newborn-queretaro"]}
         />
 
-        {/* Final CTA */}
+        {/* ── Final CTA ── */}
         <section className="svc-cta">
           <div className="container">
             <h2 className="heading">
-              Cada sonrisa merece ser recordada
+              Tu beb&eacute; no va a estar as&iacute; de chiquito mucho tiempo
             </h2>
             <p className="body-text">
-              No dejes pasar esta etapa tan bonita. Escríbenos por WhatsApp y te
-              contamos todo lo que necesitas saber para la sesión sitter de tu
-              bebé.
+              M&aacute;ndanos un WhatsApp y platicamos. Te contamos fechas,
+              precios y todo lo que necesitas saber para la sesi&oacute;n
+              sitter de tu beb&eacute;.
             </p>
             <a
               className="btn-wa-dark"
@@ -312,10 +372,10 @@ export default function SittersQueretaroPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon /> Pedir información y precios
+              <WhatsAppIcon /> Pedir informaci&oacute;n y precios
             </a>
             <p className="svc-microcopy">
-              Respondemos en menos de 2 horas · Sin compromiso
+              Respondemos en menos de 2 horas &middot; Sin compromiso
             </p>
           </div>
         </section>

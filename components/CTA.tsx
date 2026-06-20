@@ -7,8 +7,8 @@ export default function CTA() {
       <div className="container">
         <h2 className="display">¿Estás esperando un bebé?</h2>
         <p className="body-text">
-          Reserva tu sesión newborn durante el embarazo. Los lugares son
-          limitados y se agotan rápido, especialmente en temporada alta.
+          Escríbenos. Te contamos cómo funciona, cuándo conviene hacer la
+          sesión y respondemos todas tus dudas. Sin compromiso, sin presión.
         </p>
         <a
           className="btn-wa-dark"

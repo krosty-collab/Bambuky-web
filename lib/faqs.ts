@@ -2,134 +2,130 @@ export type FAQ = { q: string; a: string };
 
 export const GLOBAL_FAQS: FAQ[] = [
   {
-    q: "¿Dónde está ubicado el estudio Bambuky?",
-    a: "Nuestro estudio está en Querétaro y recibimos familias de Juriquilla, Zibatá, El Refugio, Milenio III, Corregidora y otras zonas de la ciudad.",
+    q: "¿Dónde está el estudio?",
+    a: "En Querétaro. Nos llegan familias de Juriquilla, Zibatá, El Refugio, Milenio III, Corregidora y de todo el estado. Si vienes de fuera, te ayudamos a coordinar.",
   },
   {
     q: "¿Con cuánta anticipación debo reservar?",
-    a: "Recomendamos reservar desde el segundo trimestre del embarazo. Nuestros lugares son limitados y se agotan rápido, especialmente en temporada alta.",
-  },
-  {
-    q: "¿Atienden familias de Juriquilla, Zibatá o Corregidora?",
-    a: "Sí, atendemos familias de toda la zona metropolitana de Querétaro: Juriquilla, Zibatá, El Refugio, Milenio III, Corregidora, Centro y más.",
+    a: "Lo ideal es desde el segundo trimestre del embarazo. Tomamos pocas sesiones por semana para darle a cada familia el tiempo que merece, así que las fechas sí se van llenando.",
   },
   {
     q: "¿Cómo puedo pedir precios?",
-    a: "Escríbenos por WhatsApp al 442 344 0766. Te respondemos con toda la información, paquetes disponibles y fechas.",
+    a: "Mándanos WhatsApp al 442 344 0766. Te respondemos rápido con paquetes, fechas y toda la info. Sin compromiso.",
   },
   {
-    q: "¿Las sesiones son seguras para recién nacidos?",
-    a: "Absolutamente. Cristian y Reyna están certificados en primeros auxilios pediátricos. En más de 10 años y 800+ bebés fotografiados, nunca hemos tenido un incidente.",
+    q: "¿Es seguro para mi recién nacido?",
+    a: "Sí. Estamos certificados en primeros auxilios pediátricos y renovamos la certificación cada año. En más de 800 bebés nunca hemos tenido un incidente. No es un dato de marketing — es lo que más nos importa.",
   },
   {
-    q: "¿Quién realiza las sesiones?",
-    a: "Cristian dirige la fotografía con su experiencia en cine y televisión. Reyna cuida al bebé y acompaña emocionalmente a los papás durante toda la sesión.",
+    q: "¿Quiénes hacen la sesión?",
+    a: "Cristian y Reyna, siempre los dos. Trabajamos como un gran equipo y once años de experiencia nos han enseñado mucho sobre los bebés, sobre las familias y sobre cómo hacer que todos se sientan tranquilos desde que llegan.",
   },
 ];
 
 export const NEWBORN_FAQS: FAQ[] = [
   {
-    q: "¿Cuál es la mejor edad para una sesión newborn?",
-    a: "Entre los 5 y 15 días de nacido. En esta etapa el bebé duerme profundamente y podemos lograr las poses más tiernas con total seguridad.",
+    q: "¿Cuál es la mejor edad para la sesión?",
+    a: "Entre los 5 y 15 días. En esos días todavía duermen como en la panza y podemos acomodarlos en poses que después ya no se logran.",
   },
   {
-    q: "¿Es segura una sesión newborn?",
-    a: "Sí. Contamos con certificación en primeros auxilios pediátricos, controlamos la temperatura del estudio y cada pose se realiza con protocolos estrictos de seguridad.",
+    q: "¿Es segura la sesión newborn?",
+    a: "Estamos certificados en primeros auxilios pediátricos. Controlamos la temperatura del estudio entre 26 y 28 grados. Nunca dejamos al bebé sin soporte. En más de 800 sesiones, cero incidentes.",
   },
   {
     q: "¿Qué pasa si mi bebé ya tiene más de 15 días?",
-    a: "Podemos hacer la sesión, aunque algunas poses clásicas se vuelven más difíciles. Te recomendamos agendar lo antes posible después del nacimiento.",
+    a: "Hacemos la sesión igual. Algunas poses se complican un poco más porque están más alertas, pero adaptamos todo a su etapa. Escríbenos y vemos.",
   },
   {
-    q: "¿Cuánto dura una sesión newborn?",
-    a: "Entre 3 y 4 horas. Nos tomamos el tiempo necesario para alimentar, cambiar y calmar al bebé entre poses.",
+    q: "¿Cuánto dura?",
+    a: "Entre 3 y 4 horas, con calma. Si necesita comer, come. Si necesita que lo cargue mamá, lo cargamos. No hay reloj.",
   },
   {
     q: "¿Debo llevar ropa o accesorios?",
-    a: "No es necesario. En nuestro estudio tenemos props, envolturas, diademas y todo lo que se necesita para la sesión.",
+    a: "No, tenemos todo: envolturas, canastas, diademas, gorros, fondos. Solo trae al bebé y pañales extra.",
   },
   {
-    q: "¿Cuándo debo reservar si estoy embarazada?",
-    a: "Idealmente entre la semana 20 y 30 del embarazo. Las fechas se agotan con anticipación y reservamos un espacio tentativo alrededor de tu fecha de parto.",
+    q: "¿Cuándo conviene reservar si estoy embarazada?",
+    a: "Entre la semana 20 y 30. Apartamos una fecha tentativa alrededor de tu fecha de parto y la confirmamos cuando nazca tu bebé.",
   },
 ];
 
 export const MATERNIDAD_FAQS: FAQ[] = [
   {
     q: "¿En qué semana del embarazo conviene hacer la sesión?",
-    a: "Entre la semana 28 y 34. En este periodo la pancita se ve hermosa y la mamá generalmente se siente cómoda para posar.",
+    a: "Entre la semana 28 y 34. La pancita se ve preciosa y generalmente todavía te sientes cómoda para moverte y posar.",
   },
   {
-    q: "¿Incluyen vestidos para la sesión?",
-    a: "Sí, contamos con una selección de vestidos, tops y telas para la sesión. También puedes traer prendas propias si lo prefieres.",
+    q: "¿Incluyen vestidos?",
+    a: "Sí, tenemos vestidos, tops y telas que renovamos seguido. Si quieres traer algo tuyo o algún objeto especial (los zapatos del bebé, un ultrasonido), bienvenido.",
   },
   {
-    q: "¿Puede participar mi pareja o mis hijos?",
-    a: "¡Por supuesto! Nos encanta incluir a la pareja y a los hermanos mayores. Las fotos familiares durante el embarazo son muy especiales.",
+    q: "¿Puede venir mi pareja o mis hijos?",
+    a: "Claro, nos encanta. Las fotos con la pareja y los hermanos mayores tienen algo especial. Si vienen niños, Reyna los entretiene mientras Cristian fotografía.",
   },
   {
-    q: "¿La sesión puede ser en estudio o exterior?",
-    a: "Nuestras sesiones de maternidad se realizan en estudio con iluminación profesional controlada para lograr los mejores resultados.",
+    q: "¿La sesión es en estudio?",
+    a: "Sí, en nuestro estudio en Querétaro con iluminación profesional. Así controlamos la luz y el ambiente para que las fotos queden como queremos.",
   },
 ];
 
 export const CUARENTA_Y_OCHO_FAQS: FAQ[] = [
   {
     q: "¿Qué es 48 Horas Contigo?",
-    a: "Es una sesión documental suave que realizamos en el hospital o en tu casa durante las primeras 48 horas de vida de tu bebé. Capturamos los primeros abrazos, miradas y momentos en familia.",
+    a: "Vamos al hospital o a tu casa en las primeras horas de vida de tu bebé. No armamos nada, no posamos a nadie. Fotografiamos lo que realmente pasa: el primer contacto, la lactancia, los abuelos conociendo al bebé.",
   },
   {
-    q: "¿La sesión se hace en hospital o en casa?",
-    a: "Puede ser en ambos lugares. Nos adaptamos a tu situación. Lo importante es capturar esos momentos únicos e irrepetibles de las primeras horas.",
+    q: "¿En hospital o en casa?",
+    a: "Donde estés. Conocemos los hospitales de Querétaro y sus horarios. Nos movemos con equipo ligero para no estorbar.",
   },
   {
-    q: "¿Cuánto dura la sesión 48 Horas?",
-    a: "Entre 1 y 2 horas. Es una sesión más breve y relajada que la newborn, enfocada en momentos reales y naturales.",
+    q: "¿Cuánto dura?",
+    a: "Entre 1 y 2 horas. Llegamos, nos hacemos chiquitos y capturamos lo que va pasando. Es la sesión más tranquila que hacemos.",
   },
   {
-    q: "¿Se usan poses en la sesión 48 Horas?",
-    a: "No. Esta sesión es completamente documental. No forzamos poses — capturamos los momentos tal como suceden: el primer contacto, la lactancia, las manos de los papás.",
+    q: "¿Hay poses?",
+    a: "No, cero poses. Esta sesión es puramente documental. Lo que buscamos no es la foto perfecta sino la foto verdadera.",
   },
   {
-    q: "¿Cuándo se entregan las fotos?",
-    a: "La entrega es más rápida que en otras sesiones, generalmente en 2 semanas. Sabemos que quieres compartir estos momentos lo antes posible.",
+    q: "¿Cuándo entregan las fotos?",
+    a: "En unas 2 semanas, más rápido que las otras sesiones. Sabemos que quieres compartirlas con la familia cuanto antes.",
   },
 ];
 
 export const SITTERS_FAQS: FAQ[] = [
   {
-    q: "¿A qué edad se hace una sesión sitter?",
-    a: "Entre los 5 y 8 meses, cuando tu bebé ya puede sentarse solo o con mínimo apoyo. Es una etapa llena de expresiones y personalidad.",
+    q: "¿A qué edad se hace?",
+    a: "Entre los 5 y 8 meses, cuando ya se sientan solos o casi. Antes de agendar platicamos contigo para ver en qué etapa está tu bebé.",
   },
   {
-    q: "¿Mi bebé debe sentarse solo?",
-    a: "Idealmente sí, aunque podemos trabajar con bebés que se sientan con poco apoyo. Antes de agendar te preguntaremos sobre el desarrollo de tu bebé.",
+    q: "¿Y si todavía no se sienta del todo?",
+    a: "Podemos trabajar con bebés que se sientan con poquito apoyo. Te preguntamos antes para asegurarnos de que sea buen momento.",
   },
   {
-    q: "¿Qué ropa debo llevar para la sesión sitter?",
-    a: "Te recomendamos 2-3 cambios de ropa en tonos neutros o pastel. También contamos con algunos outfits en el estudio.",
+    q: "¿Qué ropa le pongo?",
+    a: "Trae 2-3 cambios en tonos neutros o pastel. También tenemos algunos outfits en el estudio. Si tiene un juguete o mantita favorita, tráelo — hace las fotos más personales.",
   },
   {
-    q: "¿Cuánto dura una sesión sitter?",
-    a: "Aproximadamente 1-2 horas. Es más breve que una sesión newborn porque los bebés a esta edad están más activos.",
+    q: "¿Cuánto dura?",
+    a: "Entre 1 y 2 horas. A esta edad están activos y expresivos, así que trabajamos con su energía. Si necesita un descanso, paramos.",
   },
 ];
 
 export const SMASH_FAQS: FAQ[] = [
   {
-    q: "¿A qué edad se hace smash cake?",
-    a: "Se hace alrededor del primer cumpleaños. Recomendamos agendar con al menos un mes de anticipación para preparar la decoración temática.",
+    q: "¿A qué edad se hace el smash cake?",
+    a: "Alrededor del primer cumpleaños. Avísanos con al menos un mes para preparar la decoración del tema que elijas.",
   },
   {
-    q: "¿Incluye decoración el smash cake?",
-    a: "Sí, preparamos un set decorado con globos, banderines y elementos temáticos personalizados según tus preferencias.",
+    q: "¿Ustedes ponen la decoración?",
+    a: "Sí, armamos todo el set: globos, banderines, fondo, lo que haga falta según la temática. Tú llegas y ya está todo listo.",
   },
   {
-    q: "¿Incluye pastel?",
-    a: "El pastel no está incluido, pero te damos recomendaciones de pastelerías en Querétaro que hacen pasteles ideales para smash cake.",
+    q: "¿Y el pastel?",
+    a: "El pastel lo traes tú, pero te pasamos contactos de pastelerías en Querétaro que hacen pasteles que funcionan perfecto para la sesión.",
   },
   {
-    q: "¿Qué pasa si mi bebé no quiere tocar el pastel?",
-    a: "¡Pasa más seguido de lo que crees! Tenemos técnicas para animar al bebé, y las fotos de reacción — sea cual sea — siempre quedan increíbles.",
+    q: "¿Qué pasa si no quiere tocar el pastel?",
+    a: "Pasa seguido y las fotos quedan igual de buenas. La carita de confusión, la mueca, el llanto — todo eso es auténtico y a los papás les encanta cuando lo ven.",
   },
 ];

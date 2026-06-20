@@ -17,7 +17,7 @@ import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Fotografía Newborn en Querétaro | Bambuky · Sesión Recién Nacido",
   description:
-    "Sesión de fotografía newborn en Querétaro con más de 10 años de experiencia y 800+ bebés fotografiados. Estudio climatizado, certificación en primeros auxilios. Cristian y Reyna, Bambuky.",
+    "Fotografía newborn en Querétaro por Cristian y Reyna · Bambuky. Llevamos 800+ bebés y seguimos contando. Estudio climatizado, certificación en primeros auxilios y toda la paciencia del mundo.",
   alternates: {
     canonical: `${SITE.url}/fotografia-newborn-queretaro`,
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fotografía Newborn en Querétaro | Bambuky · Sesión Recién Nacido",
     description:
-      "10+ años y 800+ bebés fotografiados. Sesión newborn profesional en estudio climatizado en Querétaro. Cristian y Reyna, Bambuky.",
+      "Cristian y Reyna llevan 800+ bebés en su estudio climatizado de Querétaro. Fotografía newborn con calma, certificación en primeros auxilios y cero prisa.",
     url: `${SITE.url}/fotografia-newborn-queretaro`,
     images: [
       {
@@ -95,163 +95,189 @@ export default function FotografiaNewbornQueretaro() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="svc-hero">
-          <div className="container">
-            <Breadcrumb
-              items={[
-                { label: "Inicio", href: "/" },
-                { label: "Fotografía Newborn Querétaro" },
-              ]}
-            />
-            <p className="label">Sesión estrella &middot; 5 a 15 días de vida</p>
-            <h1>
-              Fotografía Newborn en Querétaro: los primeros días duran para
-              siempre
-            </h1>
-            <p className="subheading">
-              Una sesión de 3 a 4 horas en nuestro estudio climatizado, donde
-              cada pose y cada detalle se cuidan con la misma delicadeza con la
-              que sostienes a tu bebé por primera vez.
-            </p>
-            <a
-              className="btn-wa"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos por WhatsApp en minutos
-            </p>
+        <section className="svc-hero svc-hero--split">
+          <div className="container svc-hero-grid">
+            <div className="svc-hero-text">
+              <Breadcrumb
+                items={[
+                  { label: "Inicio", href: "/" },
+                  { label: "Fotografía Newborn Querétaro" },
+                ]}
+              />
+              <p className="label">Sesión estrella &middot; 5 a 15 días de vida</p>
+              <h1>
+                Fotografía Newborn en Querétaro: tu bebé nunca volverá a ser
+                así de chiquito
+              </h1>
+              <p className="subheading">
+                Son 3 a 4 horas en nuestro estudio climatizado. El bebé manda
+                el ritmo, Reyna lo acomoda y lo posa, Cristian hace la magia
+                con la cámara. Tú solo siéntate y disfruta.
+              </p>
+              <a
+                className="btn-wa"
+                href={waLink(WA_MESSAGE)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsAppIcon /> Pedir información y precios
+              </a>
+              <p className="svc-microcopy">
+                Te respondemos por WhatsApp en minutos
+              </p>
+            </div>
+            <div className="svc-hero-img">
+              <Image
+                src="/images/newborn7.jpg"
+                alt="Bebé recién nacido durmiendo en sesión newborn - Bambuky Fotografía Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 420px"
+                priority
+              />
+            </div>
           </div>
         </section>
 
-        {/* ── Content ── */}
+        {/* ── Content: intro ─────────────────── */}
         <section className="svc-content">
           <div className="container">
             <h2>Qué es una sesión de fotografía newborn</h2>
             <p className="body-text">
-              Una sesión newborn es una experiencia fotográfica diseñada
-              exclusivamente para capturar los primeros días de vida de tu bebé.
-              A diferencia de una foto casual con el teléfono, aquí cada imagen
-              se planifica con iluminación profesional, atrezo cuidado y, sobre
-              todo, con la seguridad que un recién nacido necesita. En Bambuky
-              realizamos estas sesiones en nuestro estudio de Querétaro, un
-              espacio pensado para que tanto el bebé como los papás se sientan
-              cómodos y tranquilos durante las 3 a 4 horas que dura la sesión.
+              Cuando nacieron nuestros gemelos, Thiago y Matheo, entendimos algo
+              que ningún curso te enseña: los primeros días se evaporan. Estás
+              tan metida en pañales, en lactancia, en sobrevivir, que cuando
+              querés mirar con calma, tu bebé ya cambió. Una sesión de
+              fotografía newborn es eso: frenar el tiempo unas horas. En
+              nuestro estudio de Querétaro preparamos todo para que tú solo
+              tengas que llegar con tu bebé y dejarte llevar.
             </p>
             <p className="body-text">
-              Trabajamos con envolturas suaves, canastas artesanales, diademas
-              florales y fondos que cambiamos según la paleta de colores que
-              cada familia elige. El resultado es una colección de imágenes que
-              reflejan la ternura, la fragilidad y la belleza de esos días que
-              pasan más rápido de lo que imaginas.
+              Usamos envolturas suaves, canastas artesanales, diademas florales
+              y fondos que cambiamos según la paleta que tú elijas.
             </p>
+          </div>
+        </section>
 
-            <h2>La edad ideal: entre los 5 y los 15 días de nacido</h2>
-            <p className="body-text">
-              Existe una ventana muy especial en las primeras dos semanas de
-              vida. Durante estos días, tu bebé conserva la flexibilidad
-              natural del vientre materno y duerme con una profundidad que nos
-              permite acomodarlo en poses elaboradas sin que se despierte.
-              Después de los 15 días, los bebés se vuelven más alertas y
-              pueden resistir ciertas posiciones, lo que limita el repertorio
-              de poses clásicas de una sesión newborn.
-            </p>
-            <p className="body-text">
-              Por eso recomendamos agendar tu sesión desde el segundo trimestre
-              del embarazo. Reservamos una fecha tentativa alrededor de tu
-              fecha probable de parto y la confirmamos una vez que nace tu
-              bebé. Si ya nació y tiene más de 15 días, no te preocupes:
-              adaptamos la sesión a su etapa y logramos imágenes igualmente
-              hermosas. Familias de Juriquilla, Zibatá, El Refugio,
-              Corregidora y todo Querétaro nos eligen precisamente por esa
-              flexibilidad.
-            </p>
+        {/* ── Editorial: 5-15 días (texto izq + img der) ── */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-text">
+              <h2>Por qué la sesión newborn se hace entre los 5 y los 15 días</h2>
+              <p className="body-text">
+                Hay una ventana cortísima en la que tu bebé todavía se siente
+                como en el vientre de mamá. Duerme profundo, se deja acomodar
+                y conserva esa flexibilidad que nos permite las poses clásicas
+                de una sesión newborn: acurrucado, de ladito, con las manitas
+                bajo la carita. Después de los 15 días se ponen más alertas,
+                más inquietos, y algunas poses ya no se logran igual.
+              </p>
+              <p className="body-text">
+                Por eso te pedimos que nos escribas desde el embarazo.
+                Apartamos una fecha tentativa cerca de tu fecha probable de
+                parto y la ajustamos cuando nazca. Si ya nació y pasaron los
+                15 días, tranquila: adaptamos la sesión a su momento y las
+                fotos salen preciosas igual.
+              </p>
+            </div>
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/newborn4.jpg"
+                alt="Bebé recién nacido durmiendo envuelto en tela suave - sesión newborn Bambuky Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+          </div>
+        </section>
 
-            <h2>Seguridad ante todo: certificación en primeros auxilios</h2>
+        {/* ── Content: seguridad ────────────────── */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Tu bebé va a estar seguro: esto es lo que hacemos</h2>
             <p className="body-text">
-              Sabemos que confiar a tu recién nacido a alguien que no sea su
-              pediatra requiere mucha confianza. En Bambuky esa confianza la
-              respaldamos con hechos. Cristian y Reyna están certificados en
-              primeros auxilios pediátricos y renuevan esa certificación cada
-              año. Nuestro estudio mantiene una temperatura controlada entre
-              26 y 28 grados, el nivel óptimo para que un recién nacido se
-              sienta tan seguro como en el vientre de mamá. Utilizamos
-              calefactores de cerámica silenciosos, mantas térmicas y un
-              monitor de temperatura ambiental que revisamos durante toda la
-              sesión.
+              Vas a poner en nuestras manos al amor de tu vida, y eso no lo
+              tomamos a la ligera. Estamos capacitados por médicos neonatólogos
+              y certificados en primeros auxilios pediátricos — renovamos cada
+              año. El estudio siempre está calentito: usamos calefactores y
+              mantas térmicas para mantenerlo entre 26 y 28 grados.
             </p>
             <p className="body-text">
-              Cada pose que realizamos sigue protocolos estrictos de
-              seguridad. Nunca dejamos al bebé sin soporte, nunca forzamos una
-              posición y siempre respetamos los tiempos del recién nacido: si
-              necesita comer, se alimenta; si necesita un cambio de pañal, lo
-              cambiamos; si necesita estar en brazos de mamá, lo acurrucamos.
-              En más de 10 años y más de 800 bebés fotografiados, nunca hemos
-              tenido un incidente. Esa es nuestra mayor estadística.
+              Nunca dejamos al bebé sin soporte, nunca forzamos una posición.
+              Si necesita comer, se alimenta. Si necesita un cambio de pañal,
+              paramos. Si solo quiere estar en brazos de mamá, lo acomodamos
+              y esperamos. En 800+ bebés nunca tuvimos un incidente. No es un
+              eslogan, es un dato.
             </p>
+          </div>
+        </section>
 
-            <h2>Nuestro estudio en Querétaro: un refugio para tu bebé</h2>
-            <p className="body-text">
-              El estudio Bambuky fue diseñado desde cero para sesiones con
-              recién nacidos. Cuenta con un área climatizada exclusiva para la
-              sesión, una zona de descanso para los papás con sillones cómodos
-              y bebidas calientes, y un cambiador equipado con todo lo
-              necesario. La iluminación combina luz natural filtrada con
-              flashes de estudio de muy baja intensidad, lo que permite
-              trabajar sin incomodar los ojos sensibles del bebé.
-            </p>
-            <p className="body-text">
-              Familias que viajan desde Milenio III, El Refugio o el centro
-              de Querétaro nos comentan que el estudio se siente como un
-              pequeño oasis. Ese ambiente relajado se refleja directamente en
-              las fotos: un bebé que se siente seguro duerme mejor, y un bebé
-              que duerme bien permite las poses más bellas.
-            </p>
+        {/* ── Editorial: estudio (img izq + texto der) ── */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/newborn2.jpg"
+                alt="Bebé recién nacido con diadema floral en envoltura blanca - estudio Bambuky Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+            <div className="svc-editorial-text">
+              <h2>Nuestro estudio: pensado para que tu bebé duerma tranquilo</h2>
+              <p className="body-text">
+                Armamos el estudio desde cero pensando en recién nacidos, no en
+                adultos. El área de sesión está climatizada y separada del resto.
+                Hay un rincón con sillones para que tú y tu pareja se sienten
+                tranquilos y vean cómo trabajamos. También tenemos cambiador
+                equipado y todo lo que puedas necesitar.
+              </p>
+              <p className="body-text">
+                Lo que distingue a Bambuky es que creamos un ambiente tranquilo
+                para que ustedes como papás se relajen. Si ustedes están
+                tranquilos, su bebé lo siente. Un bebé tranquilo duerme
+                profundo. Y un bebé que duerme profundo nos deja trabajar las
+                mejores poses.
+              </p>
+            </div>
+          </div>
+        </section>
 
+        {/* ── Content: sesión + quiénes somos ── */}
+        <section className="svc-content">
+          <div className="container">
             <h2>Qué esperar el día de la sesión</h2>
             <p className="body-text">
-              El día de tu cita, te recibimos con calma. No hay prisa. Mientras
-              Cristian prepara el set y calibra la iluminación, Reyna recibe al
-              bebé con las manos tibias y lo va acurrucando hasta que alcanza
-              un sueño profundo. A partir de ahí, la sesión fluye entre poses
-              de envoltura, poses en canasta, poses naturalistas y los
-              retratos familiares que tanto valor tendrán con el paso de los
-              años.
+              El día de tu cita, te recibimos con calma. No hay prisa.
+              Mientras preparamos el set y la iluminación, recibimos a tu
+              bebé con las manos tibias y lo acomodamos hasta que se queda
+              dormido. De ahí pasamos por poses de envoltura, canasta,
+              naturalistas y los retratos con mamá, papá o hermanitos que
+              después te van a hacer llorar cada vez que los veas.
             </p>
             <p className="body-text">
-              Durante las 3 a 4 horas hacemos pausas para alimentar al bebé,
-              cambiar pañales y simplemente dejarlo descansar. No forzamos los
-              tiempos. Cada sesión es diferente porque cada bebé es diferente,
-              y eso es precisamente lo que la hace única. Al terminar,
-              seleccionamos juntos las mejores imágenes y las entregamos
-              editadas profesionalmente a través de nuestra galería digital
-              en mila-os.com, donde puedes verlas, descargarlas y compartirlas
-              con tu familia.
+              En las 3 a 4 horas hacemos todas las pausas que hagan falta:
+              para comer, cambiar pañal, o simplemente para que el bebé
+              descanse en brazos. Cada sesión sale distinta porque cada bebé
+              trae su propio temperamento, y eso es lo que nos gusta.
             </p>
 
-            <h2>Cristian y Reyna: más de 10 años capturando primeros días</h2>
+            <h2>Quiénes somos</h2>
             <p className="body-text">
-              Detrás de Bambuky están Cristian Andrada y Reyna, un equipo de
-              pareja que lleva más de una década dedicado a la fotografía de
-              recién nacidos en Querétaro. Cristian aporta su formación en cine
-              y televisión: cada sesión la dirige como si contara una historia,
-              cuidando la composición, la luz y la emoción de cada cuadro.
-              Reyna es el alma de la sesión: ella recibe al bebé, lo calma, lo
-              acomoda y acompaña a los papás en cada momento.
+              Somos Cristian y Reyna. Cristian viene de Argentina, con una
+              carrera en cine y televisión. Reyna es de León, Guanajuato. Nos
+              conocimos en Querétaro y en 2015 descubrimos juntos la
+              fotografía newborn. Nos capacitamos con fotógrafos y también
+              con médicos neonatólogos para entender al bebé recién nacido.
             </p>
             <p className="body-text">
-              Juntos han fotografiado a más de 800 bebés. Han visto llegar a
-              familias primerizas con nervios y salir con lágrimas de emoción
-              al ver las primeras fotos en la pantalla. Han trabajado con
-              gemelos, prematuros que alcanzaron su peso ideal y bebés que
-              decidieron no dormir en toda la sesión. Cada experiencia les ha
-              enseñado a adaptarse con paciencia, creatividad y cariño.
-              Familias de Juriquilla, Zibatá, Corregidora, El Marqués y todo
-              el estado de Querétaro confían en ellos para este momento tan
-              importante.
+              En 2022 tuvimos la sorpresa de embarazarnos de gemelos. Thiago
+              y Matheo llegaron para cambiar nuestras vidas. Entendimos en
+              carne propia lo que significa poner a tu bebé de días de nacido
+              en manos de alguien más. Llevamos más de 800 bebés y seguimos
+              contando.
             </p>
           </div>
         </section>
@@ -322,11 +348,12 @@ export default function FotografiaNewbornQueretaro() {
         <section className="svc-cta">
           <div className="container">
             <h2 className="heading">
-              Reserva la sesión de tu bebé
+              Escríbenos y platicamos
             </h2>
             <p className="body-text">
-              Te recomendamos agendar desde el embarazo para asegurar tu fecha.
-              Escríbenos y te orientamos según la edad de tu bebé.
+              Si todavía estás embarazada, es buen momento para apartar fecha.
+              Si ya nació, cuéntanos cuántos días tiene y vemos cómo
+              organizarnos.
             </p>
             <a
               className="btn-wa-dark"
@@ -359,11 +386,12 @@ export default function FotografiaNewbornQueretaro() {
         <section className="svc-cta">
           <div className="container">
             <h2 className="heading">
-              Los primeros días no se repiten
+              Mañana ya va a ser otro bebé
             </h2>
             <p className="body-text">
-              Cada día que pasa, tu bebé cambia. Permítenos capturar este
-              momento tal como es ahora, para que lo guardes para siempre.
+              No exagero: en una semana la carita cambia, los cachetes crecen,
+              los dedos se estiran. Si querés que quede registro de cómo es
+              hoy, este es el momento.
             </p>
             <a
               className="btn-wa-dark"

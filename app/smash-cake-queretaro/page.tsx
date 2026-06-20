@@ -74,142 +74,185 @@ export default function SmashCakeQueretaro() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
 
-      {/* ── Hero ─────────────────────────────── */}
-      <section className="svc-hero">
+      {/* ── Hero split ──────────────────────── */}
+      <section className="svc-hero svc-hero--split">
+        <div className="container svc-hero-grid">
+          <div className="svc-hero-text">
+            <Breadcrumb
+              items={[
+                { label: "Inicio", href: "/" },
+                { label: "Smash Cake Querétaro" },
+              ]}
+            />
+            <p className="label">Primer cumpleaños &middot; 1 año</p>
+            <h1>
+              Smash the Cake en Querétaro: pastel, mugrero y las fotos que
+              más vas a presumir
+            </h1>
+            <p className="subheading">
+              Armamos un set personalizado con la temática que te guste,
+              ponemos el pastel enfrente de tu bebé y dejamos que pase lo
+              que tenga que pasar. Nosotros capturamos cada gesto.
+            </p>
+            <a
+              className="btn-wa"
+              href={waLink(WA_MSG)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <WhatsAppIcon /> Pedir información y precios
+            </a>
+            <p className="svc-microcopy">
+              Respondemos en menos de 2 horas por WhatsApp
+            </p>
+          </div>
+          <div className="svc-hero-img">
+            <Image
+              src="/images/smash01.jpg"
+              alt="Sesión smash the cake en estudio Bambuky Querétaro - bebé con pastel y decoración temática"
+              width={900}
+              height={1200}
+              sizes="(max-width: 768px) 92vw, 420px"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Content: intro ──────────────────── */}
+      <section className="svc-content">
         <div className="container">
-          <Breadcrumb
-            items={[
-              { label: "Inicio", href: "/" },
-              { label: "Smash Cake Querétaro" },
-            ]}
-          />
-          <p className="label">Primer cumpleaños</p>
-          <h1>
-            Smash the Cake en Querétaro
-          </h1>
-          <p className="subheading">
-            El primer año de tu bebé merece una celebración llena de color, pastel
-            y carcajadas. Preparamos un set temático personalizado para que este
-            momento quede en fotografías que tu familia guardará para siempre.
+          <h2>Qué es un smash the cake (y por qué nos encanta hacerlo)</h2>
+          <p className="body-text">
+            La idea es simple: le ponemos un pastel enfrente a tu bebé y lo
+            dejamos ser. Que meta las manos, que lo pruebe, que se lo embarque
+            en la cara. Nosotros disparamos la cámara y capturamos cada
+            expresión, cada risa, cada gesto de sorpresa. Es la fiesta del
+            primer año, pero sin invitados que te estresen y con fotos que de
+            verdad te van a encantar.
           </p>
-          <a
-            className="btn-wa"
-            href={waLink(WA_MSG)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsAppIcon /> Pedir información y precios
-          </a>
-          <p className="svc-microcopy">
-            Respondemos en menos de 2 horas por WhatsApp
+          <p className="body-text">
+            Cada sesión es diferente porque cada bebé es diferente. Nos
+            cuentas qué colores te gustan, qué tema te late, y armamos un set
+            que se sienta tuyo. No hay paquete genérico: si quieres
+            dinosaurios con globos dorados, eso hacemos.
           </p>
         </div>
       </section>
 
-      {/* ── Contenido principal ──────────────── */}
+      {/* ── Editorial 1: decoración (texto izq + img der) ── */}
+      <section className="svc-editorial">
+        <div className="container svc-editorial-grid">
+          <div className="svc-editorial-text">
+            <h2>Decoración temática: el set lo armamos nosotros</h2>
+            <p className="body-text">
+              El set es lo que hace que las fotos se vean wow. Usamos globos,
+              banderines, flores, telas... lo que haga falta según tu tema.
+              Safari, bosque encantado, circo, princesas, súper héroes, o algo
+              que se te ocurrió a las 2 AM viendo Pinterest: todo vale.
+            </p>
+            <p className="body-text">
+              Cuando llegas al estudio ya está todo montado. Tú solo llegas
+              con tu bebé y a pasarla bien. Nos encargamos de cada detalle
+              para que no tengas que pensar en nada más que en disfrutar.
+            </p>
+          </div>
+          <div className="svc-editorial-img">
+            <Image
+              src="/images/smash03.jpg"
+              alt="Set temático smash the cake con decoración personalizada en estudio Bambuky"
+              width={900}
+              height={1200}
+              sizes="(max-width: 768px) 92vw, 480px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Content: el momento del pastel ──── */}
       <section className="svc-content">
         <div className="container">
-          <h2>Qué es una sesión Smash the Cake</h2>
-          <p className="body-text">
-            El smash the cake es una tradición fotográfica que nació para celebrar
-            el primer cumpleaños de los bebés de una forma única y divertida.
-            La idea es sencilla y poderosa: colocar un pastel frente a tu pequeño
-            y dejar que explore, toque, pruebe y juegue con total libertad. El
-            resultado son imágenes espontáneas, llenas de expresiones genuinas que
-            capturan su personalidad en esta etapa irrepetible.
-          </p>
-          <p className="body-text">
-            En Bambuky llevamos más de diez años fotografiando bebés en Querétaro
-            y hemos preparado cientos de sesiones smash cake. Sabemos que cada
-            familia tiene su estilo, por eso cada set que armamos es diferente.
-            Nos encanta escuchar tus ideas y transformarlas en un escenario que
-            refleje la personalidad de tu bebé y los colores que más te gustan.
-          </p>
-
-          <h2>Decoración temática personalizada</h2>
-          <p className="body-text">
-            El set es el corazón visual de la sesión. Trabajamos con globos,
-            banderines, flores, telas y elementos decorativos que combinamos
-            según el tema que elijas: puede ser algo clásico con tonos pastel,
-            una temática de safari, bosque encantado, circo, princesas, súper
-            héroes, o cualquier concepto que imagines. Familias de Juriquilla,
-            Zibatá, El Refugio, Milenio III y Corregidora nos han pedido las
-            temáticas más creativas, y siempre logramos que el resultado supere
-            sus expectativas. Todo queda listo antes de que llegues al estudio
-            para que solo tengas que disfrutar.
-          </p>
-
           <h2>El momento del pastel</h2>
           <p className="body-text">
-            La sesión se divide en dos etapas. Primero fotografiamos a tu bebé
-            limpio y arreglado junto a la decoración: retratos con su outfit del
-            día, poses con globos y detalles del set. Estas fotos son las más
-            elegantes y perfectas para imprimir o compartir como invitación.
+            Primero hacemos las fotos limpias: tu bebé arregladito con su
+            outfit, posando con los globos y la decoración. Estas son las que
+            vas a querer para el cuadro de la sala o para mandar como
+            invitación.
           </p>
           <p className="body-text">
-            Después llega lo mejor: acercamos el pastel y dejamos que la magia
-            suceda. Algunos bebés meten las manos de inmediato, otros lo miran
-            con curiosidad, algunos lloran un poquito y luego sonríen. No
-            importa cuál sea la reacción de tu bebé, las fotos siempre quedan
-            increíbles porque capturamos cada gesto auténtico. Si tu bebé
-            necesita un empujoncito para animarse, Cristian y Reyna tienen
-            técnicas suaves para generar curiosidad sin forzar nada.
+            Y luego viene lo bueno: acercamos el pastel y que pase lo que
+            tenga que pasar. Algunos bebés meten las manos de inmediato. Otros
+            lo miran con cara de &ldquo;y esto qué&rdquo; y no lo quieren ni
+            tocar. Algunos lloran un poquito y luego se animan. Y hay quienes
+            de plano no quieren saber nada del pastel, y eso está
+            perfectamente bien. La cara de confusión, el puchero, el llanto
+            indignado... todo eso es auténtico, y los papás terminan amando
+            esas fotos tanto como las de las carcajadas. No forzamos nada:
+            capturamos lo que tu bebé es en ese momento.
           </p>
+        </div>
+      </section>
 
+      {/* ── Editorial 2: la sesión completa (img izq + texto der) ── */}
+      <section className="svc-editorial">
+        <div className="container svc-editorial-grid">
+          <div className="svc-editorial-img">
+            <Image
+              src="/images/smash04.jpg"
+              alt="Bebé disfrutando su pastel en sesión smash cake - estudio Bambuky Querétaro"
+              width={900}
+              height={1200}
+              sizes="(max-width: 768px) 92vw, 480px"
+            />
+          </div>
+          <div className="svc-editorial-text">
+            <h2>Cómo es la sesión de principio a fin</h2>
+            <p className="body-text">
+              La sesión dura entre hora y media y dos horas. No hay prisa: nos
+              tomamos el tiempo para que tu bebé esté cómodo antes de acercar
+              el pastel. Empezamos con las fotos formales, seguimos con el
+              smash, y cerramos con el baño. Las fotos del baño después del
+              mugrero suelen ser de las favoritas: un bebé lleno de betún
+              riéndose en una tina es difícil de superar.
+            </p>
+            <p className="body-text">
+              Y no te preocupes por el desastre: la limpieza del bebé y del
+              set va incluida. Tu pequeño sale del estudio bañadito y contento.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Content: qué traer, familia, entrega ── */}
+      <section className="svc-content">
+        <div className="container">
           <h2>Qué traer a la sesión</h2>
           <p className="body-text">
-            Nosotros nos encargamos de toda la decoración y la ambientación del
-            set. Tú solo necesitas traer el pastel (te damos recomendaciones de
-            pastelerías en Querétaro que hacen pasteles ideales para smash cake),
-            un cambio de ropa para tu bebé y, si quieres, algún objeto especial
-            como su juguete favorito o un peluche con significado. También te
-            pedimos ropa cómoda para los papás por si quieren salir en algunas
+            De la decoración y el montaje nos encargamos nosotros. Tú traes
+            el pastel (te pasamos recomendaciones de pastelerías que hacen
+            pasteles buenos para smash cake), un cambio de ropa para tu bebé,
+            y si quieres, su juguete favorito o un peluche que le guste.
+            Papás: vengan con ropa cómoda por si se animan a salir en las
             fotos familiares.
-          </p>
-
-          <h2>Duración y limpieza</h2>
-          <p className="body-text">
-            Una sesión smash the cake dura entre una hora y media y dos horas.
-            Nos tomamos todo el tiempo necesario para que tu bebé esté cómodo,
-            para las fotos previas al pastel y para el momento del smash en sí.
-            No te preocupes por el desastre: la limpieza del bebé y del set está
-            incluida. Tenemos todo lo necesario para que tu pequeño salga del
-            estudio limpio y feliz. Además, esos minutos de limpieza también son
-            parte de la sesión: las fotos del baño posterior suelen ser de las
-            más tiernas.
           </p>
 
           <h2>La familia también participa</h2>
           <p className="body-text">
-            Nos encanta cuando los papás, hermanos o abuelos quieren sumarse a
-            la sesión. Las fotos familiares alrededor del set decorado tienen un
-            valor enorme y complementan el álbum de manera especial. Si vienen
-            hermanos mayores, los incluimos en las primeras tomas y en el
-            momento del pastel para que toda la familia sea parte de la
-            celebración. Muchas familias de la zona metropolitana de Querétaro
-            aprovechan la sesión smash cake como una mini fiesta íntima antes
-            de la celebración grande.
-          </p>
-
-          <h2>Nuestra forma de trabajar</h2>
-          <p className="body-text">
-            Cristian dirige la fotografía con su experiencia de más de una
-            década en cine y fotografía de bebés. Reyna acompaña emocionalmente
-            a los papás y cuida cada detalle para que la sesión fluya con
-            naturalidad. Juntos nos aseguramos de que tu bebé esté seguro,
-            cómodo y contento en todo momento. Nuestro estudio en Querétaro
-            está climatizado y preparado específicamente para sesiones con
-            bebés y niños pequeños.
+            Si los abuelos quieren foto con el nieto embarrado de pastel,
+            bienvenidos. Si el hermano mayor quiere meter mano al betún,
+            también. Nos encanta cuando se suma la familia porque esas fotos
+            son las que luego ponen en el refri. Muchas familias usan la
+            sesión smash cake como una mini fiesta íntima antes del festejón
+            grande: llegan, se divierten, y se llevan fotos que no habrían
+            logrado con 50 invitados alrededor.
           </p>
 
           <h2>Entrega de fotografías</h2>
           <p className="body-text">
-            Las fotografías editadas se entregan a través de nuestra galería
-            digital en mila-os.com, donde podrás verlas, descargarlas y
-            compartirlas con tu familia. La entrega es en alta resolución para
-            que puedas imprimir en el tamaño que quieras. Atendemos familias
-            de todo Querétaro y su zona metropolitana: Juriquilla, Zibatá,
-            El Refugio, Milenio III, Corregidora y más.
+            Te entregamos las fotos editadas en tu galería digital en
+            mila-os.com: las ves, las descargas y las compartes con quien
+            quieras. Todo en alta resolución para que imprimas en el tamaño
+            que se te antoje.
           </p>
         </div>
       </section>
@@ -247,11 +290,11 @@ export default function SmashCakeQueretaro() {
       <section className="svc-cta">
         <div className="container">
           <h2 className="heading">
-            Celebra el primer año de tu bebé con Bambuky
+            Ya tienes el tema en mente? Cuéntanos
           </h2>
           <p className="body-text">
-            Cada smash the cake es único. Escríbenos para contarnos qué tienes
-            en mente y te ayudamos a planear cada detalle de la sesión.
+            Cada smash the cake que hacemos es distinto. Escríbenos con tu idea
+            (aunque sea a medias) y entre todos la armamos.
           </p>
           <a
             className="btn-wa-dark"
@@ -281,9 +324,8 @@ export default function SmashCakeQueretaro() {
             El primer cumpleaños solo pasa una vez
           </h2>
           <p className="body-text">
-            Déjanos crear un recuerdo que tu familia va a atesorar siempre.
-            Escríbenos hoy y empecemos a planear la sesión smash the cake
-            perfecta para tu bebé.
+            Pastel, mugrero, risas y fotos que te van a encantar. Escríbenos
+            y empezamos a planear la sesión smash the cake de tu bebé.
           </p>
           <a
             className="btn-wa-dark"

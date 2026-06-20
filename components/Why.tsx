@@ -2,20 +2,20 @@ import Image from "next/image";
 
 const REASONS = [
   {
-    title: "Certificados en primeros auxilios pediátricos",
-    text: "Más de 10 años trabajando con recién nacidos. Sabemos detectar y actuar ante cualquier situación; hemos atendido apneas y detectado condiciones de salud en sesión. Tu bebé siempre está en manos expertas.",
+    title: "Capacitados por médicos neonatólogos",
+    text: "Tenemos todo el cuidado y conocimiento para trabajar con recién nacidos. Nos capacitamos con médicos neonatólogos para entender al bebé y saber cómo actuar en cualquier situación.",
   },
   {
-    title: "Somos un equipo de pareja",
-    text: "Cristian dirige la fotografía y Reyna cuida al bebé y acompaña emocionalmente a los papás. No estás en manos de un desconocido, sino de una familia que entiende lo que sientes.",
+    title: "Somos una pareja experta en lo que hacemos",
+    text: "Reyna recibe a tu bebé con las manos tibias y lo va acurrucando. No estás en manos de un desconocido — estás con una familia que tiene gemelos de 3 años.",
   },
   {
-    title: "Estudio climatizado y profesional",
-    text: "Temperatura controlada para el confort del bebé, flash de estudio profesional y un ambiente campestre y tranquilo, sin el ruido ni el tráfico de la ciudad.",
+    title: "El estudio está pensado para bebés, no para adultos",
+    text: "Acondicionamos el estudio para que tu bebé se sienta cómodo. Ruido blanco de fondo, lejos del tráfico. Los papás tienen sillones y están cómodos. El bebé tiene todo lo que necesita para dormir tranquilo.",
   },
   {
-    title: "800+ bebés, 100% de familias felices",
-    text: "Desde 2015 hemos fotografiado más de 800 recién nacidos en Querétaro. Cero incidentes, cada sesión un éxito y cada familia con sus recuerdos guardados para siempre.",
+    title: "Fotografiamos bebés desde hace once años. Cero incidentes.",
+    text: "Lo decimos porque sabemos que es lo primero que necesitas escuchar. Once años, cero incidentes. Esa estadística es lo que más nos importa.",
   },
 ];
 
@@ -24,8 +24,8 @@ export default function Why() {
     <section className="why" id="por-que">
       <div className="container why-inner">
         <div className="why-text">
-          <p className="label">Por qué elegirnos</p>
-          <h2 className="heading">La seguridad de tu bebé, primero. Siempre.</h2>
+          <p className="label">Cómo cuidamos a tu bebé</p>
+          <h2 className="heading">Tu bebé en buenas manos</h2>
           <ul className="why-list">
             {REASONS.map((reason) => (
               <li className="why-item" key={reason.title}>
