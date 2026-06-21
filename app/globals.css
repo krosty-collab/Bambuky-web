@@ -548,7 +548,10 @@ nav.site-nav.scrolled {
 }
 .service-card-img {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
   overflow: hidden;
   border-radius: var(--r);
   box-shadow: 0 24px 60px rgba(30, 27, 25, 0.12);
@@ -1565,6 +1568,9 @@ nav.site-nav.scrolled {
   .service-card .service-card-img,
   .service-card:nth-child(even) .service-card-img {
     order: -1;
+  }
+  .service-card-img {
+    max-width: 320px;
   }
   .service-card-body {
     max-width: none;
