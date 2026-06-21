@@ -528,7 +528,7 @@ nav.site-nav.scrolled {
 .services-grid {
   display: flex;
   flex-direction: column;
-  gap: clamp(4rem, 9vw, 9rem);
+  gap: clamp(2.5rem, 5vw, 5rem);
 }
 /* Cada servicio es una fila: foto grande a un lado, texto breve al otro.
    Las filas pares invierten el lado de la imagen (ritmo de revista). */
@@ -548,7 +548,7 @@ nav.site-nav.scrolled {
 }
 .service-card-img {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--r);
   box-shadow: 0 24px 60px rgba(30, 27, 25, 0.12);
