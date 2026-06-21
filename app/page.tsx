@@ -34,9 +34,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <ScrollReveal><Intro /></ScrollReveal>
-        <ScrollReveal><Services /></ScrollReveal>
+        {/* Portafolio arriba: la fotografía vende antes que el texto. */}
         <ScrollReveal><Gallery /></ScrollReveal>
+        <ScrollReveal><Services /></ScrollReveal>
+        {/* Arco de confianza: empatía → seguridad → quiénes somos. */}
+        <ScrollReveal><Intro /></ScrollReveal>
         <ScrollReveal><Why /></ScrollReveal>
         <ScrollReveal><About /></ScrollReveal>
         <ScrollReveal><Process /></ScrollReveal>

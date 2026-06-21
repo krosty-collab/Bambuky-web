@@ -6,8 +6,9 @@
 :root {
   --gold: #B5838D;
   --gold-lt: #C9A0A8;
-  --cream: #FAF6F4;
-  --warm: #F0E6E2;
+  --base: #FBFAF8;
+  --cream: #F6F1ED;
+  --warm: #EFE7E1;
   --stone: #E5DCDA;
   --text: #1E1B19;
   --muted: #8C7E78;
@@ -17,7 +18,7 @@
   --serif: var(--font-serif), Georgia, serif;
   --sans: var(--font-sans), system-ui, sans-serif;
 
-  --gap: clamp(3rem, 8vw, 8rem);
+  --gap: clamp(4.5rem, 10vw, 11rem);
   --r: 2px;
 }
 
@@ -29,7 +30,7 @@ body {
   font-family: var(--sans);
   font-weight: 300;
   color: var(--text);
-  background: var(--white);
+  background: var(--base);
   overflow-x: hidden;
 }
 
@@ -337,8 +338,8 @@ nav.site-nav.scrolled {
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.75) 0%,
-    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.12) 55%,
     transparent 100%
   );
 }
@@ -481,9 +482,11 @@ nav.site-nav.scrolled {
 .intro-image {
   position: relative;
   aspect-ratio: 4 / 5;
+  box-shadow: 0 24px 60px rgba(30, 27, 25, 0.13);
 }
 .intro-image img {
   object-fit: cover;
+  border-radius: var(--r);
 }
 .intro-image-badge {
   position: absolute;
@@ -518,113 +521,101 @@ nav.site-nav.scrolled {
   margin-top: 1rem;
 }
 
-/* ── SERVICIOS ─────────────────────────────────── */
+/* ── SERVICIOS (editorial: filas alternadas, foto grande) ──────── */
 .services {
-  background: var(--white);
+  background: var(--base);
 }
-/* Desktop: 3 tarjetas arriba + 2 centradas abajo (grid de 6 columnas, cada
-   tarjeta ocupa 2; las dos últimas se desplazan para quedar centradas). */
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1.75rem;
-}
-.service-card {
-  grid-column: span 2;
-  background: var(--white);
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--stone);
-  border-radius: var(--r);
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.3s ease;
+  gap: clamp(4rem, 9vw, 9rem);
 }
-.service-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--gold);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-  z-index: 2;
+/* Cada servicio es una fila: foto grande a un lado, texto breve al otro.
+   Las filas pares invierten el lado de la imagen (ritmo de revista). */
+.service-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
 }
-.service-card:hover::after {
-  transform: scaleX(1);
-}
-.service-card:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-}
-.service-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-.service-card:nth-child(5) {
-  grid-column: 4 / span 2;
+.service-card:nth-child(even) .service-card-img {
+  order: 2;
 }
 .service-card-img {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  border-radius: var(--r);
+  box-shadow: 0 24px 60px rgba(30, 27, 25, 0.12);
 }
 .service-card-img img {
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 .service-card:hover .service-card-img img {
   transform: scale(1.04);
 }
 .service-card-body {
-  padding: 1.8rem;
-  flex: 1;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  max-width: 38ch;
 }
 .service-card-body .label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 .service-card-body .subheading {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
   font-style: normal;
   font-weight: 400;
 }
 .service-card-body .body-text {
-  font-size: 0.9rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.02rem);
 }
 .service-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   align-self: flex-start;
-  margin-top: auto;
-  padding-top: 1.2rem;
+  margin-top: 1.6rem;
   font-size: 0.8rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
+  transition: gap 0.3s ease;
+}
+.service-card:hover .service-link {
+  gap: 0.9rem;
 }
 .service-link::after {
   content: "→";
 }
 
-/* ── GALERÍA ───────────────────────────────────── */
+/* ── GALERÍA (portafolio protagonista, casi a sangre) ──────────── */
 .gallery {
-  background: var(--warm);
+  background: var(--cream);
+}
+.gallery .container {
+  width: min(1480px, 95vw);
 }
 .gallery-masonry {
   columns: 3;
-  column-gap: 1rem;
+  column-gap: 1.4rem;
 }
 .gallery-masonry .gallery-item {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
   break-inside: avoid;
   overflow: hidden;
   border-radius: var(--r);
+  box-shadow: 0 14px 40px rgba(30, 27, 25, 0.08);
 }
 .gallery-masonry img {
   width: 100%;
@@ -657,17 +648,22 @@ nav.site-nav.scrolled {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
-  margin-top: 2.5rem;
+  gap: 0;
+  margin-top: 2.8rem;
 }
 .why-item {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.4rem;
   align-items: flex-start;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.why-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .why-icon {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border: 1px solid var(--gold);
   border-radius: 50%;
   display: flex;
@@ -676,21 +672,28 @@ nav.site-nav.scrolled {
   flex-shrink: 0;
   color: var(--gold);
   font-family: var(--serif);
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
+  font-size: 1rem;
+  margin-top: 0.1rem;
 }
 .why-item-text strong {
   display: block;
+  font-family: var(--serif);
   font-weight: 400;
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
   color: var(--white);
 }
 .why-item-text p {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.6;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.7;
   font-weight: 300;
+}
+.why-image {
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  border-radius: var(--r);
+  overflow: hidden;
 }
 .why-image {
   position: relative;
@@ -703,7 +706,7 @@ nav.site-nav.scrolled {
 
 /* ── NOSOTROS ──────────────────────────────────── */
 .about {
-  background: var(--cream);
+  background: var(--base);
 }
 .about-inner {
   display: grid;
@@ -716,6 +719,7 @@ nav.site-nav.scrolled {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: var(--r);
+  box-shadow: 0 24px 60px rgba(30, 27, 25, 0.13);
 }
 .about-img-single img {
   object-fit: cover;
@@ -739,23 +743,23 @@ nav.site-nav.scrolled {
   margin-bottom: 1.2rem;
 }
 .about-quote {
-  margin-top: 2rem;
-  padding: 1.5rem;
+  margin-top: 2.5rem;
+  padding: 0.3rem 0 0.3rem 1.8rem;
   border-left: 2px solid var(--gold);
-  background: var(--warm);
+  background: transparent;
 }
 .about-quote p {
   font-family: var(--serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--text);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 /* ── PROCESO ───────────────────────────────────── */
 .process {
-  background: var(--white);
+  background: var(--cream);
 }
 .process-steps {
   display: grid;
@@ -799,37 +803,38 @@ nav.site-nav.scrolled {
 
 /* ── TESTIMONIOS ──────────────────────────────── */
 .testimonials {
-  background: var(--white);
+  background: var(--base);
   padding-block: var(--gap);
 }
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 3.5rem;
 }
 .testimonial-card {
-  background: var(--cream);
-  padding: 2.5rem 2rem 2rem;
-  border-radius: var(--r);
+  background: transparent;
+  padding: 2.5rem 0 0;
+  border-top: 1px solid var(--stone);
+  border-radius: 0;
   position: relative;
 }
 .testimonial-quote {
   font-family: var(--serif);
-  font-size: 4rem;
+  font-size: 3.4rem;
   line-height: 1;
   color: var(--gold);
   position: absolute;
-  top: 0.8rem;
-  left: 1.5rem;
+  top: 1rem;
+  left: 0;
 }
 .testimonial-text {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
   color: var(--text);
-  margin-top: 1rem;
+  margin-top: 1.2rem;
 }
 .testimonial-name {
   display: block;
@@ -1300,7 +1305,8 @@ nav.site-nav.scrolled {
 .newborn-callout {
   background: var(--cream);
   border-radius: var(--r);
-  padding: 2rem;
+  padding: 2.2rem;
+  border: 1px solid rgba(229, 220, 218, 0.6);
 }
 .newborn-callout h3 {
   font-family: var(--serif);
@@ -1477,15 +1483,10 @@ nav.site-nav.scrolled {
 
 /* ── RESPONSIVE ────────────────────────────────── */
 
-/* Tablet: servicios en 2 columnas (se anula el layout 3+2 de escritorio). */
+/* Tablet: las filas editoriales de servicios se aprietan un poco. */
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .service-card,
-  .service-card:nth-child(4),
-  .service-card:nth-child(5) {
-    grid-column: auto;
+  .service-card {
+    gap: clamp(1.5rem, 4vw, 3rem);
   }
 }
 
@@ -1509,8 +1510,17 @@ nav.site-nav.scrolled {
     left: 0;
     bottom: -1rem;
   }
-  .services-grid {
+  .service-card {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  /* En móvil la foto siempre va arriba, sin importar la fila par/impar. */
+  .service-card .service-card-img,
+  .service-card:nth-child(even) .service-card-img {
+    order: -1;
+  }
+  .service-card-body {
+    max-width: none;
   }
   .gallery-masonry {
     columns: 2;
