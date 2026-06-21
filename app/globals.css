@@ -1101,9 +1101,9 @@ nav.site-nav.scrolled {
 .svc-content h2 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  line-height: 1.2;
-  margin-bottom: 1.2rem;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  line-height: 1.15;
+  margin-bottom: 1.3rem;
   margin-top: 2.5rem;
 }
 .svc-content h2:first-child {
