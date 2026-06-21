@@ -814,27 +814,27 @@ nav.site-nav.scrolled {
 }
 .testimonial-card {
   background: transparent;
-  padding: 2.5rem 0 0;
-  border-top: 1px solid var(--stone);
+  padding: 3.2rem 0 0;
+  border: none;
   border-radius: 0;
   position: relative;
 }
 .testimonial-quote {
   font-family: var(--serif);
-  font-size: 3.4rem;
-  line-height: 1;
-  color: var(--gold);
+  font-size: 4.5rem;
+  line-height: 0.6;
+  color: var(--gold-lt);
   position: absolute;
-  top: 1rem;
+  top: 1.4rem;
   left: 0;
 }
 .testimonial-text {
   font-family: var(--serif);
   font-style: italic;
-  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
-  line-height: 1.65;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  line-height: 1.6;
   color: var(--text);
-  margin-top: 1.2rem;
+  margin-top: 0;
 }
 .testimonial-name {
   display: block;
@@ -847,12 +847,40 @@ nav.site-nav.scrolled {
   letter-spacing: 0.04em;
 }
 
-/* ── CTA CENTRAL ───────────────────────────────── */
+/* ── CTA CENTRAL (cierre emocional con foto de fondo) ──────────── */
 .cta-section {
-  background: var(--gold);
+  position: relative;
+  overflow: hidden;
+  background: var(--text);
   color: var(--white);
   text-align: center;
-  padding-block: clamp(4rem, 8vw, 6rem);
+  padding-block: clamp(5.5rem, 13vw, 9.5rem);
+}
+.cta-bg {
+  object-fit: cover !important;
+  object-position: center 35% !important;
+  z-index: 0;
+}
+/* Velo cálido y sobrio (sin gradiente) para que el texto siempre se lea
+   y la foto acompañe sin competir. */
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 22, 20, 0.56);
+  z-index: 1;
+}
+.cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+/* En móvil oscurecemos un poco más para que la foto vertical no compita. */
+@media (max-width: 768px) {
+  .cta-overlay {
+    background: rgba(26, 22, 20, 0.64);
+  }
+  .cta-bg {
+    object-position: center 30% !important;
+  }
 }
 .cta-section .display {
   color: var(--white);
