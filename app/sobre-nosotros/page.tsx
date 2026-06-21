@@ -4,8 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
-import { waLink } from "@/lib/site";
+import SplitCta from "@/components/SplitCta";
 import { SITE } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/seo";
 
@@ -347,29 +346,16 @@ export default function SobreNosotrosPage() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              Lo estás haciendo bien
-            </h2>
-            <p className="body-text">
-              Si querés conocernos, escríbenos. Te contamos cómo funciona
-              todo y resolvemos cualquier duda. Sin compromiso, sin presión.
-              Solo dos papás que entienden lo que estás viviendo.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Escríbenos por WhatsApp
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos hoy mismo
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/cris_rey.jpg"
+          alt="Cristian y Reyna, fotógrafos de Bambuky en Querétaro"
+          label="Cristian y Reyna"
+          title="Lo estás haciendo bien"
+          text="Si querés conocernos, escríbenos. Te contamos cómo funciona todo y resolvemos cualquier duda. Sin compromiso, sin presión. Solo dos papás que entienden lo que estás viviendo."
+          buttonLabel="Escríbenos por WhatsApp"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos hoy mismo"
+        />
       </main>
 
       <Footer />

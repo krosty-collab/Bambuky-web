@@ -898,6 +898,11 @@ nav.site-nav.scrolled {
   align-self: flex-start;
   margin-top: 0.6rem;
 }
+.cta-panel .cta-microcopy {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
 @media (max-width: 768px) {
   .cta-split {
     grid-template-columns: 1fr;
@@ -1283,12 +1288,31 @@ nav.site-nav.scrolled {
   color: var(--muted);
 }
 
+/* Nudge ligero de media página (no bloque): solo texto + botón. */
 .svc-mid-cta {
   text-align: center;
-  padding: 3rem 0;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: var(--base);
+}
+.svc-mid-cta h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  max-width: 24ch;
+  margin-inline: auto;
+}
+.svc-mid-cta p.body-text {
+  max-width: 48ch;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
 }
 .svc-mid-cta .btn-wa {
   margin-bottom: 0.5rem;
+}
+.svc-mid-cta .svc-microcopy {
+  margin-top: 0;
 }
 
 /* ── BREADCRUMB ──────────────────────────────── */

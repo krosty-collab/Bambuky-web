@@ -6,6 +6,7 @@ import { SMASH_FAQS } from "@/lib/faqs";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /* ── METADATA ────────────────────────────────── */
@@ -287,7 +288,7 @@ export default function SmashCakeQueretaro() {
       </section>
 
       {/* ── CTA intermedio ───────────────────── */}
-      <section className="svc-cta">
+      <section className="svc-mid-cta">
         <div className="container">
           <h2 className="heading">
             Ya tienes el tema en mente? Cuéntanos
@@ -297,7 +298,7 @@ export default function SmashCakeQueretaro() {
             (aunque sea a medias) y entre todos la armamos.
           </p>
           <a
-            className="btn-wa-dark"
+            className="btn-wa"
             href={waLink(WA_MSG)}
             target="_blank"
             rel="noopener noreferrer"
@@ -318,28 +319,16 @@ export default function SmashCakeQueretaro() {
       />
 
       {/* ── CTA final ────────────────────────── */}
-      <section className="svc-cta">
-        <div className="container">
-          <h2 className="heading">
-            El primer cumpleaños solo pasa una vez
-          </h2>
-          <p className="body-text">
-            Pastel, mugrero, risas y fotos que te van a encantar. Escríbenos
-            y empezamos a planear la sesión smash the cake de tu bebé.
-          </p>
-          <a
-            className="btn-wa-dark"
-            href={waLink(WA_MSG)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsAppIcon /> Pedir información y precios
-          </a>
-          <p className="svc-microcopy">
-            Respondemos en menos de 2 horas por WhatsApp
-          </p>
-        </div>
-      </section>
+      <SplitCta
+        image="/images/smash05.jpg"
+        alt="Sesión smash the cake de primer cumpleaños - Bambuky Querétaro"
+        label="Smash the Cake · Querétaro"
+        title="El primer cumpleaños solo pasa una vez"
+        text="Pastel, mugrero, risas y fotos que te van a encantar. Escríbenos y empezamos a planear la sesión smash the cake de tu bebé."
+        buttonLabel="Pedir información y precios"
+        waMessage={WA_MSG}
+        microcopy="Respondemos en menos de 2 horas por WhatsApp"
+      />
     </>
   );
 }

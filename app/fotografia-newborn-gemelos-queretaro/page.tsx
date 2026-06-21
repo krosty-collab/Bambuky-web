@@ -7,6 +7,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waLink, SITE } from "@/lib/site";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
@@ -384,7 +385,7 @@ export default function FotografiaNewbornGemelosQueretaro() {
         </section>
 
         {/* ── Mid CTA ── */}
-        <section className="svc-cta">
+        <section className="svc-mid-cta">
           <div className="container">
             <h2 className="heading">
               Escríbenos y platicamos de tus gemelos
@@ -395,7 +396,7 @@ export default function FotografiaNewbornGemelosQueretaro() {
               cómo organizarnos.
             </p>
             <a
-              className="btn-wa-dark"
+              className="btn-wa"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
@@ -422,27 +423,16 @@ export default function FotografiaNewbornGemelosQueretaro() {
         />
 
         {/* ── Final CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              Dos bebés. Dos historias. Todo el tiempo que necesiten.
-            </h2>
-            <p className="body-text">
-              Escríbenos y platicamos con calma sobre tus gemelos.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos por WhatsApp
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/newborn5.jpg"
+          alt="Recién nacido envuelto y dormido en sesión newborn - Bambuky Querétaro"
+          label="Newborn Gemelos · Querétaro"
+          title="Dos bebés. Dos historias. Todo el tiempo que necesiten."
+          text="Escríbenos y platicamos con calma sobre tus gemelos."
+          buttonLabel="Pedir información y precios"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos por WhatsApp"
+        />
       </main>
 
       <Footer />

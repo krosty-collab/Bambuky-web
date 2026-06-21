@@ -6,6 +6,7 @@ import { CUARENTA_Y_OCHO_FAQS } from "@/lib/faqs";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 /* ── Metadata ──────────────────────────────────── */
@@ -278,7 +279,7 @@ export default function CuarentaYOchoHorasPage() {
       </section>
 
       {/* ── CTA intermedio ────────────────────── */}
-      <section className="svc-cta">
+      <section className="svc-mid-cta">
         <div className="container">
           <h2 className="heading">
             Las primeras horas pasan en un instante
@@ -288,7 +289,7 @@ export default function CuarentaYOchoHorasPage() {
             olvide cómo se sintió.
           </p>
           <a
-            className="btn-wa-dark"
+            className="btn-wa"
             href={waLink(WA_MSG)}
             target="_blank"
             rel="noopener noreferrer"
@@ -314,28 +315,16 @@ export default function CuarentaYOchoHorasPage() {
       />
 
       {/* ── CTA final ─────────────────────────── */}
-      <section className="svc-cta">
-        <div className="container">
-          <h2 className="heading">
-            ¿Ya casi nace tu bebé?
-          </h2>
-          <p className="body-text">
-            Escríbenos y platicamos. Te contamos cómo funciona, qué
-            incluye y resolvemos cualquier duda.
-          </p>
-          <a
-            className="btn-wa-dark"
-            href={waLink(WA_MSG)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <WhatsAppIcon /> Pedir información y precios
-          </a>
-          <p className="svc-microcopy">
-            Respondemos en menos de 2 horas por WhatsApp
-          </p>
-        </div>
-      </section>
+      <SplitCta
+        image="/images/48hs02.jpg"
+        alt="Papás con su bebé recién nacido en sesión 48 horas - Bambuky Querétaro"
+        label="48 Horas Contigo · Querétaro"
+        title="¿Ya casi nace tu bebé?"
+        text="Escríbenos y platicamos. Te contamos cómo funciona, qué incluye y resolvemos cualquier duda."
+        buttonLabel="Pedir información y precios"
+        waMessage={WA_MSG}
+        microcopy="Respondemos en menos de 2 horas por WhatsApp"
+      />
     </>
   );
 }

@@ -7,6 +7,7 @@ import { MATERNIDAD_FAQS } from "@/lib/faqs";
 import FAQ from "@/components/FAQ";
 import Breadcrumb from "@/components/Breadcrumb";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -324,7 +325,7 @@ export default function FotografiaMaternidadQueretaro() {
         </section>
 
         {/* -- Mid CTA -- */}
-        <section className="svc-cta">
+        <section className="svc-mid-cta">
           <div className="container">
             <h2 className="heading">
               Esto pasa rápido &mdash; que queden las fotos
@@ -334,7 +335,7 @@ export default function FotografiaMaternidadQueretaro() {
               qué llevar el día de tu sesión. Sin compromiso.
             </p>
             <a
-              className="btn-wa-dark"
+              className="btn-wa"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
@@ -360,28 +361,16 @@ export default function FotografiaMaternidadQueretaro() {
         />
 
         {/* -- Final CTA -- */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              Platiquemos de tu sesión
-            </h2>
-            <p className="body-text">
-              Un mensaje por WhatsApp y te respondemos con todo: estilos,
-              precios y fechas. Nos adaptamos a ti.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Reservar por WhatsApp
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos por WhatsApp
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/maternidad5.jpg"
+          alt="Sesión de fotografía de maternidad en Querétaro - Bambuky"
+          label="Maternidad · Querétaro"
+          title="Platiquemos de tu sesión"
+          text="Un mensaje por WhatsApp y te respondemos con todo: estilos, precios y fechas. Nos adaptamos a ti."
+          buttonLabel="Reservar por WhatsApp"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos por WhatsApp"
+        />
       </main>
 
       <Footer />

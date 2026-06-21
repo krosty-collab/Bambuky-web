@@ -7,6 +7,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waLink, SITE } from "@/lib/site";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
@@ -403,7 +404,7 @@ export default function FotografiaNewbornPrematurosQueretaro() {
         </section>
 
         {/* ── Mid CTA ── */}
-        <section className="svc-cta">
+        <section className="svc-mid-cta">
           <div className="container">
             <h2 className="heading">
               Cuéntanos la historia de tu bebé
@@ -414,7 +415,7 @@ export default function FotografiaNewbornPrematurosQueretaro() {
               prisa, sin compromiso.
             </p>
             <a
-              className="btn-wa-dark"
+              className="btn-wa"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
@@ -441,27 +442,16 @@ export default function FotografiaNewbornPrematurosQueretaro() {
         />
 
         {/* ── Final CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              No hay prisa. Cuando tu bebé esté listo, nosotros también.
-            </h2>
-            <p className="body-text">
-              Escríbenos y platicamos. Cada bebé tiene su tiempo.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos por WhatsApp
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/newborn6.jpg"
+          alt="Recién nacido dormido con osito en sesión newborn - Bambuky Querétaro"
+          label="Newborn Prematuros · Querétaro"
+          title="No hay prisa. Cuando tu bebé esté listo, nosotros también."
+          text="Escríbenos y platicamos. Cada bebé tiene su tiempo."
+          buttonLabel="Pedir información y precios"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos por WhatsApp"
+        />
       </main>
 
       <Footer />

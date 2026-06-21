@@ -4,7 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
+import SplitCta from "@/components/SplitCta";
 import { waLink, SITE } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/seo";
 import FAQAccordion from "./FAQAccordion";
@@ -741,29 +741,16 @@ export default function PreguntasFrecuentesPage() {
         ))}
 
         {/* ── CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              ¿Tu duda no está aquí?
-            </h2>
-            <p className="body-text">
-              Escríbenos por WhatsApp. Te respondemos hoy mismo, sin
-              compromiso, sin presión. Solo dos papás que entienden lo que
-              estás viviendo.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Escríbenos por WhatsApp
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos hoy mismo
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/newborn7.jpg"
+          alt="Recién nacido dormido en sesión newborn - Bambuky Querétaro"
+          label="Bambuky · Querétaro"
+          title="¿Tu duda no está aquí?"
+          text="Escríbenos por WhatsApp. Te respondemos hoy mismo, sin compromiso, sin presión. Solo dos papás que entienden lo que estás viviendo."
+          buttonLabel="Escríbenos por WhatsApp"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos hoy mismo"
+        />
       </main>
 
       <Footer />

@@ -7,6 +7,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waLink } from "@/lib/site";
 import { SITE } from "@/lib/site";
@@ -443,7 +444,7 @@ export default function FotografiaNewbornQueretaro() {
         </section>
 
         {/* ── Mid CTA ── */}
-        <section className="svc-cta">
+        <section className="svc-mid-cta">
           <div className="container">
             <h2 className="heading">
               Escríbenos y platicamos
@@ -454,7 +455,7 @@ export default function FotografiaNewbornQueretaro() {
               organizarnos.
             </p>
             <a
-              className="btn-wa-dark"
+              className="btn-wa"
               href={waLink(WA_MESSAGE)}
               target="_blank"
               rel="noopener noreferrer"
@@ -481,29 +482,16 @@ export default function FotografiaNewbornQueretaro() {
         />
 
         {/* ── Final CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              Mañana ya va a ser otro bebé
-            </h2>
-            <p className="body-text">
-              No exagero: en una semana la carita cambia, los cachetes crecen,
-              los dedos se estiran. Si querés que quede registro de cómo es
-              hoy, este es el momento.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MESSAGE)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir información y precios
-            </a>
-            <p className="svc-microcopy">
-              Te respondemos por WhatsApp
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/newborn4.jpg"
+          alt="Recién nacido dormido y envuelto en sesión newborn - Bambuky Querétaro"
+          label="Newborn · Querétaro"
+          title="Mañana ya va a ser otro bebé"
+          text="No exagero: en una semana la carita cambia, los cachetes crecen, los dedos se estiran. Si querés que quede registro de cómo es hoy, este es el momento."
+          buttonLabel="Pedir información y precios"
+          waMessage={WA_MESSAGE}
+          microcopy="Te respondemos por WhatsApp"
+        />
       </main>
 
       <Footer />

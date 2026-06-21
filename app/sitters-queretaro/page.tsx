@@ -6,6 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
+import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 import { waLink } from "@/lib/site";
 import { SITE } from "@/lib/site";
@@ -322,7 +323,7 @@ export default function SittersQueretaroPage() {
         </section>
 
         {/* ── Mid CTA ── */}
-        <section className="svc-cta">
+        <section className="svc-mid-cta">
           <div className="container">
             <h2 className="heading">
               Reserva la sesi&oacute;n sitter de tu beb&eacute;
@@ -333,7 +334,7 @@ export default function SittersQueretaroPage() {
               presi&oacute;n, pura pl&aacute;tica.
             </p>
             <a
-              className="btn-wa-dark"
+              className="btn-wa"
               href={waLink(WA_MSG)}
               target="_blank"
               rel="noopener noreferrer"
@@ -356,29 +357,16 @@ export default function SittersQueretaroPage() {
         />
 
         {/* ── Final CTA ── */}
-        <section className="svc-cta">
-          <div className="container">
-            <h2 className="heading">
-              Tu beb&eacute; no va a estar as&iacute; de chiquito mucho tiempo
-            </h2>
-            <p className="body-text">
-              M&aacute;ndanos un WhatsApp y platicamos. Te contamos fechas,
-              precios y todo lo que necesitas saber para la sesi&oacute;n
-              sitter de tu beb&eacute;.
-            </p>
-            <a
-              className="btn-wa-dark"
-              href={waLink(WA_MSG)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <WhatsAppIcon /> Pedir informaci&oacute;n y precios
-            </a>
-            <p className="svc-microcopy">
-              Respondemos en menos de 2 horas &middot; Sin compromiso
-            </p>
-          </div>
-        </section>
+        <SplitCta
+          image="/images/sitters04.jpg"
+          alt="Bebé sentado en sesión sitter de 6 a 8 meses - Bambuky Querétaro"
+          label="Sitters · Querétaro"
+          title="Tu bebé no va a estar así de chiquito mucho tiempo"
+          text="Mándanos un WhatsApp y platicamos. Te contamos fechas, precios y todo lo que necesitas saber para la sesión sitter de tu bebé."
+          buttonLabel="Pedir información y precios"
+          waMessage={WA_MSG}
+          microcopy="Respondemos en menos de 2 horas · Sin compromiso"
+        />
       </main>
 
       <Footer />
