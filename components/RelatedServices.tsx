@@ -39,6 +39,18 @@ const ALL: Related[] = [
     image: "/images/smash05.jpg",
     alt: "Smash the Cake Querétaro",
   },
+  {
+    title: "Newborn Gemelos",
+    href: "/fotografia-newborn-gemelos-queretaro",
+    image: "/images/newborn1.jpg",
+    alt: "Fotografía newborn gemelos Querétaro",
+  },
+  {
+    title: "Newborn Prematuros",
+    href: "/fotografia-newborn-prematuros-queretaro",
+    image: "/images/newborn6.jpg",
+    alt: "Fotografía newborn prematuros Querétaro",
+  },
 ];
 
 export default function RelatedServices({

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -198,17 +199,76 @@ export default function FotografiaNewbornQueretaro() {
             <h2>Tu bebé va a estar seguro: esto es lo que hacemos</h2>
             <p className="body-text">
               Vas a poner en nuestras manos al amor de tu vida, y eso no lo
-              tomamos a la ligera. Estamos capacitados por médicos neonatólogos
-              y certificados en primeros auxilios pediátricos — renovamos cada
-              año. El estudio siempre está calentito: usamos calefactores y
-              mantas térmicas para mantenerlo entre 26 y 28 grados.
+              tomamos a la ligera. Antes de tomar la primera foto hacemos un
+              check-up visual del bebé: revisamos cabeza, dedos, extremidades,
+              pliegues, axilas. La intención es conocer su estado y documentar
+              cualquier situación previa a la sesión. Si algo nos parece
+              inusual, lo comentamos contigo y recomendamos valoración médica
+              antes de continuar.
             </p>
             <p className="body-text">
-              Nunca dejamos al bebé sin soporte, nunca forzamos una posición.
-              Si necesita comer, se alimenta. Si necesita un cambio de pañal,
-              paramos. Si solo quiere estar en brazos de mamá, lo acomodamos
-              y esperamos. En 800+ bebés nunca tuvimos un incidente. No es un
-              eslogan, es un dato.
+              Estamos capacitados por médicos neonatólogos y certificados en
+              primeros auxilios pediátricos — renovamos cada año. El estudio
+              siempre está entre 26 y 28 grados. Nuestras manos siempre están
+              cerca del bebé y nuestros ojos siempre están sobre él. Higiene
+              de protocolo: manos sanitizadas, espacio limpio, materiales
+              revisados antes de cada sesión.
+            </p>
+          </div>
+        </section>
+
+        {/* ── Editorial: montaje y poses (texto izq + img der) ── */}
+        <section className="svc-editorial">
+          <div className="container svc-editorial-grid">
+            <div className="svc-editorial-text">
+              <h2>Poses complejas: montaje digital, nunca riesgo real</h2>
+              <p className="body-text">
+                Esas fotos donde un bebé parece suspendido, colgado o sostenido
+                de formas imposibles existen en la industria. En Bambuky, cuando
+                las hacemos, se construyen con montaje digital. El bebé siempre
+                está sostenido físicamente. Nunca dejamos al bebé sin soporte,
+                nunca forzamos una posición. Si una pose implica el menor
+                riesgo, no la hacemos. Siempre gana el bebé.
+              </p>
+              <p className="body-text">
+                En más de 830 bebés nunca tuvimos un incidente. En varias
+                ocasiones sí detectamos durante la sesión situaciones que
+                después requirieron atención médica: problemas digestivos
+                importantes, episodios de apnea, irritaciones severas. No
+                somos médicos, pero cuando algo no se ve bien, lo decimos.
+                Esa es parte de la responsabilidad de trabajar con recién
+                nacidos.
+              </p>
+            </div>
+            <div className="svc-editorial-img">
+              <Image
+                src="/images/newborn2.jpg"
+                alt="Bebé recién nacido con diadema floral en envoltura blanca - estudio Bambuky Querétaro"
+                width={900}
+                height={1200}
+                sizes="(max-width: 768px) 92vw, 480px"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ── Content: lectura del bebé ────────────────── */}
+        <section className="svc-content">
+          <div className="container">
+            <h2>Entendemos a tu bebé: la foto es consecuencia</h2>
+            <p className="body-text">
+              No existen bebés que se portan mal. Cuando un recién nacido
+              parece incómodo o no logra dormir, no está portándose mal. Está
+              comunicando algo: hambre, sueño, sobreestimulación, necesidad
+              de contacto. Nuestro trabajo no es controlar al bebé. Es
+              entender qué necesita. Después de 830 bebés aprendimos a
+              leer esas señales antes de que llegue el llanto.
+            </p>
+            <p className="body-text">
+              Cuando el bebé está tranquilo, seguro y cómodo, las fotografías
+              suceden solas. Por eso nuestra prioridad nunca es una pose.
+              Nuestra prioridad es que tu bebé esté bien. La imagen es el
+              resultado. Nunca el objetivo por encima del bienestar.
             </p>
           </div>
         </section>
@@ -218,8 +278,8 @@ export default function FotografiaNewbornQueretaro() {
           <div className="container svc-editorial-grid">
             <div className="svc-editorial-img">
               <Image
-                src="/images/newborn2.jpg"
-                alt="Bebé recién nacido con diadema floral en envoltura blanca - estudio Bambuky Querétaro"
+                src="/images/newborn4.jpg"
+                alt="Bebé recién nacido durmiendo envuelto en tela suave - sesión newborn Bambuky Querétaro"
                 width={900}
                 height={1200}
                 sizes="(max-width: 768px) 92vw, 480px"
@@ -235,11 +295,13 @@ export default function FotografiaNewbornQueretaro() {
                 equipado y todo lo que puedas necesitar.
               </p>
               <p className="body-text">
-                Lo que distingue a Bambuky es que creamos un ambiente tranquilo
-                para que ustedes como papás se relajen. Si ustedes están
-                tranquilos, su bebé lo siente. Un bebé tranquilo duerme
-                profundo. Y un bebé que duerme profundo nos deja trabajar las
-                mejores poses.
+                Si ustedes como papás están tranquilos, su bebé lo siente.
+                Un bebé tranquilo duerme profundo. Y un bebé que duerme
+                profundo nos deja trabajar las mejores poses. Por eso
+                también leemos a la familia: cuando una mamá cruza la puerta,
+                sabemos si llega cansada, si necesita hablar o si necesita
+                silencio. Cada sesión se adapta a lo que ustedes necesitan
+                ese día.
               </p>
             </div>
           </div>
@@ -279,6 +341,42 @@ export default function FotografiaNewbornQueretaro() {
               en manos de alguien más. Llevamos más de 800 bebés y seguimos
               contando.
             </p>
+          </div>
+        </section>
+
+        {/* ── Gemelos y Prematuros ── */}
+        <section className="svc-content">
+          <div className="container">
+            <div className="newborn-callouts">
+              <div className="newborn-callout">
+                <h3>¿Son gemelos?</h3>
+                <p className="body-text">
+                  Somos papás de gemelos. Sabemos lo que significa tener
+                  dos necesidades al mismo tiempo. La sesión se planifica
+                  distinto y necesita su propio ritmo.
+                </p>
+                <Link
+                  href="/fotografia-newborn-gemelos-queretaro"
+                  className="callout-link"
+                >
+                  Ver información para familias con gemelos →
+                </Link>
+              </div>
+              <div className="newborn-callout">
+                <h3>¿Tu bebé nació prematuro?</h3>
+                <p className="body-text">
+                  Trabajamos con la edad corregida y nos adaptamos al
+                  ritmo de tu bebé. Vivimos la prematurez en carne propia
+                  y entendemos el proceso.
+                </p>
+                <Link
+                  href="/fotografia-newborn-prematuros-queretaro"
+                  className="callout-link"
+                >
+                  Ver información para familias con prematuros →
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -376,9 +474,9 @@ export default function FotografiaNewbornQueretaro() {
         <RelatedServices
           current="/fotografia-newborn-queretaro"
           show={[
+            "/fotografia-newborn-gemelos-queretaro",
+            "/fotografia-newborn-prematuros-queretaro",
             "/48-horas-contigo-queretaro",
-            "/fotografia-maternidad-queretaro",
-            "/sitters-queretaro",
           ]}
         />
 

@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   SOCIAL,
-  SITE,
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
   waLink,
@@ -23,9 +22,8 @@ export default function Footer() {
               height={58}
             />
             <p>
-              Estudio de fotografía newborn y familia en Querétaro. Desde
-              2015 capturando los momentos más irrepetibles de las familias
-              queretanas.
+              Estudio de fotografía newborn y familia en Querétaro.
+              Desde 2015.
             </p>
             <div className="footer-social">
               <a
@@ -58,11 +56,21 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Sesiones</h4>
             <ul>
-              <li><Link href="/fotografia-newborn-queretaro">Newborn · Recién Nacido</Link></li>
+              <li><Link href="/fotografia-newborn-queretaro">Recién Nacido</Link></li>
               <li><Link href="/fotografia-maternidad-queretaro">Maternidad</Link></li>
               <li><Link href="/48-horas-contigo-queretaro">48 Horas Contigo</Link></li>
               <li><Link href="/sitters-queretaro">Sitters</Link></li>
               <li><Link href="/smash-cake-queretaro">Smash the Cake</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Recursos</h4>
+            <ul>
+              <li><Link href="/fotografia-newborn-gemelos-queretaro">Gemelos</Link></li>
+              <li><Link href="/fotografia-newborn-prematuros-queretaro">Prematuros</Link></li>
+              <li><Link href="/preguntas-frecuentes">Preguntas frecuentes</Link></li>
+              <li><Link href="/sobre-nosotros">Sobre Nosotros</Link></li>
             </ul>
           </div>
 
@@ -79,13 +87,6 @@ export default function Footer() {
                   @bambuky
                 </a>
               </li>
-              <li>
-                <a href={SITE.gallery} target="_blank" rel="noopener noreferrer">
-                  Galería de clientes · mila-os.com
-                </a>
-              </li>
-              <li><Link href="/#nosotros">Querétaro</Link></li>
-              <li><Link href="/#preguntas-frecuentes">Preguntas frecuentes</Link></li>
             </ul>
           </div>
         </div>
@@ -93,9 +94,6 @@ export default function Footer() {
         <div className="footer-bottom">
           <span>
             © {year} Bambuky Fotografía · Querétaro, México
-          </span>
-          <span>
-            Fotografía de recién nacidos · Maternidad · Smash the Cake
           </span>
         </div>
       </div>
