@@ -7,12 +7,12 @@ export default function CTA() {
     <section className="cta-section">
       <Image
         className="cta-bg"
-        src="/images/48hs03.jpg"
-        alt="Familia mirando a su bebé recién nacido - sesión Bambuky Querétaro"
+        src="/images/newborn2.jpg"
+        alt="Recién nacido durmiendo con la carita sobre sus manos - fotografía newborn Bambuky Querétaro"
         fill
         sizes="100vw"
         loading="lazy"
-        style={{ objectFit: "cover", objectPosition: "center" }}
+        style={{ objectFit: "cover", objectPosition: "center 32%" }}
       />
       <div className="cta-overlay" />
       <div className="container">

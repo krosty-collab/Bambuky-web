@@ -858,7 +858,7 @@ nav.site-nav.scrolled {
 }
 .cta-bg {
   object-fit: cover !important;
-  object-position: center 35% !important;
+  object-position: center 32% !important;
   z-index: 0;
 }
 /* Velo cálido y sobrio (sin gradiente) para que el texto siempre se lea
@@ -879,7 +879,7 @@ nav.site-nav.scrolled {
     background: rgba(26, 22, 20, 0.64);
   }
   .cta-bg {
-    object-position: center 30% !important;
+    object-position: center 26% !important;
   }
 }
 .cta-section .display {
