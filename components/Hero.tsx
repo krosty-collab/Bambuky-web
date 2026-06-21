@@ -1,13 +1,6 @@
-import { Fragment } from "react";
 import Image from "next/image";
 import { waLink } from "@/lib/site";
 import WhatsAppIcon from "./WhatsAppIcon";
-
-const STATS = [
-  { value: "10+", label: "Años juntos en esto" },
-  { value: "800+", label: "Bebés fotografiados" },
-  { value: "2", label: "Gemelos propios" },
-];
 
 export default function Hero() {
   return (
@@ -26,21 +19,9 @@ export default function Hero() {
         <p className="label">Fotografía Newborn · Querétaro</p>
         <h1 className="display">Los primeros días pasan volando</h1>
         <p className="body-text">
-          Somos Cristian y Reyna. Desde 2015 fotografiamos recién nacidos
-          en Querétaro. Cada foto que hacemos es un pedacito de tu historia
-          que vas a volver a mirar mil veces.
+          Somos Cristian y Reyna. Fotografiamos recién nacidos en Querétaro
+          desde 2015.
         </p>
-        <div className="hero-badges">
-          {STATS.map((stat, i) => (
-            <Fragment key={stat.label}>
-              <div className="hero-badge">
-                <strong>{stat.value}</strong>
-                <span>{stat.label}</span>
-              </div>
-              {i < STATS.length - 1 && <div className="hero-divider" />}
-            </Fragment>
-          ))}
-        </div>
         <div className="hero-actions">
           <a
             className="btn-wa"
@@ -49,10 +30,10 @@ export default function Hero() {
             rel="noopener noreferrer"
           >
             <WhatsAppIcon />
-            Pedir información y precios
+            Agendar sesión
           </a>
-          <a className="btn-outline" href="#servicios">
-            Ver sesiones
+          <a className="btn-outline" href="#galeria">
+            Ver nuestro trabajo
           </a>
         </div>
       </div>
