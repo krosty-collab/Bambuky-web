@@ -18,14 +18,14 @@ const ALL: Related[] = [
   {
     title: "Maternidad",
     href: "/fotografia-maternidad-queretaro",
-    image: "/images/maternidad3.jpg",
-    alt: "Sesión maternidad Querétaro",
+    image: "/images/maternidad7.jpg",
+    alt: "Pareja esperando bebé, papá besando la frente de la mamá embarazada - sesión de maternidad en Querétaro",
   },
   {
     title: "48 Horas Contigo",
     href: "/48-horas-contigo-queretaro",
-    image: "/images/48hs01.jpg",
-    alt: "Sesión 48 horas Querétaro",
+    image: "/images/48hs02.jpg",
+    alt: "Papás sosteniendo a su recién nacido en las primeras horas de vida - sesión 48 horas en Querétaro",
   },
   {
     title: "Sitters",

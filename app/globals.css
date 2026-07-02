@@ -333,6 +333,20 @@ nav.site-nav.scrolled {
   object-position: center !important;
   animation: kenBurns 25s ease-out forwards;
 }
+/* Art direction del hero: foto horizontal en desktop, vertical en móvil.
+   Solo una es visible según el viewport. */
+.hero-bg--mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hero-bg--desktop {
+    display: none;
+  }
+  .hero-bg--mobile {
+    display: block;
+    object-position: center 38% !important;
+  }
+}
 .hero-overlay {
   position: absolute;
   inset: 0;
