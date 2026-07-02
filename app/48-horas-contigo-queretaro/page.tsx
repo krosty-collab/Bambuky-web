@@ -8,6 +8,9 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 
 /* ── Metadata ──────────────────────────────────── */
 
@@ -62,6 +65,7 @@ const faqLd = faqSchema(CUARENTA_Y_OCHO_FAQS);
 export default function CuarentaYOchoHorasPage() {
   return (
     <>
+      <ServicePageView serviceType="48-horas" />
       {/* JSON-LD */}
       <script
         type="application/ld+json"
@@ -95,14 +99,17 @@ export default function CuarentaYOchoHorasPage() {
               sin instrucciones. Fotografiamos lo que realmente pasa: el primer
               abrazo, la primera mirada, la familia junta por primera vez.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MSG)}
+              location="hero"
+              buttonName="Pedir información y precios"
+              serviceType="48-horas"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Pedir información y precios
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Respondemos en menos de 2 horas por WhatsApp
             </p>
@@ -246,7 +253,7 @@ export default function CuarentaYOchoHorasPage() {
       {/* ── Galería ──────────────────────────── */}
       <section className="svc-gallery">
         <div className="container">
-          <div className="svc-gallery-grid">
+          <GalleryGrid section="48-horas">
             <div className="svc-gallery-item">
               <Image
                 src="/images/48hs01.jpg"
@@ -274,7 +281,7 @@ export default function CuarentaYOchoHorasPage() {
                 sizes="(max-width: 768px) 92vw, 33vw"
               />
             </div>
-          </div>
+          </GalleryGrid>
         </div>
       </section>
 
@@ -288,14 +295,17 @@ export default function CuarentaYOchoHorasPage() {
             Tú dedícate a tu bebé. Nosotros nos encargamos de que no se te
             olvide cómo se sintió.
           </p>
-          <a
+          <WhatsAppLink
             className="btn-wa"
             href={waLink(WA_MSG)}
+            location="cta_mid"
+            buttonName="Reservar mi sesión"
+            serviceType="48-horas"
             target="_blank"
             rel="noopener noreferrer"
           >
             <WhatsAppIcon /> Reservar mi sesión
-          </a>
+          </WhatsAppLink>
           <p className="svc-microcopy">
             Escríbenos por WhatsApp y te respondemos hoy mismo
           </p>
@@ -324,6 +334,7 @@ export default function CuarentaYOchoHorasPage() {
         buttonLabel="Pedir información y precios"
         waMessage={WA_MSG}
         microcopy="Respondemos en menos de 2 horas por WhatsApp"
+        location="cta_final"
       />
     </>
   );

@@ -14,7 +14,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
 import ScrollReveal from "@/components/ScrollReveal";
 import { GLOBAL_FAQS } from "@/lib/faqs";
-import { faqSchema, organizationSchema } from "@/lib/seo";
+import { faqSchema } from "@/lib/seo";
 
 export default function Home() {
   return (
@@ -23,12 +23,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema(GLOBAL_FAQS)),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema()),
         }}
       />
       <Nav />

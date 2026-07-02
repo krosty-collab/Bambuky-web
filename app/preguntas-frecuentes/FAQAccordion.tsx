@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { ReactNode } from "react";
+import { trackFAQ } from "@/lib/analytics";
 
 type Item = { q: string; answer: ReactNode };
 
@@ -13,6 +14,12 @@ export default function FAQAccordion({
   sectionId: string;
 }) {
   const [open, setOpen] = useState<number | null>(null);
+
+  function toggle(i: number, question: string) {
+    const next = open === i ? null : i;
+    setOpen(next);
+    if (next !== null) trackFAQ(question, sectionId);
+  }
 
   return (
     <dl className="faq-list">
@@ -26,7 +33,7 @@ export default function FAQAccordion({
             <dt>
               <button
                 className="faq-trigger"
-                onClick={() => setOpen(isOpen ? null : i)}
+                onClick={() => toggle(i, item.q)}
                 aria-expanded={isOpen}
               >
                 <span>{item.q}</span>

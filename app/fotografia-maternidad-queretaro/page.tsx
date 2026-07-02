@@ -9,6 +9,9 @@ import Breadcrumb from "@/components/Breadcrumb";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -79,6 +82,7 @@ const faqLd = faqSchema(MATERNIDAD_FAQS);
 export default function FotografiaMaternidadQueretaro() {
   return (
     <>
+      <ServicePageView serviceType="maternidad" />
       {/* -- Structured data -- */}
       <script
         type="application/ld+json"
@@ -116,14 +120,17 @@ export default function FotografiaMaternidadQueretaro() {
                 telas y dirección de poses incluidos. Tú solo
                 llégate &mdash; nosotros nos encargamos de todo.
               </p>
-              <a
+              <WhatsAppLink
                 className="btn-wa"
                 href={waLink(WA_MESSAGE)}
+                location="hero"
+                buttonName="Pedir información y precios"
+                serviceType="maternidad"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <WhatsAppIcon /> Pedir información y precios
-              </a>
+              </WhatsAppLink>
               <p className="svc-microcopy">
                 Te respondemos por WhatsApp en minutos
               </p>
@@ -274,7 +281,7 @@ export default function FotografiaMaternidadQueretaro() {
               <p className="label">Galería</p>
               <h2 className="heading">Sesiones de maternidad</h2>
             </div>
-            <div className="svc-gallery-grid">
+            <GalleryGrid section="maternidad">
               <div className="svc-gallery-item">
                 <Image
                   src="/images/maternidad2.jpg"
@@ -320,7 +327,7 @@ export default function FotografiaMaternidadQueretaro() {
                   sizes="(max-width: 768px) 92vw, 30vw"
                 />
               </div>
-            </div>
+            </GalleryGrid>
           </div>
         </section>
 
@@ -334,14 +341,17 @@ export default function FotografiaMaternidadQueretaro() {
               Escríbenos y te contamos paquetes, fechas disponibles y
               qué llevar el día de tu sesión. Sin compromiso.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MESSAGE)}
+              location="cta_mid"
+              buttonName="Agendar mi sesión de maternidad"
+              serviceType="maternidad"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Agendar mi sesión de maternidad
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Te orientamos según tu semana de embarazo
             </p>
@@ -370,6 +380,7 @@ export default function FotografiaMaternidadQueretaro() {
           buttonLabel="Reservar por WhatsApp"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos por WhatsApp"
+          location="cta_final"
         />
       </main>
 

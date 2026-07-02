@@ -9,6 +9,9 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 import { waLink, SITE } from "@/lib/site";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
@@ -43,10 +46,10 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/images/newborn1.jpg",
+        url: "/images/fotografia-newborn-gemelos-queretaro-bambuky-01.webp",
         width: 1200,
         height: 630,
-        alt: "Fotografía newborn de gemelos en Querétaro - estudio Bambuky",
+        alt: "Gemelos recién nacidos dormidos y abrazados durante una sesión newborn en Querétaro",
       },
     ],
   },
@@ -65,7 +68,7 @@ const serviceLd = serviceSchema({
   description:
     "Sesión de fotografía newborn especializada para gemelos. Fotógrafos padres de gemelos con experiencia personal y profesional. Estudio climatizado, protocolos de seguridad, sin límite de tiempo.",
   url: PAGE_URL,
-  image: "/images/newborn1.jpg",
+  image: "/images/fotografia-newborn-gemelos-queretaro-bambuky-01.webp",
 });
 
 const GEMELOS_FAQS = [
@@ -101,6 +104,7 @@ const WA_MESSAGE =
 export default function FotografiaNewbornGemelosQueretaro() {
   return (
     <>
+      <ServicePageView serviceType="newborn-gemelos" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
@@ -143,24 +147,27 @@ export default function FotografiaNewbornGemelosQueretaro() {
                 newborn multiplicada por dos &mdash; es una sesión pensada
                 desde adentro.
               </p>
-              <a
+              <WhatsAppLink
                 className="btn-wa"
                 href={waLink(WA_MESSAGE)}
+                location="hero"
+                buttonName="Pedir información y precios"
+                serviceType="newborn-gemelos"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <WhatsAppIcon /> Pedir información y precios
-              </a>
+              </WhatsAppLink>
               <p className="svc-microcopy">
                 Te respondemos por WhatsApp en minutos
               </p>
             </div>
             <div className="svc-hero-img">
               <Image
-                src="/images/newborn1.jpg"
-                alt="Fotografía newborn de gemelos recién nacidos en estudio Bambuky Querétaro"
-                width={900}
-                height={1200}
+                src="/images/fotografia-newborn-gemelos-queretaro-bambuky-01.webp"
+                alt="Gemelos recién nacidos dormidos y abrazados, envueltos juntos en una sesión newborn en Querétaro"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 768px) 92vw, 420px"
                 priority
               />
@@ -239,10 +246,10 @@ export default function FotografiaNewbornGemelosQueretaro() {
           <div className="container svc-editorial-grid">
             <div className="svc-editorial-img">
               <Image
-                src="/images/newborn4.jpg"
-                alt="Gemelos recién nacidos durmiendo juntos en sesión newborn - estudio Bambuky Querétaro"
-                width={900}
-                height={1200}
+                src="/images/fotografia-newborn-gemelos-queretaro-bambuky-02.webp"
+                alt="Gemelas recién nacidas dormidas dentro de una canasta de madera, envueltas en mantas rosa durante su sesión newborn en Querétaro"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 768px) 92vw, 480px"
               />
             </div>
@@ -324,10 +331,10 @@ export default function FotografiaNewbornGemelosQueretaro() {
             </div>
             <div className="svc-editorial-img">
               <Image
-                src="/images/newborn7.jpg"
-                alt="Sesión newborn de gemelos - bebés recién nacidos en bowl con flores, Bambuky Querétaro"
-                width={900}
-                height={1200}
+                src="/images/fotografia-newborn-gemelos-queretaro-bambuky-03.webp"
+                alt="Gemelos recién nacidos en pose boca abajo, uno de ellos sonriendo dormido, durante sesión newborn en Querétaro"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 768px) 92vw, 480px"
               />
             </div>
@@ -343,31 +350,31 @@ export default function FotografiaNewbornGemelosQueretaro() {
                 Así se ven los primeros días con gemelos
               </h2>
             </div>
-            <div className="svc-gallery-grid">
+            <GalleryGrid section="newborn-gemelos">
               {[
                 {
-                  src: "/images/newborn1.jpg",
-                  alt: "Fotografía newborn gemelos Querétaro - bebés en canasta con flores, estudio Bambuky",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-01.webp",
+                  alt: "Gemelos recién nacidos dormidos y abrazados, envueltos juntos en una sesión newborn en Querétaro",
                 },
                 {
-                  src: "/images/newborn2.jpg",
-                  alt: "Sesión newborn gemelos Querétaro - bebé envuelto en tela blanca con diadema",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-03.webp",
+                  alt: "Gemelos recién nacidos en pose boca abajo, uno de ellos sonriendo dormido, durante sesión newborn en Querétaro",
                 },
                 {
-                  src: "/images/newborn3.jpg",
-                  alt: "Fotografía gemelos recién nacidos Querétaro - bebé en cama miniatura de madera",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-02.webp",
+                  alt: "Gemelas recién nacidas dormidas dentro de una canasta de madera, envueltas en mantas rosa durante su sesión newborn en Querétaro",
                 },
                 {
-                  src: "/images/newborn5.jpg",
-                  alt: "Sesión gemelos newborn Querétaro - pose lateral en traje crema",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-04.webp",
+                  alt: "Gemelos recién nacidos frente a frente, tomados de la mano, en sesión newborn en Querétaro",
                 },
                 {
-                  src: "/images/newborn6.jpg",
-                  alt: "Fotografía newborn gemelos Querétaro - bebé con accesorios artesanales",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-05.webp",
+                  alt: "Gemelos recién nacidos abrazados y envueltos en manta gris durante sesión newborn en Querétaro",
                 },
                 {
-                  src: "/images/newborn4.jpg",
-                  alt: "Sesión recién nacidos gemelos Querétaro - bebé durmiendo en envoltura suave",
+                  src: "/images/fotografia-newborn-gemelos-queretaro-bambuky-06.webp",
+                  alt: "Gemelos recién nacidos dormidos abrazando un osito de peluche durante sesión newborn en Querétaro",
                 },
               ].map((img) => (
                 <div className="svc-gallery-item" key={img.src}>
@@ -380,7 +387,7 @@ export default function FotografiaNewbornGemelosQueretaro() {
                   />
                 </div>
               ))}
-            </div>
+            </GalleryGrid>
           </div>
         </section>
 
@@ -395,14 +402,17 @@ export default function FotografiaNewbornGemelosQueretaro() {
               fecha. Si ya nacieron, cuéntanos cuántos días tienen y vemos
               cómo organizarnos.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MESSAGE)}
+              location="cta_mid"
+              buttonName="Agendar mi sesión de gemelos"
+              serviceType="newborn-gemelos"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Agendar mi sesión de gemelos
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Te orientamos según la edad de tus bebés
             </p>
@@ -424,14 +434,15 @@ export default function FotografiaNewbornGemelosQueretaro() {
 
         {/* ── Final CTA ── */}
         <SplitCta
-          image="/images/newborn5.jpg"
-          alt="Recién nacido envuelto y dormido en sesión newborn - Bambuky Querétaro"
+          image="/images/fotografia-newborn-gemelos-queretaro-bambuky-06.webp"
+          alt="Gemelos recién nacidos dormidos abrazando un osito de peluche durante sesión newborn en Querétaro"
           label="Newborn Gemelos · Querétaro"
           title="Dos bebés. Dos historias. Todo el tiempo que necesiten."
           text="Escríbenos y platicamos con calma sobre tus gemelos."
           buttonLabel="Pedir información y precios"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos por WhatsApp"
+          location="cta_final"
         />
       </main>
 

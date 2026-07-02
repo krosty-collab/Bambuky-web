@@ -9,8 +9,11 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 import { waLink } from "@/lib/site";
-import { SITE } from "@/lib/site";
+import { SITE, BABIES_COUNT_TEXT } from "@/lib/site";
 import { NEWBORN_FAQS } from "@/lib/faqs";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
@@ -19,7 +22,7 @@ import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Fotografía Newborn en Querétaro | Bambuky · Sesión Recién Nacido",
   description:
-    "Fotografía newborn en Querétaro por Cristian y Reyna · Bambuky. Llevamos 800+ bebés y seguimos contando. Estudio climatizado, certificación en primeros auxilios y toda la paciencia del mundo.",
+    `Fotografía newborn en Querétaro por Cristian y Reyna · Bambuky. Llevamos ${BABIES_COUNT_TEXT} bebés y seguimos contando. Estudio climatizado, certificación en primeros auxilios y toda la paciencia del mundo.`,
   alternates: {
     canonical: `${SITE.url}/fotografia-newborn-queretaro`,
   },
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fotografía Newborn en Querétaro | Bambuky · Sesión Recién Nacido",
     description:
-      "Cristian y Reyna llevan 800+ bebés en su estudio climatizado de Querétaro. Fotografía newborn con calma, certificación en primeros auxilios y cero prisa.",
+      `Cristian y Reyna llevan ${BABIES_COUNT_TEXT} bebés en su estudio climatizado de Querétaro. Fotografía newborn con calma, certificación en primeros auxilios y cero prisa.`,
     url: `${SITE.url}/fotografia-newborn-queretaro`,
     images: [
       {
@@ -79,6 +82,7 @@ const WA_MESSAGE =
 export default function FotografiaNewbornQueretaro() {
   return (
     <>
+      <ServicePageView serviceType="newborn" />
       {/* ── Structured data ── */}
       <script
         type="application/ld+json"
@@ -116,14 +120,17 @@ export default function FotografiaNewbornQueretaro() {
                 el ritmo, Reyna lo acomoda y lo posa, Cristian hace la magia
                 con la cámara. Tú solo siéntate y disfruta.
               </p>
-              <a
+              <WhatsAppLink
                 className="btn-wa"
                 href={waLink(WA_MESSAGE)}
+                location="hero"
+                buttonName="Pedir información y precios"
+                serviceType="newborn"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <WhatsAppIcon /> Pedir información y precios
-              </a>
+              </WhatsAppLink>
               <p className="svc-microcopy">
                 Te respondemos por WhatsApp en minutos
               </p>
@@ -279,10 +286,10 @@ export default function FotografiaNewbornQueretaro() {
           <div className="container svc-editorial-grid">
             <div className="svc-editorial-img">
               <Image
-                src="/images/newborn4.jpg"
-                alt="Bebé recién nacido durmiendo envuelto en tela suave - sesión newborn Bambuky Querétaro"
-                width={900}
-                height={1200}
+                src="/images/bebe-recien-nacido-fotografia-newborn-queretaro-bambuky-01.webp"
+                alt="Recién nacida dormida con las manos bajo el mentón, vestido color durazno, durante sesión newborn en Bambuky, Querétaro"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 768px) 92vw, 480px"
               />
             </div>
@@ -339,7 +346,7 @@ export default function FotografiaNewbornQueretaro() {
               En 2022 tuvimos la sorpresa de embarazarnos de gemelos. Thiago
               y Matheo llegaron para cambiar nuestras vidas. Entendimos en
               carne propia lo que significa poner a tu bebé de días de nacido
-              en manos de alguien más. Llevamos más de 800 bebés y seguimos
+              en manos de alguien más. Llevamos más de {BABIES_COUNT_TEXT} bebés y seguimos
               contando.
             </p>
           </div>
@@ -390,7 +397,7 @@ export default function FotografiaNewbornQueretaro() {
                 Así se ven los primeros días de vida
               </h2>
             </div>
-            <div className="svc-gallery-grid">
+            <GalleryGrid section="newborn">
               <div className="svc-gallery-item">
                 <Image
                   src="/images/newborn1.jpg"
@@ -439,7 +446,15 @@ export default function FotografiaNewbornQueretaro() {
                   height={1200}
                 />
               </div>
-            </div>
+              <div className="svc-gallery-item">
+                <Image
+                  src="/images/hermanos-sesion-newborn-familia-queretaro-bambuky-01.webp"
+                  alt="Dos hermanos mayores sentados junto a su hermana recién nacida en una cuna de madera, durante sesión newborn familiar en Querétaro"
+                  width={1200}
+                  height={1600}
+                />
+              </div>
+            </GalleryGrid>
           </div>
         </section>
 
@@ -454,14 +469,17 @@ export default function FotografiaNewbornQueretaro() {
               Si ya nació, cuéntanos cuántos días tiene y vemos cómo
               organizarnos.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MESSAGE)}
+              location="cta_mid"
+              buttonName="Agendar mi sesión newborn"
+              serviceType="newborn"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Agendar mi sesión newborn
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Te orientamos según la edad de tu bebé
             </p>
@@ -491,6 +509,7 @@ export default function FotografiaNewbornQueretaro() {
           buttonLabel="Pedir información y precios"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos por WhatsApp"
+          location="cta_final"
         />
       </main>
 

@@ -8,8 +8,11 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 import { waLink } from "@/lib/site";
-import { SITE } from "@/lib/site";
+import { SITE, BABIES_COUNT_TEXT } from "@/lib/site";
 import { SITTERS_FAQS } from "@/lib/faqs";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
@@ -76,6 +79,7 @@ const WA_MSG =
 export default function SittersQueretaroPage() {
   return (
     <>
+      <ServicePageView serviceType="sitters" />
       {/* ── Structured data ── */}
       <script
         type="application/ld+json"
@@ -112,14 +116,17 @@ export default function SittersQueretaroPage() {
                 mira con esa cara que te derrite. Esta es la sesión más
                 divertida que hacemos &mdash; y queremos fotografiarla contigo.
               </p>
-              <a
+              <WhatsAppLink
                 className="btn-wa"
                 href={waLink(WA_MSG)}
+                location="hero"
+                buttonName="Pedir información y precios"
+                serviceType="sitters"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <WhatsAppIcon /> Pedir informaci&oacute;n y precios
-              </a>
+              </WhatsAppLink>
               <p className="svc-microcopy">
                 Respondemos en menos de 2 horas &middot; Sin compromiso
               </p>
@@ -263,7 +270,7 @@ export default function SittersQueretaroPage() {
               beb&eacute; se sienta a gusto.
             </p>
             <p className="body-text">
-              Llevamos m&aacute;s de 800 beb&eacute;s fotografiados y tenemos
+              Llevamos m&aacute;s de {BABIES_COUNT_TEXT} beb&eacute;s fotografiados y tenemos
               certificaci&oacute;n en primeros auxilios pedi&aacute;tricos.
               Si tu beb&eacute; se rueda, si se jala algo, si decide que hoy es
               d&iacute;a de llorar &mdash; lo hemos visto todo y sabemos
@@ -281,7 +288,7 @@ export default function SittersQueretaroPage() {
                 As&iacute; se ven los 6 meses
               </h2>
             </div>
-            <div className="svc-gallery-grid">
+            <GalleryGrid section="sitters">
               <div className="svc-gallery-item">
                 <Image
                   src="/images/sitters01.jpg"
@@ -318,7 +325,7 @@ export default function SittersQueretaroPage() {
                   sizes="(max-width: 768px) 92vw, 30vw"
                 />
               </div>
-            </div>
+            </GalleryGrid>
           </div>
         </section>
 
@@ -333,14 +340,17 @@ export default function SittersQueretaroPage() {
               qu&eacute; incluye cada paquete y apartamos tu fecha. Cero
               presi&oacute;n, pura pl&aacute;tica.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MSG)}
+              location="cta_mid"
+              buttonName="Pedir información y precios"
+              serviceType="sitters"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Pedir informaci&oacute;n y precios
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Respondemos en menos de 2 horas &middot; Sin compromiso
             </p>
@@ -366,6 +376,7 @@ export default function SittersQueretaroPage() {
           buttonLabel="Pedir información y precios"
           waMessage={WA_MSG}
           microcopy="Respondemos en menos de 2 horas · Sin compromiso"
+          location="cta_final"
         />
       </main>
 

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { GALLERY } from "@/lib/site";
+import { trackGallery } from "@/lib/analytics";
 
 export default function Gallery() {
   return (
@@ -11,7 +14,11 @@ export default function Gallery() {
         </div>
         <div className="gallery-masonry">
           {GALLERY.map((item) => (
-            <div className="gallery-item" key={item.src}>
+            <div
+              className="gallery-item"
+              key={item.src}
+              onClick={() => trackGallery(item.alt, "portafolio")}
+            >
               <Image
                 src={item.src}
                 alt={item.alt}

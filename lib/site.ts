@@ -15,8 +15,27 @@ export const SITE = {
   gallery: "https://mila-os.com",
 } as const;
 
+/**
+ * Zona pública del estudio. Única fuente de verdad — debe coincidir con Google Business Profile.
+ * Deliberadamente sin streetAddress ni postalCode: no se publica la dirección exacta todavía.
+ * Direcciones viejas de directorios (Brasil 123, Av. Cimatario 305) son datos obsoletos —
+ * no reutilizar hasta que Cristian confirme lo contrario.
+ */
+export const ADDRESS = {
+  neighborhood: "Jurica",
+  locality: "Querétaro",
+  region: "Querétaro",
+  country: "MX",
+  /** Línea legible para mostrar en pantalla (footer, etc.). */
+  display: "Estudio de fotografía newborn en Jurica, Querétaro · WhatsApp 442 344 0766",
+} as const;
+
 export const WHATSAPP_NUMBER = "524423440766";
 export const WHATSAPP_DISPLAY = "442 344 0766";
+
+/** Número de bebés fotografiados. Única fuente de verdad — no hardcodear "800" o "830" en otro lado. */
+export const BABIES_COUNT = 830;
+export const BABIES_COUNT_TEXT = `${BABIES_COUNT}+`;
 
 /** Mensaje por defecto pre-cargado en el chat de WhatsApp. */
 export const DEFAULT_WA_MESSAGE =

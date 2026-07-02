@@ -8,6 +8,9 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 
 /* ── METADATA ────────────────────────────────── */
 
@@ -61,6 +64,7 @@ const faqLd = faqSchema(SMASH_FAQS);
 export default function SmashCakeQueretaro() {
   return (
     <>
+      <ServicePageView serviceType="smash-cake" />
       {/* JSON-LD structured data */}
       <script
         type="application/ld+json"
@@ -95,14 +99,17 @@ export default function SmashCakeQueretaro() {
               ponemos el pastel enfrente de tu bebé y dejamos que pase lo
               que tenga que pasar. Nosotros capturamos cada gesto.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MSG)}
+              location="hero"
+              buttonName="Pedir información y precios"
+              serviceType="smash-cake"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Pedir información y precios
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Respondemos en menos de 2 horas por WhatsApp
             </p>
@@ -265,7 +272,7 @@ export default function SmashCakeQueretaro() {
             <p className="label">Galería</p>
             <h2 className="heading">Momentos reales de nuestras sesiones</h2>
           </div>
-          <div className="svc-gallery-grid">
+          <GalleryGrid section="smash-cake">
             {[
               { src: "/images/smash01.jpg", alt: "Smash the Cake Querétaro - niña con pastel rosa y globos en estudio Bambuky" },
               { src: "/images/smash02.jpg", alt: "Smash the Cake niño Querétaro - primer cumpleaños con decoración temática y globos azules" },
@@ -283,7 +290,7 @@ export default function SmashCakeQueretaro() {
                 />
               </div>
             ))}
-          </div>
+          </GalleryGrid>
         </div>
       </section>
 
@@ -297,14 +304,17 @@ export default function SmashCakeQueretaro() {
             Cada smash the cake que hacemos es distinto. Escríbenos con tu idea
             (aunque sea a medias) y entre todos la armamos.
           </p>
-          <a
+          <WhatsAppLink
             className="btn-wa"
             href={waLink(WA_MSG)}
+            location="cta_mid"
+            buttonName="Reservar mi sesión"
+            serviceType="smash-cake"
             target="_blank"
             rel="noopener noreferrer"
           >
             <WhatsAppIcon /> Reservar mi sesión
-          </a>
+          </WhatsAppLink>
           <p className="svc-microcopy">Sin compromiso, sin spam</p>
         </div>
       </section>
@@ -328,6 +338,7 @@ export default function SmashCakeQueretaro() {
         buttonLabel="Pedir información y precios"
         waMessage={WA_MSG}
         microcopy="Respondemos en menos de 2 horas por WhatsApp"
+        location="cta_final"
       />
     </>
   );

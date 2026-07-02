@@ -2,9 +2,16 @@
 
 import { useState } from "react";
 import type { FAQ as FAQType } from "@/lib/faqs";
+import { trackFAQ } from "@/lib/analytics";
 
 export default function FAQ({ items, id }: { items: FAQType[]; id?: string }) {
   const [open, setOpen] = useState<number | null>(null);
+
+  function toggle(i: number, question: string) {
+    const next = open === i ? null : i;
+    setOpen(next);
+    if (next !== null) trackFAQ(question, id);
+  }
 
   return (
     <section className="faq-section" id={id}>
@@ -22,7 +29,7 @@ export default function FAQ({ items, id }: { items: FAQType[]; id?: string }) {
               <dt>
                 <button
                   className="faq-trigger"
-                  onClick={() => setOpen(open === i ? null : i)}
+                  onClick={() => toggle(i, faq.q)}
                   aria-expanded={open === i}
                 >
                   <span>{faq.q}</span>

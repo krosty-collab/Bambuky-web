@@ -982,6 +982,10 @@ nav.site-nav.scrolled {
 .footer-col ul a:hover {
   color: var(--gold-lt);
 }
+.footer-address {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+}
 .footer-social {
   display: flex;
   gap: 1rem;

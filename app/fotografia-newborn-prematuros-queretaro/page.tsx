@@ -9,6 +9,9 @@ import FAQ from "@/components/FAQ";
 import RelatedServices from "@/components/RelatedServices";
 import SplitCta from "@/components/SplitCta";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import WhatsAppLink from "@/components/WhatsAppLink";
+import GalleryGrid from "@/components/GalleryGrid";
+import ServicePageView from "@/components/analytics/ServicePageView";
 import { waLink, SITE } from "@/lib/site";
 import { faqSchema, serviceSchema, breadcrumbSchema } from "@/lib/seo";
 
@@ -43,10 +46,10 @@ export const metadata: Metadata = {
     locale: "es_MX",
     images: [
       {
-        url: "/images/newborn6.jpg",
+        url: "/images/sesion-prematuro-newborn-queretaro-bambuky-01.webp",
         width: 1200,
         height: 630,
-        alt: "Fotografía newborn de bebé prematuro en Querétaro - estudio Bambuky",
+        alt: "Recién nacido dormido y envuelto en manta blanca durante sesión newborn en Bambuky, Querétaro",
       },
     ],
   },
@@ -65,7 +68,7 @@ const serviceLd = serviceSchema({
   description:
     "Sesión de fotografía newborn adaptada a bebés prematuros. Trabajamos con la edad corregida, sin límite de tiempo. Fotógrafos con experiencia personal en prematurez y más de 830 recién nacidos fotografiados.",
   url: PAGE_URL,
-  image: "/images/newborn6.jpg",
+  image: "/images/sesion-prematuro-newborn-queretaro-bambuky-01.webp",
 });
 
 const PREMATUROS_FAQS = [
@@ -101,6 +104,7 @@ const WA_MESSAGE =
 export default function FotografiaNewbornPrematurosQueretaro() {
   return (
     <>
+      <ServicePageView serviceType="newborn-prematuros" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
@@ -145,24 +149,27 @@ export default function FotografiaNewbornPrematurosQueretaro() {
                 tu bebé nació antes de tiempo, entendemos tu historia. Y
                 la sesión se adapta a ella.
               </p>
-              <a
+              <WhatsAppLink
                 className="btn-wa"
                 href={waLink(WA_MESSAGE)}
+                location="hero"
+                buttonName="Pedir información y precios"
+                serviceType="newborn-prematuros"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <WhatsAppIcon /> Pedir información y precios
-              </a>
+              </WhatsAppLink>
               <p className="svc-microcopy">
                 Te respondemos por WhatsApp en minutos
               </p>
             </div>
             <div className="svc-hero-img">
               <Image
-                src="/images/newborn6.jpg"
-                alt="Fotografía newborn de bebé prematuro en estudio Bambuky Querétaro"
-                width={900}
-                height={1200}
+                src="/images/sesion-prematuro-newborn-queretaro-bambuky-01.webp"
+                alt="Recién nacida dormida y sonriente, envuelta en manta blanca durante sesión newborn en Bambuky, Querétaro"
+                width={1200}
+                height={1600}
                 sizes="(max-width: 768px) 92vw, 420px"
                 priority
               />
@@ -241,7 +248,7 @@ export default function FotografiaNewbornPrematurosQueretaro() {
             <div className="svc-editorial-img">
               <Image
                 src="/images/newborn4.jpg"
-                alt="Bebé prematuro durmiendo tranquilo en sesión newborn - Bambuky Querétaro"
+                alt="Recién nacido durmiendo tranquilo, envuelto en tela suave, durante sesión newborn en Bambuky Querétaro"
                 width={900}
                 height={1200}
                 sizes="(max-width: 768px) 92vw, 480px"
@@ -322,7 +329,7 @@ export default function FotografiaNewbornPrematurosQueretaro() {
             <div className="svc-editorial-img">
               <Image
                 src="/images/newborn7.jpg"
-                alt="Sesión newborn gemelos prematuros - bebés en bowl con flores, Bambuky Querétaro"
+                alt="Recién nacido dormido en bowl artesanal con flores lilas, durante sesión newborn en Bambuky Querétaro"
                 width={900}
                 height={1200}
                 sizes="(max-width: 768px) 92vw, 480px"
@@ -362,31 +369,31 @@ export default function FotografiaNewbornPrematurosQueretaro() {
                 A su ritmo, a su tiempo
               </h2>
             </div>
-            <div className="svc-gallery-grid">
+            <GalleryGrid section="newborn-prematuros">
               {[
                 {
-                  src: "/images/newborn6.jpg",
-                  alt: "Fotografía newborn prematuro Querétaro - bebé durmiendo con accesorios artesanales",
+                  src: "/images/sesion-prematuro-newborn-queretaro-bambuky-01.webp",
+                  alt: "Recién nacida dormida y sonriente, envuelta en manta blanca durante sesión newborn en Bambuky, Querétaro",
                 },
                 {
                   src: "/images/newborn2.jpg",
-                  alt: "Sesión newborn prematuro Querétaro - bebé envuelto en tela blanca",
+                  alt: "Recién nacido con diadema floral, envuelto en tela blanca, sesión newborn en Bambuky Querétaro",
                 },
                 {
                   src: "/images/newborn3.jpg",
-                  alt: "Fotografía bebé prematuro Querétaro - bebé en cama miniatura de madera",
+                  alt: "Recién nacido dormido en cama miniatura de madera, sesión newborn en Bambuky Querétaro",
                 },
                 {
                   src: "/images/newborn5.jpg",
-                  alt: "Sesión newborn prematuro Querétaro - pose lateral en traje crema",
+                  alt: "Recién nacido en pose lateral con traje crema, sesión newborn en Bambuky Querétaro",
                 },
                 {
                   src: "/images/newborn1.jpg",
-                  alt: "Fotografía newborn prematuro Querétaro - bebé en canasta con flores",
+                  alt: "Recién nacido dormido en canasta con flores rosas, sesión newborn en Bambuky Querétaro",
                 },
                 {
                   src: "/images/newborn4.jpg",
-                  alt: "Sesión bebé prematuro Querétaro - bebé durmiendo en envoltura suave",
+                  alt: "Recién nacido durmiendo envuelto en tela suave, sesión newborn en Bambuky Querétaro",
                 },
               ].map((img) => (
                 <div className="svc-gallery-item" key={img.src}>
@@ -399,7 +406,7 @@ export default function FotografiaNewbornPrematurosQueretaro() {
                   />
                 </div>
               ))}
-            </div>
+            </GalleryGrid>
           </div>
         </section>
 
@@ -414,14 +421,17 @@ export default function FotografiaNewbornPrematurosQueretaro() {
               semanas tenía, y vemos juntos cuál es el mejor momento. Sin
               prisa, sin compromiso.
             </p>
-            <a
+            <WhatsAppLink
               className="btn-wa"
               href={waLink(WA_MESSAGE)}
+              location="cta_mid"
+              buttonName="Escríbenos por WhatsApp"
+              serviceType="newborn-prematuros"
               target="_blank"
               rel="noopener noreferrer"
             >
               <WhatsAppIcon /> Escríbenos por WhatsApp
-            </a>
+            </WhatsAppLink>
             <p className="svc-microcopy">
               Te respondemos hoy mismo
             </p>
@@ -443,14 +453,15 @@ export default function FotografiaNewbornPrematurosQueretaro() {
 
         {/* ── Final CTA ── */}
         <SplitCta
-          image="/images/newborn6.jpg"
-          alt="Recién nacido dormido con osito en sesión newborn - Bambuky Querétaro"
+          image="/images/sesion-prematuro-newborn-queretaro-bambuky-01.webp"
+          alt="Recién nacida dormida y sonriente, envuelta en manta blanca durante sesión newborn en Bambuky, Querétaro"
           label="Newborn Prematuros · Querétaro"
           title="No hay prisa. Cuando tu bebé esté listo, nosotros también."
           text="Escríbenos y platicamos. Cada bebé tiene su tiempo."
           buttonLabel="Pedir información y precios"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos por WhatsApp"
+          location="cta_final"
         />
       </main>
 

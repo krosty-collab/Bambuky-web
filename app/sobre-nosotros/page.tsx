@@ -6,7 +6,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import SplitCta from "@/components/SplitCta";
 import { SITE } from "@/lib/site";
-import { breadcrumbSchema } from "@/lib/seo";
+import { breadcrumbSchema, BUSINESS_ID, CRISTIAN_ID, REYNA_ID } from "@/lib/seo";
 
 /* ── METADATA ────────────────────────────────── */
 
@@ -48,14 +48,11 @@ const breadcrumbLd = breadcrumbSchema([
 const personLd = [
   {
     "@context": "https://schema.org",
+    "@id": CRISTIAN_ID,
     "@type": "Person",
     name: "Cristian Andrada",
     jobTitle: "Fotógrafo newborn",
-    worksFor: {
-      "@type": "LocalBusiness",
-      name: "Bambuky Fotografía",
-      url: SITE.url,
-    },
+    worksFor: { "@id": BUSINESS_ID },
     knowsAbout: [
       "Fotografía newborn",
       "Seguridad neonatal en fotografía",
@@ -65,14 +62,11 @@ const personLd = [
   },
   {
     "@context": "https://schema.org",
+    "@id": REYNA_ID,
     "@type": "Person",
     name: "Reyna",
     jobTitle: "Fotógrafa newborn",
-    worksFor: {
-      "@type": "LocalBusiness",
-      name: "Bambuky Fotografía",
-      url: SITE.url,
-    },
+    worksFor: { "@id": BUSINESS_ID },
     knowsAbout: [
       "Fotografía newborn",
       "Posado y manejo de recién nacidos",
@@ -347,14 +341,15 @@ export default function SobreNosotrosPage() {
 
         {/* ── CTA ── */}
         <SplitCta
-          image="/images/cris_rey.jpg"
-          alt="Cristian y Reyna, fotógrafos de Bambuky en Querétaro"
+          image="/images/bambuky-detras-de-camaras-estudio-queretaro-01.webp"
+          alt="Reyna acomodando con cuidado a gemelos recién nacidos durante una sesión newborn en el estudio Bambuky, Querétaro"
           label="Cristian y Reyna"
           title="Lo estás haciendo bien"
           text="Si querés conocernos, escríbenos. Te contamos cómo funciona todo y resolvemos cualquier duda. Sin compromiso, sin presión. Solo dos papás que entienden lo que estás viviendo."
           buttonLabel="Escríbenos por WhatsApp"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos hoy mismo"
+          location="cta_final"
         />
       </main>
 

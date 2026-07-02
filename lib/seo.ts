@@ -1,5 +1,10 @@
-import { SITE, SOCIAL, WHATSAPP_NUMBER } from "./site";
+import { SITE } from "./site";
 import type { FAQ } from "./faqs";
+
+/** @id canónico del negocio. Todo schema que necesite "provider" o "worksFor" debe apuntar aquí en vez de re-declarar LocalBusiness. */
+export const BUSINESS_ID = `${SITE.url}/#business`;
+export const CRISTIAN_ID = `${SITE.url}/#cristian-andrada`;
+export const REYNA_ID = `${SITE.url}/#reyna`;
 
 export function faqSchema(faqs: FAQ[]) {
   return {
@@ -29,22 +34,7 @@ export function serviceSchema(opts: {
     description: opts.description,
     url: opts.url,
     image: `${SITE.url}${opts.image}`,
-    provider: {
-      "@type": "LocalBusiness",
-      name: "Bambuky Fotografía",
-      url: SITE.url,
-      telephone: `+${WHATSAPP_NUMBER}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Querétaro",
-        addressRegion: "Querétaro",
-        addressCountry: "MX",
-      },
-      areaServed: {
-        "@type": "City",
-        name: "Querétaro",
-      },
-    },
+    provider: { "@id": BUSINESS_ID },
     areaServed: {
       "@type": "City",
       name: "Querétaro",
@@ -62,27 +52,5 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       name: item.name,
       item: item.url,
     })),
-  };
-}
-
-export function organizationSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Bambuky Fotografía",
-    url: SITE.url,
-    logo: `${SITE.url}/images/logo.png`,
-    sameAs: [SOCIAL.instagram, SOCIAL.facebook],
-    founder: [
-      { "@type": "Person", name: "Cristian Andrada" },
-      { "@type": "Person", name: "Reyna" },
-    ],
-    foundingDate: "2015-08",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: `+${WHATSAPP_NUMBER}`,
-      contactType: "customer service",
-      availableLanguage: "Spanish",
-    },
   };
 }

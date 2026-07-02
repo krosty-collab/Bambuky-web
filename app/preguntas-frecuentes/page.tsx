@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import Breadcrumb from "@/components/Breadcrumb";
 import SplitCta from "@/components/SplitCta";
+import WhatsAppLink from "@/components/WhatsAppLink";
 import { waLink, SITE } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/seo";
 import FAQAccordion from "./FAQAccordion";
@@ -703,13 +704,15 @@ export default function PreguntasFrecuentesPage() {
             <p className="subheading">
               Respuestas desde la experiencia de once años y más de 830
               recién nacidos. Si no encontrás tu duda aquí,{" "}
-              <a
+              <WhatsAppLink
                 href={waLink(WA_MESSAGE)}
+                location="faq_hero"
+                buttonName="escríbenos por WhatsApp"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 escríbenos por WhatsApp
-              </a>
+              </WhatsAppLink>
               .
             </p>
 
@@ -750,6 +753,7 @@ export default function PreguntasFrecuentesPage() {
           buttonLabel="Escríbenos por WhatsApp"
           waMessage={WA_MESSAGE}
           microcopy="Te respondemos hoy mismo"
+          location="cta_final"
         />
       </main>
 

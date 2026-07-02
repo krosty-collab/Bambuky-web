@@ -4,6 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { waLink } from "@/lib/site";
+import WhatsAppLink from "./WhatsAppLink";
 
 const SESSIONS = [
   { href: "/fotografia-newborn-queretaro", label: "Recién Nacido" },
@@ -114,14 +115,16 @@ export default function Nav() {
               <Link href="/preguntas-frecuentes">Preguntas frecuentes</Link>
             </li>
             <li>
-              <a
+              <WhatsAppLink
                 className="nav-cta"
                 href={waLink()}
+                location="navbar"
+                buttonName="Agendar sesión"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Agendar sesión
-              </a>
+              </WhatsAppLink>
             </li>
           </ul>
 
@@ -199,15 +202,17 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <a
+            <WhatsAppLink
               className="nav-mobile-cta"
               href={waLink()}
+              location="navbar_mobile"
+              buttonName="Agendar sesión"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMobile}
             >
               Agendar sesión
-            </a>
+            </WhatsAppLink>
           </li>
         </ul>
       </div>

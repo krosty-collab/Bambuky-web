@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { waLink } from "@/lib/site";
 import WhatsAppIcon from "./WhatsAppIcon";
+import WhatsAppLink from "./WhatsAppLink";
+import CTALink from "./CTALink";
 
 export default function Hero() {
   return (
@@ -23,18 +25,25 @@ export default function Hero() {
           desde 2015.
         </p>
         <div className="hero-actions">
-          <a
+          <WhatsAppLink
             className="btn-wa"
             href={waLink()}
+            location="hero"
+            buttonName="Agendar sesión"
             target="_blank"
             rel="noopener noreferrer"
           >
             <WhatsAppIcon />
             Agendar sesión
-          </a>
-          <a className="btn-outline" href="#galeria">
+          </WhatsAppLink>
+          <CTALink
+            className="btn-outline"
+            href="#galeria"
+            buttonName="Ver nuestro trabajo"
+            section="hero"
+          >
             Ver nuestro trabajo
-          </a>
+          </CTALink>
         </div>
       </div>
     </section>

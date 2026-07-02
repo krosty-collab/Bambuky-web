@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { waLink } from "@/lib/site";
 import WhatsAppIcon from "./WhatsAppIcon";
+import WhatsAppLink from "./WhatsAppLink";
 
 type SplitCtaProps = {
   image: string;
@@ -12,6 +13,7 @@ type SplitCtaProps = {
   waMessage?: string;
   microcopy?: string;
   imagePosition?: string;
+  location?: string;
 };
 
 /**
@@ -28,6 +30,7 @@ export default function SplitCta({
   waMessage,
   microcopy,
   imagePosition = "center 30%",
+  location = "cta_final",
 }: SplitCtaProps) {
   return (
     <section className="cta-section">
@@ -46,14 +49,16 @@ export default function SplitCta({
           {label ? <p className="label">{label}</p> : null}
           <h2 className="cta-title">{title}</h2>
           <p className="body-text">{text}</p>
-          <a
+          <WhatsAppLink
             className="btn-wa"
             href={waLink(waMessage)}
+            location={location}
+            buttonName={buttonLabel}
             target="_blank"
             rel="noopener noreferrer"
           >
             <WhatsAppIcon /> {buttonLabel}
-          </a>
+          </WhatsAppLink>
           {microcopy ? <p className="cta-microcopy">{microcopy}</p> : null}
         </div>
       </div>

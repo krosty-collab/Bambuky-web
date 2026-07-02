@@ -4,8 +4,10 @@ import {
   SOCIAL,
   WHATSAPP_DISPLAY,
   WHATSAPP_NUMBER,
+  ADDRESS,
   waLink,
 } from "@/lib/site";
+import WhatsAppLink from "./WhatsAppLink";
 
 const year = new Date().getFullYear();
 
@@ -42,14 +44,15 @@ export default function Footer() {
               >
                 FB
               </a>
-              <a
+              <WhatsAppLink
                 href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                location="footer_social"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Bambuky"
               >
                 WA
-              </a>
+              </WhatsAppLink>
             </div>
           </div>
 
@@ -78,9 +81,15 @@ export default function Footer() {
             <h4>Contacto</h4>
             <ul>
               <li>
-                <a href={waLink()} target="_blank" rel="noopener noreferrer">
+                <WhatsAppLink
+                  href={waLink()}
+                  location="footer"
+                  buttonName={`WhatsApp: ${WHATSAPP_DISPLAY}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   WhatsApp: {WHATSAPP_DISPLAY}
-                </a>
+                </WhatsAppLink>
               </li>
               <li>
                 <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer">
@@ -95,6 +104,7 @@ export default function Footer() {
           <span>
             © {year} Bambuky Fotografía · Querétaro, México
           </span>
+          <span className="footer-address">{ADDRESS.display}</span>
         </div>
       </div>
     </footer>

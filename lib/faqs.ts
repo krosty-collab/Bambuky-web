@@ -1,3 +1,5 @@
+import { BABIES_COUNT_TEXT } from "./site";
+
 export type FAQ = { q: string; a: string };
 
 export const GLOBAL_FAQS: FAQ[] = [
@@ -15,7 +17,7 @@ export const GLOBAL_FAQS: FAQ[] = [
   },
   {
     q: "¿Es seguro para mi recién nacido?",
-    a: "Sí. Estamos certificados en primeros auxilios pediátricos y renovamos la certificación cada año. En más de 800 bebés nunca hemos tenido un incidente. No es un dato de marketing — es lo que más nos importa.",
+    a: `Sí. Estamos certificados en primeros auxilios pediátricos y renovamos la certificación cada año. En más de ${BABIES_COUNT_TEXT} bebés nunca hemos tenido un incidente. No es un dato de marketing — es lo que más nos importa.`,
   },
   {
     q: "¿Quiénes hacen la sesión?",
@@ -30,7 +32,7 @@ export const NEWBORN_FAQS: FAQ[] = [
   },
   {
     q: "¿Es segura la sesión newborn?",
-    a: "Estamos certificados en primeros auxilios pediátricos. Controlamos la temperatura del estudio entre 26 y 28 grados. Nunca dejamos al bebé sin soporte. En más de 800 sesiones, cero incidentes.",
+    a: `Estamos certificados en primeros auxilios pediátricos. Controlamos la temperatura del estudio entre 26 y 28 grados. Nunca dejamos al bebé sin soporte. En más de ${BABIES_COUNT_TEXT} sesiones, cero incidentes.`,
   },
   {
     q: "¿Qué pasa si mi bebé ya tiene más de 15 días?",
