@@ -1638,6 +1638,11 @@ nav.site-nav.scrolled {
   .gallery-masonry {
     columns: 2;
   }
+  /* En móvil mostramos una selección del portafolio (las primeras 8) para
+     no alargar demasiado el scroll. En desktop se ven todas. */
+  .gallery-masonry .gallery-item:nth-child(n + 9) {
+    display: none;
+  }
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
