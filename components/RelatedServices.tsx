@@ -42,8 +42,8 @@ const ALL: Related[] = [
   {
     title: "Newborn Gemelos",
     href: "/fotografia-newborn-gemelos-queretaro",
-    image: "/images/newborn1.jpg",
-    alt: "Fotografía newborn gemelos Querétaro",
+    image: "/images/fotografia-newborn-gemelos-queretaro-bambuky-04.webp",
+    alt: "Gemelos recién nacidos frente a frente durante una sesión newborn en Querétaro",
   },
   {
     title: "Newborn Prematuros",
