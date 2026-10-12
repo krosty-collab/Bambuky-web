@@ -6,7 +6,11 @@
 export const SITE = {
   name: "Bambuky",
   legalName: "Bambuky Fotografía",
-  url: "https://www.bambuky.com",
+  // Dominio del sitio. Única fuente de verdad para canonical, Open Graph,
+  // metadataBase, sitemap, robots, llms.txt y JSON-LD. Para cambiar de dominio
+  // basta con definir NEXT_PUBLIC_SITE_URL (en Vercel o en .env.local); el valor
+  // de abajo es el fallback por defecto.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bambukyphotography.com",
   tagline: "Los primeros días pasan volando",
   locality: "Querétaro",
   region: "Querétaro",

@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { execSync } from "node:child_process";
 import path from "node:path";
+import { SITE } from "@/lib/site";
 
-const BASE = "https://www.bambuky.com";
+const BASE = SITE.url;
 
 /** Fecha real del último commit que tocó el archivo. Evita mandar "hoy" en cada build. */
 function lastModified(filePath: string): Date {

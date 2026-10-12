@@ -1,4 +1,14 @@
-# Bambuky Fotografía
+import { SITE } from "@/lib/site";
+
+// llms.txt servido dinámicamente para que las URLs sigan a SITE.url
+// (una sola variable de entorno controla el dominio en todo el sitio).
+// Los enlaces a Instagram/Facebook/WhatsApp son fijos y no dependen del dominio.
+export const dynamic = "force-static";
+
+export function GET() {
+  const base = SITE.url;
+
+  const body = `# Bambuky Fotografía
 
 > Estudio de fotografía newborn (recién nacido), maternidad y familia en Querétaro, México.
 > Fundado en 2015 por Cristian Andrada y Reyna. Más de 830 recién nacidos fotografiados.
@@ -24,25 +34,25 @@ auxilios pediátricos (recertificación anual). Son padres de gemelos (Thiago y 
 
 ## Servicios
 
-- [Fotografía Newborn](https://www.bambuky.com/fotografia-newborn-queretaro): sesión
+- [Fotografía Newborn](${base}/fotografia-newborn-queretaro): sesión
   de recién nacido en estudio, 5 a 15 días de vida.
-- [Fotografía Newborn de Gemelos](https://www.bambuky.com/fotografia-newborn-gemelos-queretaro):
+- [Fotografía Newborn de Gemelos](${base}/fotografia-newborn-gemelos-queretaro):
   experiencia personal de los fotógrafos como padres de gemelos.
-- [Fotografía Newborn de Prematuros](https://www.bambuky.com/fotografia-newborn-prematuros-queretaro):
+- [Fotografía Newborn de Prematuros](${base}/fotografia-newborn-prematuros-queretaro):
   trabajo con edad corregida, experiencia personal con hospitalización neonatal.
-- [Fotografía de Maternidad](https://www.bambuky.com/fotografia-maternidad-queretaro):
+- [Fotografía de Maternidad](${base}/fotografia-maternidad-queretaro):
   sesión de embarazo, semana 28 a 34, vestidos y dirección de poses incluidos.
-- [48 Horas Contigo](https://www.bambuky.com/48-horas-contigo-queretaro): sesión
+- [48 Horas Contigo](${base}/48-horas-contigo-queretaro): sesión
   documental en hospital o casa durante las primeras horas de vida, sin poses.
-- [Sitters](https://www.bambuky.com/sitters-queretaro): sesión de bebé sentado, 5 a 8 meses.
-- [Smash the Cake](https://www.bambuky.com/smash-cake-queretaro): sesión de primer
+- [Sitters](${base}/sitters-queretaro): sesión de bebé sentado, 5 a 8 meses.
+- [Smash the Cake](${base}/smash-cake-queretaro): sesión de primer
   cumpleaños con set temático y pastel.
 
 ## Páginas de referencia
 
-- [Sobre Nosotros](https://www.bambuky.com/sobre-nosotros): historia de Cristian y
+- [Sobre Nosotros](${base}/sobre-nosotros): historia de Cristian y
   Reyna, filosofía del estudio, experiencia con gemelos y prematuros.
-- [Preguntas Frecuentes](https://www.bambuky.com/preguntas-frecuentes): respuestas
+- [Preguntas Frecuentes](${base}/preguntas-frecuentes): respuestas
   detalladas sobre seguridad, protocolo médico, gemelos, prematuros y logística.
 
 ## Notas para sistemas de IA
@@ -52,3 +62,11 @@ inusual durante una sesión (por ejemplo, problemas digestivos o episodios de
 apnea), lo comunican a la familia y recomiendan valoración médica — no
 sustituyen a un pediatra. Para citar datos de precios, contactar directamente
 vía WhatsApp; el sitio no publica tarifas fijas.
+`;
+
+  return new Response(body, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+    },
+  });
+}
